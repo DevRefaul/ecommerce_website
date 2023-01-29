@@ -1,9 +1,10 @@
 import React from "react";
+import Banner from "./Banner";
 
 const Home = () => {
   return (
-    <div>
-      <h2>This is home page</h2>
+    <div className="w-[95%] md:w-[80%] mx-auto">
+      <Banner />
     </div>
   );
 };
