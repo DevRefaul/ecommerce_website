@@ -131,14 +131,14 @@ const Banner = () => {
               <a href="/">
                 <img
                   className="p-8 rounded-t-lg"
-                  src="https://flowbite.com/docs/images/products/apple-watch.png"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf1Z5NobTQdC3vtU6vRAsIkjPK6ojnzPSfKg&usqp=CAU"
                   alt="product"
                 />
               </a>
               <div className="px-5 pb-5">
                 <a href="/">
                   <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                    Samsung Watch Series 7 GPS, Aluminium Case
+                    Samsung Galaxy Watch 4
                   </h5>
                 </a>
                 <div className="flex items-center mt-2.5 mb-5">
