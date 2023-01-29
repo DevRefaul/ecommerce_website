@@ -16,6 +16,7 @@ const Banner = () => {
             dynamicBullets: true,
           }}
           modules={[Pagination]}
+          loop={true}
           className="mySwiper p-8 rounded-xl"
         >
           {bannerImges.map((image, i) => {
@@ -24,8 +25,12 @@ const Banner = () => {
                 <img
                   src={image}
                   alt=""
-                  className="h-[80vh] w-full object-cover"
+                  className="h-[80vh] w-full object-cover block relative"
                 />
+
+                <h2 className="textCenter text-white text-2xl md:text-4xl lg:text-5xl font-bold font-['Roboto_Slab'] bg-[rgba(0,0,0,0.7)] p-8 rounded-md">
+                  Buy Your Desire Products <br /> At A Cheap Rate
+                </h2>
               </SwiperSlide>
             );
           })}
