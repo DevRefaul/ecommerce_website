@@ -29,7 +29,7 @@ const Banner = () => {
                   className="h-full w-full object-cover block relative"
                 />
 
-                <h2 className="textCenter text-white text-2xl md:text-4xl lg:text-5xl font-bold font-['Roboto_Slab'] bg-[rgba(0,0,0,0.7)] p-8 rounded-md">
+                <h2 className="textCenter text-white text-2xl md:text-4xl lg:text-5xl font-bold font-['Roboto_Slab'] bg-[rgba(0,0,0,0.5)] p-8 rounded-md">
                   Buy Your Desire Products <br /> At A Cheap Rate
                 </h2>
               </SwiperSlide>
