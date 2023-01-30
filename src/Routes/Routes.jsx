@@ -1,6 +1,7 @@
 import Home from "../Pages/Home/Home";
 import Electronics from "../Pages/Products/Electronics/Electronics";
 import Fashion from "../Pages/Products/Fashion/Fashion";
+import Furniture from "../Pages/Products/Furniture/Furniture";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Root from "../Root/Root";
 
@@ -37,7 +38,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/furniture",
-        element: "",
+        element: <Furniture />,
       },
       {
         path: "/plant",
