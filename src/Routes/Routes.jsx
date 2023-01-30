@@ -1,4 +1,5 @@
 import Home from "../Pages/Home/Home";
+import Fashion from "../Pages/Products/Fashion/Fashion";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Root from "../Root/Root";
 
@@ -27,7 +28,7 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/fashion",
-        element: "",
+        element: <Fashion />,
       },
       {
         path: "/electronics",
