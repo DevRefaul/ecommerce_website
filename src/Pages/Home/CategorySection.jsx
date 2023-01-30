@@ -19,7 +19,7 @@ const CategorySection = () => {
             Furniture
           </h2>
         </div>
-        <div className="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 h-32 relative rounded-lg">
+        <div className="bg-gradient-to-r from-sky-400 to-blue-500 h-32 relative rounded-lg">
           <h2 className="textCenter text-white text-3xl font-medium font-['Roboto_Slab']">
             Electronics
           </h2>
