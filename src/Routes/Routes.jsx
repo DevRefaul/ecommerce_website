@@ -30,19 +30,19 @@ const routes = createBrowserRouter([
     errorElement: "",
     children: [
       {
-        path: "/fashion",
+        path: "/products/fashion",
         element: <Fashion />,
       },
       {
-        path: "/electronics",
+        path: "/products/electronics",
         element: <Electronics />,
       },
       {
-        path: "/furniture",
+        path: "/products/furniture",
         element: <Furniture />,
       },
       {
-        path: "/plant",
+        path: "/products/plant",
         element: <Plant />,
       },
     ],
