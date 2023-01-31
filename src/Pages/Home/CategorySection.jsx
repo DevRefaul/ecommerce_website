@@ -32,8 +32,8 @@ const CategorySection = () => {
           </div>
         </Link>
         <Link to="/products/plant" state="Plant">
-          <div className="bg-gradient-to-r from-green-300 via-green-400 to-green-500 h-32 relative rounded-lg">
-            <h2 className="textCenter text-white text-3xl font-medium font-['Roboto_Slab']">
+          <div className="bg-gradient-to-r from-green-300 via-green-400 to-green-500 h-32 relative rounded-lg  ">
+            <h2 className="textCenter text-3xl text-white  font-medium font-['Roboto_Slab']">
               Plant
             </h2>
           </div>
