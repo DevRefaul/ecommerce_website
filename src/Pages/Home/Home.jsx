@@ -4,6 +4,7 @@ import CategorySection from "./CategorySection";
 import ElectronicsSection from "./ElectronicsSection";
 import FashionSection from "./FashionSection";
 import FurnitureSection from "./FurnitureSection";
+import NewsLetterSection from "./NewsLetterSection";
 import PlantSection from "./PlantSection";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <ElectronicsSection />
       <FurnitureSection />
       <PlantSection />
+      <NewsLetterSection />
     </div>
   );
 };
