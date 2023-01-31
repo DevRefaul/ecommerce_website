@@ -6,6 +6,7 @@ import FashionSection from "./FashionSection";
 import FurnitureSection from "./FurnitureSection";
 import NewsLetterSection from "./NewsLetterSection";
 import PlantSection from "./PlantSection";
+import TrendingProducts from "./TrendingProducts";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <FurnitureSection />
       <PlantSection />
       <NewsLetterSection />
+      <TrendingProducts />
     </div>
   );
 };
