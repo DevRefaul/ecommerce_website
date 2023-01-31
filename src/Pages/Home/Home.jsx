@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import CategorySection from "./CategorySection";
+import ElectronicsSection from "./ElectronicsSection";
 import FashionSection from "./FashionSection";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Banner />
       <CategorySection />
       <FashionSection />
+      <ElectronicsSection />
     </div>
   );
 };
