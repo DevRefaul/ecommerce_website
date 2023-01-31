@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsLetterSection = () => {
   return (
-    <section className="bg-gradient-to-l from-green-300  to-blue-400 p-10 grid xl:grid-cols-[3fr,2fr] xl:w-[80%] mx-auto my-20 rounded">
+    <section className="bg-gradient-to-l from-green-300  to-blue-400 p-4 md:p-10 grid gap-4 xl:grid-cols-[2fr,2fr] xl:w-[80%] mx-auto my-20 rounded">
       <div>
         <h2 className="text-white font-bold text-2xl">
           Subscribe to Our Newsletter
@@ -20,7 +20,7 @@ const NewsLetterSection = () => {
         />
         <button
           type="submit"
-          className="bg-white border-2 border-transparent text-gray-600 font-bold py-2 px-4 rounded hover:bg-transparent hover:border-white ml-1"
+          className="bg-white border-2 border-transparent text-gray-600 font-bold py-2 px-4 rounded hover:bg-transparent hover:border-white md:ml-1 my-1"
         >
           Subscribe
         </button>
