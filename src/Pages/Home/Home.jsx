@@ -3,6 +3,8 @@ import Banner from "./Banner";
 import CategorySection from "./CategorySection";
 import ElectronicsSection from "./ElectronicsSection";
 import FashionSection from "./FashionSection";
+import FurnitureSection from "./FurnitureSection";
+import PlantSection from "./PlantSection";
 
 const Home = () => {
   return (
@@ -11,6 +13,8 @@ const Home = () => {
       <CategorySection />
       <FashionSection />
       <ElectronicsSection />
+      <FurnitureSection />
+      <PlantSection />
     </div>
   );
 };
