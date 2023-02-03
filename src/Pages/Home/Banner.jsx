@@ -18,7 +18,7 @@ const Banner = () => {
           modules={[Pagination, Autoplay]}
           loop={true}
           autoplay={{ delay: 3000 }}
-          className="mySwiper rounded-xl"
+          className="mySwiper rounded-xl h-[80vh] lg:h-full"
         >
           {bannerImges.map((image, i) => {
             return (
