@@ -7,6 +7,8 @@ import { RouterProvider } from 'react-router-dom';
 import routes from './Routes/Routes';
 import "swiper/css/bundle";
 
+import 'react-toastify/dist/ReactToastify.css';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

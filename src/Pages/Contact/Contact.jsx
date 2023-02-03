@@ -1,10 +1,17 @@
 import React from "react";
 import Lottie from "lottie-react";
 import contactAnimation from "./contact-us.json";
+import { toast, ToastContainer } from "react-toastify";
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Successfully Contacted, We Will Reach out to you");
+  };
+
   return (
     <section className="lg:flex justify-center items-center h-[100vh] overflow-scroll">
+      <ToastContainer />
       <div>
         <h2 className="text-2xl font-semibold text-center">Contact us</h2>
         <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-800 dark:text-gray-100">
@@ -12,11 +19,11 @@ const Contact = () => {
             <Lottie animationData={contactAnimation} />
           </div>
           <form
-            novalidate=""
+            onSubmit={handleSubmit}
             className="space-y-6 ng-untouched ng-pristine ng-valid"
           >
             <div>
-              <label for="name" className="text-sm">
+              <label htmlFor="name" className="text-sm">
                 Full name
               </label>
               <input
@@ -27,7 +34,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label for="email" className="text-sm">
+              <label htmlFor="email" className="text-sm">
                 Email
               </label>
               <input
@@ -37,7 +44,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label for="message" className="text-sm">
+              <label htmlFor="message" className="text-sm">
                 Message
               </label>
               <textarea
