@@ -1,3 +1,4 @@
+import Contact from "../Pages/Contact/Contact";
 import Home from "../Pages/Home/Home";
 import Electronics from "../Pages/Products/Electronics/Electronics";
 import Fashion from "../Pages/Products/Fashion/Fashion";
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
