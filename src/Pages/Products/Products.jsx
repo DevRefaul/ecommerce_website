@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import LoadingScene from "../../Components/LoadingScene/LoadingScene";
 import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
 
@@ -9,8 +10,12 @@ const Products = () => {
   useEffect(() => {
     setloading(true);
     fetch("allProducts.json")
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
       .then((data) => {
+        toast.success("Successfully Fetched Data");
         setData(data.products);
         setloading(false);
       })
@@ -23,6 +28,7 @@ const Products = () => {
 
   return (
     <section className="w-[95%] md:w-[80%] mx-auto my-8">
+      <ToastContainer />
       <h2 className="text-3xl font-semibold my-6 text-center">
         Total {data && data.length} Products Found
       </h2>

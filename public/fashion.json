@@ -3,7 +3,7 @@
         {
 "id": 1,
 "name": "Levi's 501 Original Fit Jeans",
-"price": "$69.50",
+"price": "69.50",
 "image": "https://i.ibb.co/qdw3NcJ/51dfb-X1i-Pr-L-AC-UL1000.jpg",
 "description": "The original straight leg jeans from Levi's in a classic fit, made from 100% cotton denim",
 "category": "Fashion",
@@ -16,7 +16,7 @@
 {
 "id": 2,
 "name": "Adidas Originals Superstar Sneakers",
-"price": "$80.00",
+"price": "80.00",
 "image": "https://i.ibb.co/nRKy54d/adidas-superstar-80s-snakeskin-1.webp",
 "description": "The iconic Superstar sneakers from Adidas with a leather upper, rubber shell toe, and herringbone-pattern outsole",
 "category": "Fashion",
@@ -29,7 +29,7 @@
 {
 "id": 3,
 "name": "Gucci Marmont Leather Shoulder Bag",
-"price": "$1,790.00",
+"price": "1,790.00",
 "image": "https://i.ibb.co/bLYKHHx/Gucci-GG-Marmont-Leather-Shoulder-Bag.jpg",
 "description": "A leather shoulder bag from Gucci with a quilted matelassé design and the brand's iconic double G hardware",
 "category": "Fashion",
@@ -42,7 +42,7 @@
 {
 "id": 4,
 "name": "Burberry Trench Coat",
-"price": "$1,790.00",
+"price": "1,790.00",
 "image": "https://i.ibb.co/8ctwXdz/burberry-chelsea-trench-4-1068x710.jpg",
 "description": "A classic trench coat from Burberry made from a cotton-blend gabardine fabric with a double-breasted front",
 "category": "Fashion",
@@ -55,7 +55,7 @@
 {
 "id": 5,
 "name": "Zara Basic T-Shirt",
-"price": "$9.99",
+"price": "9.99",
 "image": "https://i.ibb.co/Y0pC0Rg/maxresdefault.jpg",
 "description": "A basic t-shirt from Zara made from a soft cotton fabric with a crew neck and short sleeves",
 "category": "Fashion",
@@ -67,7 +67,7 @@
 {
 "id": 6,
 "name": "Louis Vuitton Neverfull Tote Bag",
-"price": "$1,680.00",
+"price": "1,680.00",
 "image": "https://i.ibb.co/6WsYR2x/louis-vuitton-neverfull-review-pros-and-cons.jpg",
 "description": "A spacious tote bag from Louis Vuitton with the brand's iconic monogram canvas and natural cowhide leather trim",
 "category": "Fashion",
@@ -80,7 +80,7 @@
 {
 "id": 7,
 "name": "Nike Air Max 270 React Sneakers",
-"price": "$150.00",
+"price": "150.00",
 "image": "https://i.ibb.co/CbcKk2m/https-hypebeast-com-image-2019-11-nike-air-max-270-react-winter-9.jpg",
 "description": "A pair of sneakers from Nike featuring a unique design with a large Max Air unit in the heel and a React foam midsole",
 "category": "Fashion",
@@ -93,7 +93,7 @@
 {
 "id": 8,
 "name": "H&M Denim Jacket",
-"price": "$34.99",
+"price": "34.99",
 "image": "https://i.ibb.co/G3LF3R7/06ca5fe756a3f5d94dec6bd634f735d4c4dc5138-xxl-1.jpg",
 "description": "A denim jacket from H&M with a classic design, made from a cotton-blend fabric with a button-up front",
 "category": "Fashion",
@@ -106,7 +106,7 @@
 {
 "id": 9,
 "name": "Prada Saffiano Leather Wallet",
-"price": "$630.00",
+"price": "630.00",
 "image": "https://i.ibb.co/Np1K71t/193-1747-1.jpg",
 "description": "A sleek leather wallet from Prada with a classic saffiano finish and multiple card slots and compartments",
 "category": "Fashion",
@@ -119,7 +119,7 @@
 {
 "id": 10,
 "name": "Ralph Lauren Polo Shirt",
-"price": "$89.50",
+"price": "89.50",
 "image": "https://i.ibb.co/f8dkgqy/s7-1411062-alternate10.jpg",
 "description": "A classic polo shirt from Ralph Lauren made from a soft cotton-blend fabric with the brand's iconic pony logo",
 "category": "Fashion",
@@ -131,7 +131,7 @@
 {
 "id": 11,
 "name": "Gucci GG Supreme Backpack",
-"price": "$1,980.00",
+"price": "1,980.00",
 "image": "https://i.ibb.co/BqpKtGR/Gucci-Backpack-GG-Supreme-Coated-Canvas-Leather-Black-Beige.webp",
 "description": "A stylish backpack from Gucci made from the brand's iconic GG Supreme canvas and featuring a top handle and adjustable straps",
 "category": "Fashion",
@@ -144,7 +144,7 @@
 {
 "id": 12,
 "name": "Burberry Trench Coat",
-"price": "$1,995.00",
+"price": "1,995.00",
 "image": "https://i.ibb.co/mHc247x/A-Classic-Burberry-Trench-1000x600.jpg",
 "description": "A timeless trench coat from Burberry made from a cotton-blend fabric with a button-up front and the brand's iconic check lining",
 "category": "Fashion",
@@ -157,7 +157,7 @@
 {
 "id": 13,
 "name": "Off-White Industrial Belt",
-"price": "$165.00",
+"price": "165.00",
 "image": "https://i.ibb.co/N2WTbvm/https-hypebeast-com-image-2016-07-off-white-yellow-industrial-belt-000.jpg",
 "description": "An industrial belt from Off-White featuring the brand's signature diagonal stripes and a metal buckle",
 "category": "Fashion",
@@ -170,7 +170,7 @@
 {
 "id": 14,
 "name": "Balenciaga Triple S Sneakers",
-"price": "$995.00",
+"price": "995.00",
 "image": "https://i.ibb.co/TvSSH62/https-hypebeast-com-wp-content-blogs-dir-6-files-2018-02-balenciaga-triple-s-trainer-red-yellow-grey.jpg",
 "description": "A pair of chunky sneakers from Balenciaga featuring a unique triple-sole design and a mix of materials",
 "category": "Fashion",
@@ -183,7 +183,7 @@
 {
 "id": 15,
 "name": "Yeezy Boost 700 V3 Sneakers",
-"price": "$240.00",
+"price": "240.00",
 "image": "https://i.ibb.co/M5J7tvK/adidas-Yeezy-700-V3-Azael-Product.webp",
 "description": "A pair of sneakers from Yeezy featuring a unique design with an updated 700 silhouette and a Boost sole",
 "category": "Fashion",

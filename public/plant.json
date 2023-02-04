@@ -4,7 +4,7 @@
   {
     "id": 1,
     "name": "Fiddle Leaf Fig Tree",
-    "price": "$50",
+    "price": "50",
     "image": "https://i.ibb.co/bNtBZTW/grow-fiddle-leaf-fig-indoors-1902756-hero-feca31e64e91430794e2bdcc9fa1e901.jpg",
     "description": "Ficus lyrata, also known as the fiddle-leaf fig, is a popular indoor tree.",
     "light": "Bright, indirect light",
@@ -17,7 +17,7 @@
   {
     "id": 2,
     "name": "Monstera Deliciosa",
-    "price": "$35",
+    "price": "35",
     "image": "https://i.ibb.co/k4Xz08x/303d4fdc-00af-4ccb-8164-539cbb77b97a-monstera-1-1-of-1.jpg",
     "description": "The Monstera deliciosa is a tropical plant native to Central America.",
     "light": "Bright, indirect light",
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "name": "Pothos",
-    "price": "$15",
+    "price": "15",
     "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
     "description": "Pothos, also known as devil's ivy, is a popular houseplant known for its easy care.",
     "light": "Low to bright, indirect light",
@@ -43,7 +43,7 @@
   {
     "id": 4,
     "name": "Succulent Collection",
-    "price": "$20",
+    "price": "20",
     "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
     "description": "A collection of 3 different types of succulents.",
     "light": "Bright, indirect light",
@@ -56,7 +56,7 @@
   {
     "id": 5,
     "name": "Bamboo Palm",
-    "price": "$30",
+    "price": "30",
     "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
     "description": "Bamboo palm, also known as reed palm, is a tropical plant that can grow up to 10 feet tall.",
     "light": "Bright, indirect light",
@@ -70,7 +70,7 @@
   {
     "id": 6,
     "name": "Fiddle Leaf Fig Tree",
-    "price": "$50",
+    "price": "50",
     "image": "https://i.ibb.co/bNtBZTW/grow-fiddle-leaf-fig-indoors-1902756-hero-feca31e64e91430794e2bdcc9fa1e901.jpg",
     "description": "Ficus lyrata, also known as the fiddle-leaf fig, is a popular indoor tree.",
     "light": "Bright, indirect light",
@@ -83,7 +83,7 @@
   {
     "id": 7,
     "name": "Monstera Deliciosa",
-    "price": "$35",
+    "price": "35",
     "image": "https://i.ibb.co/k4Xz08x/303d4fdc-00af-4ccb-8164-539cbb77b97a-monstera-1-1-of-1.jpg",
     "description": "The Monstera deliciosa is a tropical plant native to Central America.",
     "light": "Bright, indirect light",
@@ -96,7 +96,7 @@
   {
     "id": 8,
     "name": "Pothos",
-    "price": "$15",
+    "price": "15",
     "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
     "description": "Pothos, also known as devil's ivy, is a popular houseplant known for its easy care.",
     "light": "Low to bright, indirect light",
@@ -109,7 +109,7 @@
   {
     "id": 9,
     "name": "Succulent Collection",
-    "price": "$20",
+    "price": "20",
     "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
     "description": "A collection of 3 different types of succulents.",
     "light": "Bright, indirect light",
@@ -122,7 +122,7 @@
   {
     "id": 10,
     "name": "Bamboo Palm",
-    "price": "$30",
+    "price": "30",
     "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
     "description": "Bamboo palm, also known as reed palm, is a tropical plant that can grow up to 10 feet tall.",
     "light": "Bright, indirect light",
