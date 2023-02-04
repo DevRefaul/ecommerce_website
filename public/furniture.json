@@ -1,0 +1,131 @@
+{
+    "products":[
+        {
+"id": 1,
+"name": "Leather Sofa",
+"price": "1,399.00",
+"image": "https://i.ibb.co/28sJP68/leather-sofa-high-quality-furniture-dhaka.jpg",
+"description": "High-quality leather sofa in brown color, perfect for living room",
+"category": "Furniture",
+"brand": "Ashley Furniture",
+"type":"sofa",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 2,
+"name": "Oakwood Dining Table",
+"price": "799.00",
+"image": "https://i.ibb.co/rFq0tN3/products-oakwood-industries-color-mission-1-117b3002261w-byn8yynmumeybkqw5-9mddg-1.jpg",
+"description": "Elegant dining table made of solid oakwood, can seat up to 6 people",
+"category": "Furniture",
+"brand": "Pottery Barn",
+"type":"table",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 3,
+"name": "King Size Bed",
+"price": "499.00",
+"image": "https://i.ibb.co/ZHcjMnR/GM-FULLM-31-1-large.jpg",
+"description": "Comfortable king size bed with a wooden frame and a memory foam mattress",
+"category": "Furniture",
+"brand": "Zinus",
+"type":"bed",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 4,
+"name": "Vintage Dresser",
+"price": "699.00",
+"image": "https://i.ibb.co/WFd6rH1/il-1080x-N-2631488041-tq23.webp",
+"description": "Beautiful vintage style dresser made of reclaimed wood and metal handles",
+"category": "Furniture",
+"brand": "Hemsworth",
+"type":"table",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 5,
+"name": "Outdoor Lounge Chair",
+"price": "349.99",
+"image": "https://i.ibb.co/rc8xCBT/Modern-Teak-Poolside-Chaise-Lounge-Low-Curved-Outdoor-Chair-Design.jpg",
+"description": "Stylish outdoor lounge chair made of wicker and aluminum frame, perfect for patio or pool area",
+"category": "Furniture",
+"brand": "Home Styles",
+"type":"chair",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 6,
+"name": "Rattan Armchair",
+"price": "349.99",
+"image": "https://i.ibb.co/FJb0f8J/1200-1200.jpg",
+"description": "Stylish and comfortable armchair made of natural rattan and with a cotton cushion",
+"category": "Furniture",
+"brand": "IKEA",
+"type":"chair",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 7,
+"name": "L-Shaped Sofa",
+"price": "1,799.00",
+"image": "https://i.ibb.co/JmxdDj1/1b6288842f4caf6d931a703c75ab7895.jpg",
+"description": "Spacious and comfortable L-shaped sofa in grey fabric, perfect for living room",
+"category": "Furniture",
+"brand": "West Elm",
+"type":"sofa",
+"rating": 4.4,
+"ratings":[]
+},
+  {
+    "id": 8,
+    "name": "Leather Sofa 2",
+    "description": "A stylish and comfortable leather sofa with a sleek design.",
+    "price": 1000,
+    "image": "https://i.ibb.co/27ZkgVW/63fac25dc28d120f60fcb3b1e48c431c.jpg",
+    "category": "Furniture",
+    "brand": "Hulu Lu",
+    "type":"sofa",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 9,
+    "name": "Wooden Coffee Table",
+    "description": "A sturdy and elegant wooden coffee table with a classic design.",
+    "price": 250,
+    "image": "https://i.ibb.co/2ybW7WB/image2-27.webp",
+    "category": "Furniture",
+    "brand": "Lu Lu",
+    "type":"table",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 10,
+    "name": "Modern Armchair",
+    "description": "A comfortable and stylish armchair with a modern design.",
+    "price": 500,
+    "image": "https://i.ibb.co/7n0GR29/datsun-modern-armchair-p53188-68427-zoom.jpg",
+    "category": "Furniture",
+    "brand": "Fabric",
+    "type":"chair",
+    "rating": 4.4,
+    "ratings":[]
+  }
+
+    ]
+}

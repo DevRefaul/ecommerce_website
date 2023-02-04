@@ -1,0 +1,679 @@
+{
+    "products":[
+                {
+"id": 1,
+"name": "Levi's 501 Original Fit Jeans",
+"price": "$69.50",
+"image": "https://i.ibb.co/qdw3NcJ/51dfb-X1i-Pr-L-AC-UL1000.jpg",
+"description": "The original straight leg jeans from Levi's in a classic fit, made from 100% cotton denim",
+"category": "Fashion",
+"brand": "Levi's",
+"type":"jeans",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 2,
+"name": "Adidas Originals Superstar Sneakers",
+"price": "$80.00",
+"image": "https://i.ibb.co/nRKy54d/adidas-superstar-80s-snakeskin-1.webp",
+"description": "The iconic Superstar sneakers from Adidas with a leather upper, rubber shell toe, and herringbone-pattern outsole",
+"category": "Fashion",
+"brand": "Adidas",
+"type":"sneakers",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 3,
+"name": "Gucci Marmont Leather Shoulder Bag",
+"price": "$1,790.00",
+"image": "https://i.ibb.co/bLYKHHx/Gucci-GG-Marmont-Leather-Shoulder-Bag.jpg",
+"description": "A leather shoulder bag from Gucci with a quilted matelassé design and the brand's iconic double G hardware",
+"category": "Fashion",
+"brand": "Gucci",
+"type":"bag",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 4,
+"name": "Burberry Trench Coat",
+"price": "$1,790.00",
+"image": "https://i.ibb.co/8ctwXdz/burberry-chelsea-trench-4-1068x710.jpg",
+"description": "A classic trench coat from Burberry made from a cotton-blend gabardine fabric with a double-breasted front",
+"category": "Fashion",
+"brand": "Burberry",
+"type":"coat",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 5,
+"name": "Zara Basic T-Shirt",
+"price": "$9.99",
+"image": "https://i.ibb.co/Y0pC0Rg/maxresdefault.jpg",
+"description": "A basic t-shirt from Zara made from a soft cotton fabric with a crew neck and short sleeves",
+"category": "Fashion",
+"brand": "Zara",
+"type":"tshirt",
+"rating": 4.4,
+"ratings":[]
+},
+{
+"id": 6,
+"name": "Louis Vuitton Neverfull Tote Bag",
+"price": "$1,680.00",
+"image": "https://i.ibb.co/6WsYR2x/louis-vuitton-neverfull-review-pros-and-cons.jpg",
+"description": "A spacious tote bag from Louis Vuitton with the brand's iconic monogram canvas and natural cowhide leather trim",
+"category": "Fashion",
+"brand": "Louis Vuitton",
+"type":"bag",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 7,
+"name": "Nike Air Max 270 React Sneakers",
+"price": "$150.00",
+"image": "https://i.ibb.co/CbcKk2m/https-hypebeast-com-image-2019-11-nike-air-max-270-react-winter-9.jpg",
+"description": "A pair of sneakers from Nike featuring a unique design with a large Max Air unit in the heel and a React foam midsole",
+"category": "Fashion",
+"brand": "Nike",
+"type":"sneakers",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 8,
+"name": "H&M Denim Jacket",
+"price": "$34.99",
+"image": "https://i.ibb.co/G3LF3R7/06ca5fe756a3f5d94dec6bd634f735d4c4dc5138-xxl-1.jpg",
+"description": "A denim jacket from H&M with a classic design, made from a cotton-blend fabric with a button-up front",
+"category": "Fashion",
+"brand": "H&M",
+"type":"jacket",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 9,
+"name": "Prada Saffiano Leather Wallet",
+"price": "$630.00",
+"image": "https://i.ibb.co/Np1K71t/193-1747-1.jpg",
+"description": "A sleek leather wallet from Prada with a classic saffiano finish and multiple card slots and compartments",
+"category": "Fashion",
+"brand": "Prada",
+"type":"wallet",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 10,
+"name": "Ralph Lauren Polo Shirt",
+"price": "$89.50",
+"image": "https://i.ibb.co/f8dkgqy/s7-1411062-alternate10.jpg",
+"description": "A classic polo shirt from Ralph Lauren made from a soft cotton-blend fabric with the brand's iconic pony logo",
+"category": "Fashion",
+"brand": "Ralph Lauren",
+"type":"tshirt",
+"rating": 4.4,
+"ratings":[]
+},
+{
+"id": 11,
+"name": "Gucci GG Supreme Backpack",
+"price": "$1,980.00",
+"image": "https://i.ibb.co/BqpKtGR/Gucci-Backpack-GG-Supreme-Coated-Canvas-Leather-Black-Beige.webp",
+"description": "A stylish backpack from Gucci made from the brand's iconic GG Supreme canvas and featuring a top handle and adjustable straps",
+"category": "Fashion",
+"brand": "Gucci",
+"type":"bag",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 12,
+"name": "Burberry Trench Coat",
+"price": "$1,995.00",
+"image": "https://i.ibb.co/mHc247x/A-Classic-Burberry-Trench-1000x600.jpg",
+"description": "A timeless trench coat from Burberry made from a cotton-blend fabric with a button-up front and the brand's iconic check lining",
+"category": "Fashion",
+"brand": "Burberry",
+"type":"coat",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 13,
+"name": "Off-White Industrial Belt",
+"price": "$165.00",
+"image": "https://i.ibb.co/N2WTbvm/https-hypebeast-com-image-2016-07-off-white-yellow-industrial-belt-000.jpg",
+"description": "An industrial belt from Off-White featuring the brand's signature diagonal stripes and a metal buckle",
+"category": "Fashion",
+"brand": "Off-White",
+"type":"belt",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 14,
+"name": "Balenciaga Triple S Sneakers",
+"price": "$995.00",
+"image": "https://i.ibb.co/TvSSH62/https-hypebeast-com-wp-content-blogs-dir-6-files-2018-02-balenciaga-triple-s-trainer-red-yellow-grey.jpg",
+"description": "A pair of chunky sneakers from Balenciaga featuring a unique triple-sole design and a mix of materials",
+"category": "Fashion",
+"brand": "Balenciaga",
+"type":"sneakers",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 15,
+"name": "Yeezy Boost 700 V3 Sneakers",
+"price": "$240.00",
+"image": "https://i.ibb.co/M5J7tvK/adidas-Yeezy-700-V3-Azael-Product.webp",
+"description": "A pair of sneakers from Yeezy featuring a unique design with an updated 700 silhouette and a Boost sole",
+"category": "Fashion",
+"brand": "Yeezy",
+"type":"sneakers",
+"rating": 4.4,
+"ratings":[]
+},
+
+        {
+"id": 1,
+"name": "Leather Sofa",
+"price": "1,399.00",
+"image": "https://i.ibb.co/28sJP68/leather-sofa-high-quality-furniture-dhaka.jpg",
+"description": "High-quality leather sofa in brown color, perfect for living room",
+"category": "Furniture",
+"brand": "Ashley Furniture",
+"type":"sofa",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 2,
+"name": "Oakwood Dining Table",
+"price": "799.00",
+"image": "https://i.ibb.co/rFq0tN3/products-oakwood-industries-color-mission-1-117b3002261w-byn8yynmumeybkqw5-9mddg-1.jpg",
+"description": "Elegant dining table made of solid oakwood, can seat up to 6 people",
+"category": "Furniture",
+"brand": "Pottery Barn",
+"type":"table",
+"rating": 4.4,
+"ratings":[]
+},
+
+{
+"id": 3,
+"name": "King Size Bed",
+"price": "499.00",
+"image": "https://i.ibb.co/ZHcjMnR/GM-FULLM-31-1-large.jpg",
+"description": "Comfortable king size bed with a wooden frame and a memory foam mattress",
+"category": "Furniture",
+"brand": "Zinus",
+"type":"bed",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 4,
+"name": "Vintage Dresser",
+"price": "699.00",
+"image": "https://i.ibb.co/WFd6rH1/il-1080x-N-2631488041-tq23.webp",
+"description": "Beautiful vintage style dresser made of reclaimed wood and metal handles",
+"category": "Furniture",
+"brand": "Hemsworth",
+"type":"table",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 5,
+"name": "Outdoor Lounge Chair",
+"price": "349.99",
+"image": "https://i.ibb.co/rc8xCBT/Modern-Teak-Poolside-Chaise-Lounge-Low-Curved-Outdoor-Chair-Design.jpg",
+"description": "Stylish outdoor lounge chair made of wicker and aluminum frame, perfect for patio or pool area",
+"category": "Furniture",
+"brand": "Home Styles",
+"type":"chair",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 6,
+"name": "Rattan Armchair",
+"price": "349.99",
+"image": "https://i.ibb.co/FJb0f8J/1200-1200.jpg",
+"description": "Stylish and comfortable armchair made of natural rattan and with a cotton cushion",
+"category": "Furniture",
+"brand": "IKEA",
+"type":"chair",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 7,
+"name": "L-Shaped Sofa",
+"price": "1,799.00",
+"image": "https://i.ibb.co/JmxdDj1/1b6288842f4caf6d931a703c75ab7895.jpg",
+"description": "Spacious and comfortable L-shaped sofa in grey fabric, perfect for living room",
+"category": "Furniture",
+"brand": "West Elm",
+"type":"sofa",
+"rating": 4.4,
+"ratings":[]
+},
+  {
+    "id": 8,
+    "name": "Leather Sofa 2",
+    "description": "A stylish and comfortable leather sofa with a sleek design.",
+    "price": 1000,
+    "image": "https://i.ibb.co/27ZkgVW/63fac25dc28d120f60fcb3b1e48c431c.jpg",
+    "category": "Furniture",
+    "brand": "Hulu Lu",
+    "type":"sofa",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 9,
+    "name": "Wooden Coffee Table",
+    "description": "A sturdy and elegant wooden coffee table with a classic design.",
+    "price": 250,
+    "image": "https://i.ibb.co/2ybW7WB/image2-27.webp",
+    "category": "Furniture",
+    "brand": "Lu Lu",
+    "type":"table",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 10,
+    "name": "Modern Armchair",
+    "description": "A comfortable and stylish armchair with a modern design.",
+    "price": 500,
+    "image": "https://i.ibb.co/7n0GR29/datsun-modern-armchair-p53188-68427-zoom.jpg",
+    "category": "Furniture",
+    "brand": "Fabric",
+    "type":"chair",
+    "rating": 4.4,
+    "ratings":[]
+  },
+      {
+      "id": 1,
+      "name": "Apple iPhone XS",
+      "description": "The latest iPhone with a 5.8-inch Super Retina display and A12 Bionic chip.",
+      "price": 999.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/3sVx5zR/Apple-i-Phone-XS-and-XS-Max-07.webp",
+      "rating": 4.5,
+      "brand":"Apple",
+      "type":"mobile",
+      "ratings":[]
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S20 Ultra",
+      "description": "The latest Samsung flagship with a 6.2-inch Dynamic AMOLED 2X display and Exynos 2100 chip.",
+      "price": 899.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/6wq9q43/bf819d8952f14961f19f90b4bd5d5f5ecd063b49.webp",
+      "rating": 4.8,
+      "brand":"Samsung",
+      "type":"mobile",
+      "ratings":[]
+    },
+    {
+      "id": 3,
+      "name": "Apple iPad Pro",
+      "description": "The latest iPad Pro with a 11-inch Liquid Retina display and A12Z Bionic chip.",
+      "price": 799.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/D8nHd0m/hero-combo-fcqcc3hbzjyy-large.jpg",
+      "rating": 4.6,
+      "brand":"Apple",
+      "type":"tablet",
+      "ratings":[]
+    },
+    {
+      "id": 4,
+      "name": "Sony PlayStation 5",
+      "description": "The latest gaming console with 8-core Zen 2 CPU, 10.28 TFLOPs GPU and 16GB of GDDR6 memory.",
+      "price": 499.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/M2BYyrL/maxresdefault-1.jpg",
+      "rating": 4.7,
+      "brand":"Sony",
+      "type":"gaming console",
+      "ratings":[]
+    },
+    {
+      "id": 5,
+      "name": "Apple AirPods Pro",
+      "description": "Active noise cancellation and superior, immersive sound quality.",
+      "price": 249.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/cTzBvkf/apple-airpods-pro-2-review-00025.webp",
+      "rating": 4.3,
+      "brand":"Apple",
+      "type":"airpods",
+      "ratings":[]
+    },
+    {
+      "id": 6,
+      "name": "Google Nest Hub",
+      "description": "A smart display with a 7-inch touch screen and Google Assistant.",
+      "price": 129.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/jwPn1WL/Google-Home-Hub-Max-review-13.jpg",
+      "rating": 4.2,
+      "brand":"Google",
+      "type":"homeassistant",
+      "ratings":[]
+    },
+    {
+      "id": 7,
+      "name": "Canon EOS Rebel T7i",
+      "description": "A 24.2 MP CMOS sensor and DIGIC 8 image processor DSLR camera.",
+      "price": 749.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/GP4vsys/canon-eos-rebel-t7i-01.webp",
+      "rating": 4.4,
+      "brand":"Canon",
+      "type":"camera",
+      "ratings":[]
+    },    
+    {
+      "id": 8,
+      "name": "Sony X900H 65-inch TV",
+      "description": "A 4K HDR TV with full array local dimming and TRILUMINOS display.",
+      "price": 999.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/3RrRJJM/0d3b7fda823305ae524bac72fcb4b5cb.webp",
+      "rating": 4.4,
+      "brand":"Sony",
+      "type":"tv",
+      "ratings":[]
+    },
+    {
+    "id": 9,
+    "name": "Apple iPhone X",
+    "price": "$999.99",
+    "image": "https://i.ibb.co/3WRVjsq/apple-iphone-x-review.jpg",
+    "description": "The latest iPhone from Apple with a 5.8-inch Super Retina display, Face ID, and dual 12MP cameras",
+    "category": "Electronics",
+    "brand": "Apple",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    },
+
+    {
+    "id": 10,
+    "name": "Samsung Galaxy S21",
+    "price": "$799.99",
+    "image": "https://i.ibb.co/K9vLhJ3/S21-1-e1612876753879.jpg",
+    "description": "The latest Galaxy from Samsung with a 6.2-inch Dynamic AMOLED 2X display, 5G, and triple 12MP cameras",
+    "category": "Electronics",
+    "brand": "Samsung",
+    "type":"mobile",
+    "rating": 4.7,
+    "ratings":[]
+    },
+
+    {
+    "id": 11,
+    "name": "Sony PlayStation 4",
+    "price": "$499.99",
+    "image": "https://i.ibb.co/KxHTgKv/71j-N27m-Ylh-L-SL1500.jpg",
+    "description": "The latest gaming console from Sony with 8K graphics and lightning-fast SSD",
+    "category": "Electronics",
+    "brand": "Sony",
+    "type":"gaming console",
+    "rating": 4.4,
+    "ratings":[]
+    },
+
+    {
+    "id": 12,
+    "name": "LG OLED TV",
+    "price": "$1,499.99",
+    "image": "https://i.ibb.co/37GL5Kb/dm-01v-01.webp",
+    "description": "A 65-inch 4K OLED TV from LG with AI ThinQ and support for Apple AirPlay 2",
+    "category": "Electronics",
+    "brand": "LG",
+    "type":"tv",
+    "rating": 4.3,
+    "ratings":[]
+    },
+
+    {
+    "id": 13,
+    "name": "Bose QuietComfort 35 Wireless Headphones",
+    "price": "$349.99",
+    "image": "https://i.ibb.co/WGCg8Sb/5876115cv22d.jpg",
+    "description": "Wireless noise-canceling headphones from Bose with Alexa and Google Assistant support",
+    "category": "Electronics",
+    "brand": "Bose",
+    "type":"headphone",
+    "rating": 4.4,
+    "ratings":[]
+    },
+    {
+    "id": 14,
+    "name": "Apple iPhone 12",
+    "price": "$699.00",
+    "image": "https://i.ibb.co/wzHbVrk/Apple-announce-iphone12pro-10132020-jpg-landing-big-2x.jpg",
+    "description": "The latest iPhone model from Apple featuring a 6.1-inch Super Retina XDR display, dual-camera system, and A14 Bionic chip",
+    "category": "Electronics",
+    "brand": "Apple",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 15,
+    "name": "Samsung Galaxy S21 Ultra",
+    "price": "$1,199.00",
+    "image": "https://i.ibb.co/F3hq7Rw/Galaxy-S21-Ultra-13-1.webp",
+    "description": "The latest Galaxy model from Samsung featuring a 6.8-inch Dynamic AMOLED 2X display, quad-camera system, and Exynos 2100 processor",
+    "category": "Electronics",
+    "brand": "Samsung",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 16,
+    "name": "Sony PlayStation 3",
+    "price": "$499.00",
+    "image": "https://i.ibb.co/z5WDHWb/PS3-price-in-Bangladesh.jpg",
+    "description": "The latest gaming console from Sony featuring a custom 8-core AMD Zen 2 CPU and RDNA 2-class GPU, as well as ultra-high-speed SSD",
+    "category": "Electronics",
+    "brand": "Sony",
+    "type":"gaming console",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 17,
+    "name": "Dell XPS 13 Laptop",
+    "price": "$1,349.00",
+    "image": "https://i.ibb.co/Fq0R9SP/q-PVnzr8um-KIJx-Qy8z7-Cc4-C0-Gg9jv5-TXip-HRZnxuy-Us-U96-G8-Lv-U91-KS44-Yn-e-LF1s-Ospi-O8-Qw-Sc-Bs-Pb.jpg",
+    "description": "A high-performance laptop from Dell featuring a 13.4-inch 4K UHD+ display, 10th Gen Intel Core processors, and a thin, lightweight design",
+    "category": "Electronics",
+    "brand": "Dell",
+    "type":"laptop",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 18,
+    "name": "GoPro HERO 9 Black",
+    "price": "$449.99",
+    "image": "https://i.ibb.co/pj5q9n1/Go-Pro-Hero9-Black-4.jpg",
+    "description": "The latest action camera from GoPro featuring 5K video, 20MP photos, and a front-facing display",
+    "category": "Electronics",
+    "brand": "GoPro",
+    "type":"action camera",
+    "rating": 4.4,
+    "ratings":[]
+    },
+     {
+    "id": 1,
+    "name": "Fiddle Leaf Fig Tree",
+    "price": "$50",
+    "image": "https://i.ibb.co/bNtBZTW/grow-fiddle-leaf-fig-indoors-1902756-hero-feca31e64e91430794e2bdcc9fa1e901.jpg",
+    "description": "Ficus lyrata, also known as the fiddle-leaf fig, is a popular indoor tree.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "4-6 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 2,
+    "name": "Monstera Deliciosa",
+    "price": "$35",
+    "image": "https://i.ibb.co/k4Xz08x/303d4fdc-00af-4ccb-8164-539cbb77b97a-monstera-1-1-of-1.jpg",
+    "description": "The Monstera deliciosa is a tropical plant native to Central America.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 3,
+    "name": "Pothos",
+    "price": "$15",
+    "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
+    "description": "Pothos, also known as devil's ivy, is a popular houseplant known for its easy care.",
+    "light": "Low to bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "4 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 4,
+    "name": "Succulent Collection",
+    "price": "$20",
+    "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
+    "description": "A collection of 3 different types of succulents.",
+    "light": "Bright, indirect light",
+    "water": "Water when the soil is dry",
+    "pot_size": "4 inches",
+    "height": "Varies",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 5,
+    "name": "Bamboo Palm",
+    "price": "$30",
+    "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
+    "description": "Bamboo palm, also known as reed palm, is a tropical plant that can grow up to 10 feet tall.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  }
+      ,  
+  {
+    "id": 6,
+    "name": "Fiddle Leaf Fig Tree",
+    "price": "$50",
+    "image": "https://i.ibb.co/bNtBZTW/grow-fiddle-leaf-fig-indoors-1902756-hero-feca31e64e91430794e2bdcc9fa1e901.jpg",
+    "description": "Ficus lyrata, also known as the fiddle-leaf fig, is a popular indoor tree.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "4-6 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 7,
+    "name": "Monstera Deliciosa",
+    "price": "$35",
+    "image": "https://i.ibb.co/k4Xz08x/303d4fdc-00af-4ccb-8164-539cbb77b97a-monstera-1-1-of-1.jpg",
+    "description": "The Monstera deliciosa is a tropical plant native to Central America.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 8,
+    "name": "Pothos",
+    "price": "$15",
+    "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
+    "description": "Pothos, also known as devil's ivy, is a popular houseplant known for its easy care.",
+    "light": "Low to bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "4 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 9,
+    "name": "Succulent Collection",
+    "price": "$20",
+    "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
+    "description": "A collection of 3 different types of succulents.",
+    "light": "Bright, indirect light",
+    "water": "Water when the soil is dry",
+    "pot_size": "4 inches",
+    "height": "Varies",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 10,
+    "name": "Bamboo Palm",
+    "price": "$30",
+    "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
+    "description": "Bamboo palm, also known as reed palm, is a tropical plant that can grow up to 10 feet tall.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  }
+
+    ]
+}

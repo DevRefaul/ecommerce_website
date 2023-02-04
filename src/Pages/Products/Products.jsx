@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from "react";
+import LoadingScene from "../../Components/LoadingScene/LoadingScene";
 import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
 
 const Products = () => {
   const [data, setData] = useState(null);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
-    fetch("electronics.json")
+    setloading(true);
+    fetch("allProducts.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data.products);
+        setloading(false);
       })
       .catch((err) => console.error(err.message));
   }, []);
 
+  if (loading) {
+    return <LoadingScene />;
+  }
+
   return (
     <section className="w-[95%] md:w-[80%] mx-auto my-8">
-      <h2 className="text-3xl font-semibold my-6 text-center">All Products</h2>
+      <h2 className="text-3xl font-semibold my-6 text-center">
+        Total {data && data.length} Products Found
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
         {data
