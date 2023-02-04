@@ -7,7 +7,7 @@ import plant from "../../Assets/plant.jpg";
 import electronics from "../../Assets/electronics.jpg";
 
 const Banner = () => {
-  const bannerImges = [sofa, plant, electronics];
+  const bannerImages = [sofa, plant, electronics];
   return (
     <>
       <section className="my-8 grid grid-cols-1 gap-8 xl:grid-cols-[3fr,1fr]">
@@ -20,7 +20,7 @@ const Banner = () => {
           autoplay={{ delay: 3000 }}
           className="mySwiper rounded-xl h-[80vh] lg:h-full"
         >
-          {bannerImges.map((image, i) => {
+          {bannerImages.map((image, i) => {
             return (
               <SwiperSlide key={i}>
                 <img
