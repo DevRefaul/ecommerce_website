@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
-// import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
 
 const Products = () => {
   const [data, setData] = useState(null);
