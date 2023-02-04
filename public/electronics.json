@@ -1,0 +1,229 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple iPhone XS",
+      "description": "The latest iPhone with a 5.8-inch Super Retina display and A12 Bionic chip.",
+      "price": 999.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/3sVx5zR/Apple-i-Phone-XS-and-XS-Max-07.webp",
+      "rating": 4.5,
+      "brand":"Apple",
+      "type":"mobile",
+      "ratings":[]
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S20 Ultra",
+      "description": "The latest Samsung flagship with a 6.2-inch Dynamic AMOLED 2X display and Exynos 2100 chip.",
+      "price": 899.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/6wq9q43/bf819d8952f14961f19f90b4bd5d5f5ecd063b49.webp",
+      "rating": 4.8,
+      "brand":"Samsung",
+      "type":"mobile",
+      "ratings":[]
+    },
+    {
+      "id": 3,
+      "name": "Apple iPad Pro",
+      "description": "The latest iPad Pro with a 11-inch Liquid Retina display and A12Z Bionic chip.",
+      "price": 799.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/D8nHd0m/hero-combo-fcqcc3hbzjyy-large.jpg",
+      "rating": 4.6,
+      "brand":"Apple",
+      "type":"tablet",
+      "ratings":[]
+    },
+    {
+      "id": 4,
+      "name": "Sony PlayStation 5",
+      "description": "The latest gaming console with 8-core Zen 2 CPU, 10.28 TFLOPs GPU and 16GB of GDDR6 memory.",
+      "price": 499.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/M2BYyrL/maxresdefault-1.jpg",
+      "rating": 4.7,
+      "brand":"Sony",
+      "type":"gaming console",
+      "ratings":[]
+    },
+    {
+      "id": 5,
+      "name": "Apple AirPods Pro",
+      "description": "Active noise cancellation and superior, immersive sound quality.",
+      "price": 249.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/cTzBvkf/apple-airpods-pro-2-review-00025.webp",
+      "rating": 4.3,
+      "brand":"Apple",
+      "type":"airpods",
+      "ratings":[]
+    },
+    {
+      "id": 6,
+      "name": "Google Nest Hub",
+      "description": "A smart display with a 7-inch touch screen and Google Assistant.",
+      "price": 129.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/jwPn1WL/Google-Home-Hub-Max-review-13.jpg",
+      "rating": 4.2,
+      "brand":"Google",
+      "type":"homeassistant",
+      "ratings":[]
+    },
+    {
+      "id": 7,
+      "name": "Canon EOS Rebel T7i",
+      "description": "A 24.2 MP CMOS sensor and DIGIC 8 image processor DSLR camera.",
+      "price": 749.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/GP4vsys/canon-eos-rebel-t7i-01.webp",
+      "rating": 4.4,
+      "brand":"Canon",
+      "type":"camera",
+      "ratings":[]
+    },    
+    {
+      "id": 8,
+      "name": "Sony X900H 65-inch TV",
+      "description": "A 4K HDR TV with full array local dimming and TRILUMINOS display.",
+      "price": 999.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/3RrRJJM/0d3b7fda823305ae524bac72fcb4b5cb.webp",
+      "rating": 4.4,
+      "brand":"Sony",
+      "type":"tv",
+      "ratings":[]
+    },
+    {
+    "id": 9,
+    "name": "Apple iPhone X",
+    "price": "$999.99",
+    "image": "https://i.ibb.co/3WRVjsq/apple-iphone-x-review.jpg",
+    "description": "The latest iPhone from Apple with a 5.8-inch Super Retina display, Face ID, and dual 12MP cameras",
+    "category": "Electronics",
+    "brand": "Apple",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    },
+
+    {
+    "id": 10,
+    "name": "Samsung Galaxy S21",
+    "price": "$799.99",
+    "image": "https://i.ibb.co/K9vLhJ3/S21-1-e1612876753879.jpg",
+    "description": "The latest Galaxy from Samsung with a 6.2-inch Dynamic AMOLED 2X display, 5G, and triple 12MP cameras",
+    "category": "Electronics",
+    "brand": "Samsung",
+    "type":"mobile",
+    "rating": 4.7,
+    "ratings":[]
+    },
+
+    {
+    "id": 11,
+    "name": "Sony PlayStation 4",
+    "price": "$499.99",
+    "image": "https://i.ibb.co/KxHTgKv/71j-N27m-Ylh-L-SL1500.jpg",
+    "description": "The latest gaming console from Sony with 8K graphics and lightning-fast SSD",
+    "category": "Electronics",
+    "brand": "Sony",
+    "type":"gaming console",
+    "rating": 4.4,
+    "ratings":[]
+    },
+
+    {
+    "id": 12,
+    "name": "LG OLED TV",
+    "price": "$1,499.99",
+    "image": "https://i.ibb.co/37GL5Kb/dm-01v-01.webp",
+    "description": "A 65-inch 4K OLED TV from LG with AI ThinQ and support for Apple AirPlay 2",
+    "category": "Electronics",
+    "brand": "LG",
+    "type":"tv",
+    "rating": 4.3,
+    "ratings":[]
+    },
+
+    {
+    "id": 13,
+    "name": "Bose QuietComfort 35 Wireless Headphones",
+    "price": "$349.99",
+    "image": "https://i.ibb.co/WGCg8Sb/5876115cv22d.jpg",
+    "description": "Wireless noise-canceling headphones from Bose with Alexa and Google Assistant support",
+    "category": "Electronics",
+    "brand": "Bose",
+    "type":"headphone",
+    "rating": 4.4,
+    "ratings":[]
+    },
+    {
+    "id": 14,
+    "name": "Apple iPhone 12",
+    "price": "$699.00",
+    "image": "https://i.ibb.co/wzHbVrk/Apple-announce-iphone12pro-10132020-jpg-landing-big-2x.jpg",
+    "description": "The latest iPhone model from Apple featuring a 6.1-inch Super Retina XDR display, dual-camera system, and A14 Bionic chip",
+    "category": "Electronics",
+    "brand": "Apple",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 15,
+    "name": "Samsung Galaxy S21 Ultra",
+    "price": "$1,199.00",
+    "image": "https://i.ibb.co/F3hq7Rw/Galaxy-S21-Ultra-13-1.webp",
+    "description": "The latest Galaxy model from Samsung featuring a 6.8-inch Dynamic AMOLED 2X display, quad-camera system, and Exynos 2100 processor",
+    "category": "Electronics",
+    "brand": "Samsung",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 16,
+    "name": "Sony PlayStation 3",
+    "price": "$499.00",
+    "image": "https://i.ibb.co/z5WDHWb/PS3-price-in-Bangladesh.jpg",
+    "description": "The latest gaming console from Sony featuring a custom 8-core AMD Zen 2 CPU and RDNA 2-class GPU, as well as ultra-high-speed SSD",
+    "category": "Electronics",
+    "brand": "Sony",
+    "type":"gaming console",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 17,
+    "name": "Dell XPS 13 Laptop",
+    "price": "$1,349.00",
+    "image": "https://i.ibb.co/Fq0R9SP/q-PVnzr8um-KIJx-Qy8z7-Cc4-C0-Gg9jv5-TXip-HRZnxuy-Us-U96-G8-Lv-U91-KS44-Yn-e-LF1s-Ospi-O8-Qw-Sc-Bs-Pb.jpg",
+    "description": "A high-performance laptop from Dell featuring a 13.4-inch 4K UHD+ display, 10th Gen Intel Core processors, and a thin, lightweight design",
+    "category": "Electronics",
+    "brand": "Dell",
+    "type":"laptop",
+    "rating": 4.4,
+    "ratings":[]
+    }
+    ,
+    {
+    "id": 18,
+    "name": "GoPro HERO 9 Black",
+    "price": "$449.99",
+    "image": "https://i.ibb.co/pj5q9n1/Go-Pro-Hero9-Black-4.jpg",
+    "description": "The latest action camera from GoPro featuring 5K video, 20MP photos, and a front-facing display",
+    "category": "Electronics",
+    "brand": "GoPro",
+    "type":"action camera",
+    "rating": 4.4,
+    "ratings":[]
+    }
+
+]
+}
