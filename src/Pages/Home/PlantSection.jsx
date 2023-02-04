@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LoadingScene from "../../Components/LoadingScene/LoadingScene";
+import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
+import { api } from "../../Utils/Api";
 
 const PlantSection = () => {
+  const [data, setData] = useState(null);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    setloading(true);
+    fetch(`${api}/plant.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data.products.slice(0, 8));
+        setloading(false);
+      })
+      .catch((err) => console.error(err.message));
+  }, []);
+
+  if (loading) {
+    return <LoadingScene />;
+  }
+
   return (
     <section className="my-6">
-      <h2 className="text-2xl font-semibold">Plants</h2>
+      <h2 className="text-3xl font-bold my-8">Plants</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
+        {data
+          ? data.map((product, i) => {
+              return <SingleCardForAllProducts key={i} product={product} />;
+            })
+          : ""}
+      </div>
 
       <Link to="/products/plant">
         <button className="text-white bg-gradient-to-r from-green-300 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-6">
