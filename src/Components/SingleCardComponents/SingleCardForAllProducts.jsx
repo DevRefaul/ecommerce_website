@@ -17,7 +17,7 @@ const SingleCardForAllProducts = () => {
             Description here
           </p>
 
-          <h4 className="text-xl font-bold">$</h4>
+          <h4 className="text-xl font-bold">$200</h4>
 
           {/* section for price */}
           <div className="grid grid-cols-2 gap-4">
