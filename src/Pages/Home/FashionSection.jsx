@@ -10,7 +10,7 @@ const FashionSection = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/fashion.json`)
+    fetch(`${api}/fashion`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.products.slice(0, 8));
