@@ -4,7 +4,7 @@ import Root from "./Root/Root";
 function App() {
   return (
     <>
-      <Root />
+      {/* <Root /> */}
     </>
   );
 }

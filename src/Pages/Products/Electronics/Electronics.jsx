@@ -10,7 +10,7 @@ const Electronics = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/electronics.json`)
+    fetch(`${api}/electronics`)
       .then((res) => {
         console.log(res);
         return res.json();

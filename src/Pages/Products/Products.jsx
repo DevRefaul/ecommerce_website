@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import LoadingScene from "../../Components/LoadingScene/LoadingScene";
 import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
+import { api } from "../../Utils/Api";
 
 const Products = () => {
   const [data, setData] = useState(null);
@@ -9,7 +10,7 @@ const Products = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch("allProducts.json")
+    fetch(`${api}/allProducts`)
       .then((res) => {
         console.log(res);
         return res.json();

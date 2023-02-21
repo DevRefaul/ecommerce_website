@@ -10,7 +10,7 @@ const ElectronicsSection = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/electronics.json`)
+    fetch(`${api}/electronics`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.products.slice(0, 8));
