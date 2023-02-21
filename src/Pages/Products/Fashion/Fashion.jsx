@@ -10,7 +10,7 @@ const Fashion = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/fashion.json`)
+    fetch(`${api}/fashion`)
       .then((res) => {
         console.log(res);
         return res.json();
