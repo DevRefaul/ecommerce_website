@@ -42,7 +42,7 @@ const Banner = () => {
           <h4 className="text-center mb-2 py-1 rounded-t-xl text-xl font-bold bg-red-500 text-white">
             Trending
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-1">
+          <div className="grid items-center justify-items-center grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-1">
             {/* 1st card */}
             <div className=" w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="/">

@@ -1,0 +1,166 @@
+{
+    "products":[
+         {
+    "id": 15,
+    "name": "Samsung Galaxy S21 Ultra",
+    "price": "1,199.00",
+    "image": "https://i.ibb.co/F3hq7Rw/Galaxy-S21-Ultra-13-1.webp",
+    "description": "The latest Galaxy model from Samsung featuring a 6.8-inch Dynamic AMOLED 2X display, quad-camera system, and Exynos 2100 processor",
+    "category": "Electronics",
+    "brand": "Samsung",
+    "type":"mobile",
+    "rating": 4.4,
+    "ratings":[]
+    },
+
+    {
+    "id": 13,
+    "name": "Bose QuietComfort 35 Wireless Headphones",
+    "price": "349.99",
+    "image": "https://i.ibb.co/WGCg8Sb/5876115cv22d.jpg",
+    "description": "Wireless noise-canceling headphones from Bose with Alexa and Google Assistant support",
+    "category": "Electronics",
+    "brand": "Bose",
+    "type":"headphone",
+    "rating": 4.4,
+    "ratings":[]
+    },
+       {
+      "id": 4,
+      "name": "Sony PlayStation 5",
+      "description": "The latest gaming console with 8-core Zen 2 CPU, 10.28 TFLOPs GPU and 16GB of GDDR6 memory.",
+      "price": 499.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/M2BYyrL/maxresdefault-1.jpg",
+      "rating": 4.7,
+      "brand":"Sony",
+      "type":"gaming console",
+      "ratings":[]
+    },
+        {
+      "id": 3,
+      "name": "Apple iPad Pro",
+      "description": "The latest iPad Pro with a 11-inch Liquid Retina display and A12Z Bionic chip.",
+      "price": 799.99,
+      "category": "Electronics",
+      "image": "https://i.ibb.co/D8nHd0m/hero-combo-fcqcc3hbzjyy-large.jpg",
+      "rating": 4.6,
+      "brand":"Apple",
+      "type":"tablet",
+      "ratings":[]
+    },
+    {
+"id": 2,
+"name": "Adidas Originals Superstar Sneakers",
+"price": "80.00",
+"image": "https://i.ibb.co/nRKy54d/adidas-superstar-80s-snakeskin-1.webp",
+"description": "The iconic Superstar sneakers from Adidas with a leather upper, rubber shell toe, and herringbone-pattern outsole",
+"category": "Fashion",
+"brand": "Adidas",
+"type":"sneakers",
+"rating": 4.4,
+"ratings":[]
+},
+{
+"id": 7,
+"name": "Nike Air Max 270 React Sneakers",
+"price": "150.00",
+"image": "https://i.ibb.co/CbcKk2m/https-hypebeast-com-image-2019-11-nike-air-max-270-react-winter-9.jpg",
+"description": "A pair of sneakers from Nike featuring a unique design with a large Max Air unit in the heel and a React foam midsole",
+"category": "Fashion",
+"brand": "Nike",
+"type":"sneakers",
+"rating": 4.4,
+"ratings":[]
+}
+,
+{
+"id": 8,
+"name": "H&M Denim Jacket",
+"price": "34.99",
+"image": "https://i.ibb.co/G3LF3R7/06ca5fe756a3f5d94dec6bd634f735d4c4dc5138-xxl-1.jpg",
+"description": "A denim jacket from H&M with a classic design, made from a cotton-blend fabric with a button-up front",
+"category": "Fashion",
+"brand": "H&M",
+"type":"jacket",
+"rating": 4.4,
+"ratings":[]
+},
+  {
+    "id": 10,
+    "name": "Bamboo Palm",
+    "price": "30",
+    "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
+    "description": "Bamboo palm, also known as reed palm, is a tropical plant that can grow up to 10 feet tall.",
+    "light": "Bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "6 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+    {
+    "id": 8,
+    "name": "Pothos",
+    "price": "15",
+    "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
+    "description": "Pothos, also known as devil's ivy, is a popular houseplant known for its easy care.",
+    "light": "Low to bright, indirect light",
+    "water": "Water when the top inch of soil is dry",
+    "pot_size": "4 inches",
+    "height": "6-8 ft",
+    "rating": 4.4,
+    "ratings":[]
+  },
+  {
+    "id": 9,
+    "name": "Succulent Collection",
+    "price": "20",
+    "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
+    "description": "A collection of 3 different types of succulents.",
+    "light": "Bright, indirect light",
+    "water": "Water when the soil is dry",
+    "pot_size": "4 inches",
+    "height": "Varies",
+    "rating": 4.4,
+    "ratings":[]
+  },
+
+{
+"id": 3,
+"name": "King Size Bed",
+"price": "499.00",
+"image": "https://i.ibb.co/ZHcjMnR/GM-FULLM-31-1-large.jpg",
+"description": "Comfortable king size bed with a wooden frame and a memory foam mattress",
+"category": "Furniture",
+"brand": "Zinus",
+"type":"bed",
+"rating": 4.4,
+"ratings":[]
+},
+{
+"id": 5,
+"name": "Outdoor Lounge Chair",
+"price": "349.99",
+"image": "https://i.ibb.co/rc8xCBT/Modern-Teak-Poolside-Chaise-Lounge-Low-Curved-Outdoor-Chair-Design.jpg",
+"description": "Stylish outdoor lounge chair made of wicker and aluminum frame, perfect for patio or pool area",
+"category": "Furniture",
+"brand": "Home Styles",
+"type":"chair",
+"rating": 4.4,
+"ratings":[]
+},
+{
+"id": 6,
+"name": "Rattan Armchair",
+"price": "349.99",
+"image": "https://i.ibb.co/FJb0f8J/1200-1200.jpg",
+"description": "Stylish and comfortable armchair made of natural rattan and with a cotton cushion",
+"category": "Furniture",
+"brand": "IKEA",
+"type":"chair",
+"rating": 4.4,
+"ratings":[]
+}
+    ]
+}

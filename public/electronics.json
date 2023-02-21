@@ -99,7 +99,7 @@
     {
     "id": 9,
     "name": "Apple iPhone X",
-    "price": "$999.99",
+    "price": "999.99",
     "image": "https://i.ibb.co/3WRVjsq/apple-iphone-x-review.jpg",
     "description": "The latest iPhone from Apple with a 5.8-inch Super Retina display, Face ID, and dual 12MP cameras",
     "category": "Electronics",
@@ -112,7 +112,7 @@
     {
     "id": 10,
     "name": "Samsung Galaxy S21",
-    "price": "$799.99",
+    "price": "799.99",
     "image": "https://i.ibb.co/K9vLhJ3/S21-1-e1612876753879.jpg",
     "description": "The latest Galaxy from Samsung with a 6.2-inch Dynamic AMOLED 2X display, 5G, and triple 12MP cameras",
     "category": "Electronics",
@@ -125,7 +125,7 @@
     {
     "id": 11,
     "name": "Sony PlayStation 4",
-    "price": "$499.99",
+    "price": "499.99",
     "image": "https://i.ibb.co/KxHTgKv/71j-N27m-Ylh-L-SL1500.jpg",
     "description": "The latest gaming console from Sony with 8K graphics and lightning-fast SSD",
     "category": "Electronics",
@@ -138,7 +138,7 @@
     {
     "id": 12,
     "name": "LG OLED TV",
-    "price": "$1,499.99",
+    "price": "1,499.99",
     "image": "https://i.ibb.co/37GL5Kb/dm-01v-01.webp",
     "description": "A 65-inch 4K OLED TV from LG with AI ThinQ and support for Apple AirPlay 2",
     "category": "Electronics",
@@ -151,7 +151,7 @@
     {
     "id": 13,
     "name": "Bose QuietComfort 35 Wireless Headphones",
-    "price": "$349.99",
+    "price": "349.99",
     "image": "https://i.ibb.co/WGCg8Sb/5876115cv22d.jpg",
     "description": "Wireless noise-canceling headphones from Bose with Alexa and Google Assistant support",
     "category": "Electronics",
@@ -163,7 +163,7 @@
     {
     "id": 14,
     "name": "Apple iPhone 12",
-    "price": "$699.00",
+    "price": "699.00",
     "image": "https://i.ibb.co/wzHbVrk/Apple-announce-iphone12pro-10132020-jpg-landing-big-2x.jpg",
     "description": "The latest iPhone model from Apple featuring a 6.1-inch Super Retina XDR display, dual-camera system, and A14 Bionic chip",
     "category": "Electronics",
@@ -176,7 +176,7 @@
     {
     "id": 15,
     "name": "Samsung Galaxy S21 Ultra",
-    "price": "$1,199.00",
+    "price": "1,199.00",
     "image": "https://i.ibb.co/F3hq7Rw/Galaxy-S21-Ultra-13-1.webp",
     "description": "The latest Galaxy model from Samsung featuring a 6.8-inch Dynamic AMOLED 2X display, quad-camera system, and Exynos 2100 processor",
     "category": "Electronics",
@@ -189,7 +189,7 @@
     {
     "id": 16,
     "name": "Sony PlayStation 3",
-    "price": "$499.00",
+    "price": "499.00",
     "image": "https://i.ibb.co/z5WDHWb/PS3-price-in-Bangladesh.jpg",
     "description": "The latest gaming console from Sony featuring a custom 8-core AMD Zen 2 CPU and RDNA 2-class GPU, as well as ultra-high-speed SSD",
     "category": "Electronics",
@@ -202,7 +202,7 @@
     {
     "id": 17,
     "name": "Dell XPS 13 Laptop",
-    "price": "$1,349.00",
+    "price": "1,349.00",
     "image": "https://i.ibb.co/Fq0R9SP/q-PVnzr8um-KIJx-Qy8z7-Cc4-C0-Gg9jv5-TXip-HRZnxuy-Us-U96-G8-Lv-U91-KS44-Yn-e-LF1s-Ospi-O8-Qw-Sc-Bs-Pb.jpg",
     "description": "A high-performance laptop from Dell featuring a 13.4-inch 4K UHD+ display, 10th Gen Intel Core processors, and a thin, lightweight design",
     "category": "Electronics",
@@ -215,7 +215,7 @@
     {
     "id": 18,
     "name": "GoPro HERO 9 Black",
-    "price": "$449.99",
+    "price": "449.99",
     "image": "https://i.ibb.co/pj5q9n1/Go-Pro-Hero9-Black-4.jpg",
     "description": "The latest action camera from GoPro featuring 5K video, 20MP photos, and a front-facing display",
     "category": "Electronics",
