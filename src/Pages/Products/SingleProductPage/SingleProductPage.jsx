@@ -12,6 +12,11 @@ const SingleProductPage = () => {
       .then((res) => res.json())
       .then((data) => data);
   };
+  const functionForFetchingRelatedData = () => {
+    return fetch(`${api}/getRelatedProductData?name=${productName}`)
+      .then((res) => res.json())
+      .then((data) => data);
+  };
   const { isLoading, data, isError } = useQuery(
     [productName],
     functionForFetchingData
