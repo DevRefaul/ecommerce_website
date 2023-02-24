@@ -10,7 +10,7 @@ const PlantSection = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/plant.json`)
+    fetch(`${api}/plants`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.products.slice(0, 8));
