@@ -22,6 +22,12 @@ const SingleProductPage = () => {
     functionForFetchingData
   );
 
+  const {
+    isLoading: relatedDataLodaing,
+    data: relatedData,
+    isError: relatedDataError,
+  } = useQuery(["relatedData"], functionForFetchingRelatedData);
+
   if (isLoading) {
     return <LoadingScene />;
   }
