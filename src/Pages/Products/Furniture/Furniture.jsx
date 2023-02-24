@@ -10,7 +10,7 @@ const Furniture = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/furniture.json`)
+    fetch(`${api}/furnitures`)
       .then((res) => {
         console.log(res);
         return res.json();
