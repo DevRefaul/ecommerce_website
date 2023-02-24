@@ -9,7 +9,7 @@ const TrendingProducts = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/trendingProducts.json`)
+    fetch(`${api}/trendingProducts`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.products);
