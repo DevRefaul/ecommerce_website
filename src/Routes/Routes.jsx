@@ -7,6 +7,7 @@ import Furniture from "../Pages/Products/Furniture/Furniture";
 import Plant from "../Pages/Products/Plant/Plant";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
+import SingleProductPage from "../Pages/Products/SingleProductPage/SingleProductPage";
 import Root from "../Root/Root";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -59,6 +60,10 @@ const routes = createBrowserRouter([
       {
         path: "/products/plant",
         element: <Plant />,
+      },
+      {
+        path: "/products/:name",
+        element: <SingleProductPage />,
       },
     ],
   },
