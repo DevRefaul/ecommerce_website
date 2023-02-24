@@ -38,10 +38,10 @@ const SingleProductPage = () => {
             {productInfo.name}
           </h2>
           <h4 className="text-lg font-semibold my-3">
-            Brand : {productInfo.brand}
+            {productInfo.brand ? <> Brand : {productInfo.brand}</> : ""}
           </h4>
           <h4 className="text-lg font-semibold my-3">
-            Type : {productInfo.type}
+            {productInfo.type ? <>Type : {productInfo.type}</> : ""}
           </h4>
           <p className="my-3 text-lg">About : {productInfo.description}</p>
           <h2 className="text-xl font-bold text-red-600 mb-8">
