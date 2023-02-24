@@ -10,7 +10,7 @@ const Plant = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/plant.json`)
+    fetch(`${api}/plants`)
       .then((res) => {
         console.log(res);
         return res.json();
