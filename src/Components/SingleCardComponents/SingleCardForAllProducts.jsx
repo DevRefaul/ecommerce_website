@@ -26,13 +26,13 @@ const SingleCardForAllProducts = ({ product }) => {
           </div>
 
           {/* section for price */}
-          <div id="bottomBtns" className="grid lg:grid-cols-2 lg:gap-4">
+          <div id="bottomBtns" className="grid lg:grid-cols-2 lg:gap-2">
             <Link to={`/products/${name}`} state={{ productName: name }}>
-              <button className=" text-white bg-gradient-to-r from-green-300 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full">
+              <button className=" text-white bg-gradient-to-r from-green-300 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm  py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full">
                 See More
               </button>
             </Link>
-            <button className="text-white bg-gradient-to-r from-orange-400 to-yellow-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full">
+            <button className="text-white bg-gradient-to-r from-orange-400 to-yellow-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full">
               Add To Cart
             </button>
           </div>
