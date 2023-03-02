@@ -12,15 +12,13 @@ const SingleProductPage = () => {
       .then((res) => res.json())
       .then((data) => data);
   };
-  const functionForFetchingRelatedData = () => {
-    return fetch(`${api}/getRelatedProductData?name=${productName}`)
-      .then((res) => res.json())
-      .then((data) => data);
-  };
+
   const { isLoading, data, isError } = useQuery(
     [productName],
     functionForFetchingData
   );
+
+  const productInfo = data.product;
 
   const {
     isLoading: relatedDataLodaing,
@@ -31,8 +29,11 @@ const SingleProductPage = () => {
   if (isLoading) {
     return <LoadingScene />;
   }
-
-  const productInfo = data.product;
+  function functionForFetchingRelatedData() {
+    return fetch(`${api}/getRelatedProductData?name=${productInfo.type}`)
+      .then((res) => res.json())
+      .then((data) => data);
+  }
 
   return (
     <section className="w-[95%] lg:w-[80%] mx-auto min-h-screen">
