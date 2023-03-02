@@ -1,5 +1,13 @@
 .singleCard img {
-    height: 200px !important;
+    min-height: 200px !important;
+        max-height: 200px !important;
         object-fit: cover;
         object-position: center;
+}
+.singleCard div>div {
+    justify-content: space-between;
+}
+
+#bottomBtns {
+    justify-content: normal;
 }
