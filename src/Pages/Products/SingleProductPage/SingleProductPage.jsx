@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
 import { api } from "../../../Utils/Api";
 
@@ -29,6 +30,11 @@ const SingleProductPage = () => {
   if (isLoading) {
     return <LoadingScene />;
   }
+
+  if (isError) {
+    return toast.error(isError.message);
+  }
+
   // function functionForFetchingRelatedData() {
   //   return fetch(`${api}/getRelatedProductData?name=${productInfo?.type}`)
   //     .then((res) => res.json())
