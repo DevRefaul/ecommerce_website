@@ -46,13 +46,13 @@ const SingleProductPage = () => {
           />{" "}
         </div>
         <div>
-          <h2 className="text-center my-4 text-2xl font-semibold">
+          <h2 className="text-center my-4 text-2xl font-semibold" capitalize>
             {productInfo.name}
           </h2>
-          <h4 className="text-lg font-semibold my-3">
+          <h4 className="text-lg font-semibold my-3 capitalize">
             {productInfo.brand ? <> Brand : {productInfo.brand}</> : ""}
           </h4>
-          <h4 className="text-lg font-semibold my-3">
+          <h4 className="text-lg font-semibold my-3 capitalize">
             {productInfo.type ? <>Type : {productInfo.type}</> : ""}
           </h4>
           <p className="my-3 text-lg">About : {productInfo.description}</p>
@@ -76,6 +76,15 @@ const SingleProductPage = () => {
           {/* reviiews section */}
           <div className="mt-6">
             <h4 className="text-xl font-semibold underline">Reviews :</h4>
+            <div>
+              {productInfo?.reviews === [] ? (
+                <></>
+              ) : (
+                <>
+                  <p className="my-3 text-lg">No Reviews Found</p>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
