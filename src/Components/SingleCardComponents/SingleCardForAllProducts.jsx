@@ -12,7 +12,7 @@ const SingleCardForAllProducts = ({ product }) => {
         <Card imgSrc={image && image} className="h-full">
           <div>
             <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-between">
-              {name.slice(0, 20) + "..."}
+              {name.slice(0, 15) + "..."}
               <Badge color="success" size="sm">
                 {brand}
               </Badge>
