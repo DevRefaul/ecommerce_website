@@ -18,22 +18,22 @@ const SingleProductPage = () => {
     functionForFetchingData
   );
 
-  const productInfo = data.product;
+  const productInfo = data?.product;
 
-  const {
-    isLoading: relatedDataLodaing,
-    data: relatedData,
-    isError: relatedDataError,
-  } = useQuery(["relatedData"], functionForFetchingRelatedData);
+  // const {
+  //   isLoading: relatedDataLodaing,
+  //   data: relatedData,
+  //   isError: relatedDataError,
+  // } = useQuery(["relatedData"], functionForFetchingRelatedData);
 
   if (isLoading) {
     return <LoadingScene />;
   }
-  function functionForFetchingRelatedData() {
-    return fetch(`${api}/getRelatedProductData?name=${productInfo.type}`)
-      .then((res) => res.json())
-      .then((data) => data);
-  }
+  // function functionForFetchingRelatedData() {
+  //   return fetch(`${api}/getRelatedProductData?name=${productInfo?.type}`)
+  //     .then((res) => res.json())
+  //     .then((data) => data);
+  // }
 
   return (
     <section className="w-[95%] lg:w-[80%] mx-auto min-h-screen">
@@ -56,6 +56,12 @@ const SingleProductPage = () => {
             {productInfo.type ? <>Type : {productInfo.type}</> : ""}
           </h4>
           <p className="my-3 text-lg">About : {productInfo.description}</p>
+          <p className="my-3 text-lg">
+            Ratings :{" "}
+            <span className="text-[#ffd700] font-semibold">
+              {productInfo.rating}
+            </span>
+          </p>
           <h2 className="text-xl font-bold text-red-600 mb-8">
             Price : {productInfo.price} $
           </h2>
@@ -66,6 +72,11 @@ const SingleProductPage = () => {
           <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center mr-2 mb-2">
             Buy Now
           </button>
+
+          {/* reviiews section */}
+          <div className="mt-6">
+            <h4 className="text-xl font-semibold underline">Reviews :</h4>
+          </div>
         </div>
       </div>
     </section>
