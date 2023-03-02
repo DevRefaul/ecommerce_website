@@ -27,7 +27,7 @@ const ElectronicsSection = () => {
     <section className="my-6">
       <h2 className="text-3xl font-bold my-8">Electronics</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 place-items-center">
         {data
           ? data.map((product, i) => {
               return <SingleCardForAllProducts key={i} product={product} />;
