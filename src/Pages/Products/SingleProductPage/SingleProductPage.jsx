@@ -83,7 +83,7 @@ const SingleProductPage = () => {
           <div className="mt-6">
             <h4 className="text-xl font-semibold underline">Reviews :</h4>
             <div>
-              {productInfo?.reviews === [] ? (
+              {productInfo?.reviews.length ? (
                 <></>
               ) : (
                 <>
