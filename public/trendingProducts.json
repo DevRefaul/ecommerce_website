@@ -1,7 +1,7 @@
 {
     "products":[
          {
-    "id": 15,
+    
     "name": "Samsung Galaxy S21 Ultra",
     "price": "1,199.00",
     "image": "https://i.ibb.co/F3hq7Rw/Galaxy-S21-Ultra-13-1.webp",
@@ -14,7 +14,7 @@
     },
 
     {
-    "id": 13,
+    
     "name": "Bose QuietComfort 35 Wireless Headphones",
     "price": "349.99",
     "image": "https://i.ibb.co/WGCg8Sb/5876115cv22d.jpg",
@@ -26,7 +26,7 @@
     "ratings":[]
     },
        {
-      "id": 4,
+      
       "name": "Sony PlayStation 5",
       "description": "The latest gaming console with 8-core Zen 2 CPU, 10.28 TFLOPs GPU and 16GB of GDDR6 memory.",
       "price": 499.99,
@@ -38,7 +38,7 @@
       "ratings":[]
     },
         {
-      "id": 3,
+      
       "name": "Apple iPad Pro",
       "description": "The latest iPad Pro with a 11-inch Liquid Retina display and A12Z Bionic chip.",
       "price": 799.99,
@@ -50,7 +50,7 @@
       "ratings":[]
     },
     {
-"id": 2,
+
 "name": "Adidas Originals Superstar Sneakers",
 "price": "80.00",
 "image": "https://i.ibb.co/nRKy54d/adidas-superstar-80s-snakeskin-1.webp",
@@ -62,7 +62,7 @@
 "ratings":[]
 },
 {
-"id": 7,
+
 "name": "Nike Air Max 270 React Sneakers",
 "price": "150.00",
 "image": "https://i.ibb.co/CbcKk2m/https-hypebeast-com-image-2019-11-nike-air-max-270-react-winter-9.jpg",
@@ -75,7 +75,7 @@
 }
 ,
 {
-"id": 8,
+
 "name": "H&M Denim Jacket",
 "price": "34.99",
 "image": "https://i.ibb.co/G3LF3R7/06ca5fe756a3f5d94dec6bd634f735d4c4dc5138-xxl-1.jpg",
@@ -87,7 +87,7 @@
 "ratings":[]
 },
   {
-    "id": 10,
+    
     "name": "Bamboo Palm",
     "price": "30",
     "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
@@ -100,7 +100,7 @@
     "ratings":[]
   },
     {
-    "id": 8,
+    
     "name": "Pothos",
     "price": "15",
     "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
@@ -113,7 +113,7 @@
     "ratings":[]
   },
   {
-    "id": 9,
+    
     "name": "Succulent Collection",
     "price": "20",
     "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
@@ -127,7 +127,7 @@
   },
 
 {
-"id": 3,
+
 "name": "King Size Bed",
 "price": "499.00",
 "image": "https://i.ibb.co/ZHcjMnR/GM-FULLM-31-1-large.jpg",
@@ -139,7 +139,7 @@
 "ratings":[]
 },
 {
-"id": 5,
+
 "name": "Outdoor Lounge Chair",
 "price": "349.99",
 "image": "https://i.ibb.co/rc8xCBT/Modern-Teak-Poolside-Chaise-Lounge-Low-Curved-Outdoor-Chair-Design.jpg",
@@ -151,7 +151,7 @@
 "ratings":[]
 },
 {
-"id": 6,
+
 "name": "Rattan Armchair",
 "price": "349.99",
 "image": "https://i.ibb.co/FJb0f8J/1200-1200.jpg",

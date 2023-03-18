@@ -79,7 +79,7 @@ const SingleProductPage = () => {
             Buy Now
           </button>
 
-          {/* reviiews section */}
+          {/* reviews section */}
           <div className="mt-6">
             <h4 className="text-xl font-semibold underline">Reviews :</h4>
             <div>

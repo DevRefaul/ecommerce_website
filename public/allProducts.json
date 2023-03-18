@@ -1,7 +1,7 @@
 {
     "products":[
                 {
-"id": 1,
+
 "name": "Levi's 501 Original Fit Jeans",
 "price": "69.50",
 "image": "https://i.ibb.co/qdw3NcJ/51dfb-X1i-Pr-L-AC-UL1000.jpg",
@@ -14,7 +14,7 @@
 },
 
 {
-"id": 2,
+
 "name": "Adidas Originals Superstar Sneakers",
 "price": "80.00",
 "image": "https://i.ibb.co/nRKy54d/adidas-superstar-80s-snakeskin-1.webp",
@@ -27,7 +27,7 @@
 },
 
 {
-"id": 3,
+
 "name": "Gucci Marmont Leather Shoulder Bag",
 "price": "1,790.00",
 "image": "https://i.ibb.co/bLYKHHx/Gucci-GG-Marmont-Leather-Shoulder-Bag.jpg",
@@ -40,7 +40,7 @@
 },
 
 {
-"id": 4,
+
 "name": "Burberry Trench Coat",
 "price": "1,790.00",
 "image": "https://i.ibb.co/8ctwXdz/burberry-chelsea-trench-4-1068x710.jpg",
@@ -53,7 +53,7 @@
 },
 
 {
-"id": 5,
+
 "name": "Zara Basic T-Shirt",
 "price": "9.99",
 "image": "https://i.ibb.co/Y0pC0Rg/maxresdefault.jpg",
@@ -65,7 +65,7 @@
 "ratings":[]
 },
 {
-"id": 6,
+
 "name": "Louis Vuitton Neverfull Tote Bag",
 "price": "1,680.00",
 "image": "https://i.ibb.co/6WsYR2x/louis-vuitton-neverfull-review-pros-and-cons.jpg",
@@ -78,7 +78,7 @@
 }
 ,
 {
-"id": 7,
+
 "name": "Nike Air Max 270 React Sneakers",
 "price": "150.00",
 "image": "https://i.ibb.co/CbcKk2m/https-hypebeast-com-image-2019-11-nike-air-max-270-react-winter-9.jpg",
@@ -91,7 +91,7 @@
 }
 ,
 {
-"id": 8,
+
 "name": "H&M Denim Jacket",
 "price": "34.99",
 "image": "https://i.ibb.co/G3LF3R7/06ca5fe756a3f5d94dec6bd634f735d4c4dc5138-xxl-1.jpg",
@@ -104,7 +104,7 @@
 }
 ,
 {
-"id": 9,
+
 "name": "Prada Saffiano Leather Wallet",
 "price": "630.00",
 "image": "https://i.ibb.co/Np1K71t/193-1747-1.jpg",
@@ -117,7 +117,7 @@
 }
 ,
 {
-"id": 10,
+
 "name": "Ralph Lauren Polo Shirt",
 "price": "89.50",
 "image": "https://i.ibb.co/f8dkgqy/s7-1411062-alternate10.jpg",
@@ -129,7 +129,7 @@
 "ratings":[]
 },
 {
-"id": 11,
+
 "name": "Gucci GG Supreme Backpack",
 "price": "1,980.00",
 "image": "https://i.ibb.co/BqpKtGR/Gucci-Backpack-GG-Supreme-Coated-Canvas-Leather-Black-Beige.webp",
@@ -142,7 +142,7 @@
 }
 ,
 {
-"id": 12,
+
 "name": "Burberry Trench Coat",
 "price": "1,995.00",
 "image": "https://i.ibb.co/mHc247x/A-Classic-Burberry-Trench-1000x600.jpg",
@@ -155,7 +155,7 @@
 }
 ,
 {
-"id": 13,
+
 "name": "Off-White Industrial Belt",
 "price": "165.00",
 "image": "https://i.ibb.co/N2WTbvm/https-hypebeast-com-image-2016-07-off-white-yellow-industrial-belt-000.jpg",
@@ -168,7 +168,7 @@
 }
 ,
 {
-"id": 14,
+
 "name": "Balenciaga Triple S Sneakers",
 "price": "995.00",
 "image": "https://i.ibb.co/TvSSH62/https-hypebeast-com-wp-content-blogs-dir-6-files-2018-02-balenciaga-triple-s-trainer-red-yellow-grey.jpg",
@@ -181,7 +181,7 @@
 }
 ,
 {
-"id": 15,
+
 "name": "Yeezy Boost 700 V3 Sneakers",
 "price": "240.00",
 "image": "https://i.ibb.co/M5J7tvK/adidas-Yeezy-700-V3-Azael-Product.webp",
@@ -194,7 +194,7 @@
 },
 
         {
-"id": 1,
+
 "name": "Leather Sofa",
 "price": "1,399.00",
 "image": "https://i.ibb.co/28sJP68/leather-sofa-high-quality-furniture-dhaka.jpg",
@@ -207,7 +207,7 @@
 },
 
 {
-"id": 2,
+
 "name": "Oakwood Dining Table",
 "price": "799.00",
 "image": "https://i.ibb.co/rFq0tN3/products-oakwood-industries-color-mission-1-117b3002261w-byn8yynmumeybkqw5-9mddg-1.jpg",
@@ -220,7 +220,7 @@
 },
 
 {
-"id": 3,
+
 "name": "King Size Bed",
 "price": "499.00",
 "image": "https://i.ibb.co/ZHcjMnR/GM-FULLM-31-1-large.jpg",
@@ -233,7 +233,7 @@
 }
 ,
 {
-"id": 4,
+
 "name": "Vintage Dresser",
 "price": "699.00",
 "image": "https://i.ibb.co/WFd6rH1/il-1080x-N-2631488041-tq23.webp",
@@ -246,7 +246,7 @@
 }
 ,
 {
-"id": 5,
+
 "name": "Outdoor Lounge Chair",
 "price": "349.99",
 "image": "https://i.ibb.co/rc8xCBT/Modern-Teak-Poolside-Chaise-Lounge-Low-Curved-Outdoor-Chair-Design.jpg",
@@ -259,7 +259,7 @@
 }
 ,
 {
-"id": 6,
+
 "name": "Rattan Armchair",
 "price": "349.99",
 "image": "https://i.ibb.co/FJb0f8J/1200-1200.jpg",
@@ -272,7 +272,7 @@
 }
 ,
 {
-"id": 7,
+
 "name": "L-Shaped Sofa",
 "price": "1,799.00",
 "image": "https://i.ibb.co/JmxdDj1/1b6288842f4caf6d931a703c75ab7895.jpg",
@@ -284,7 +284,7 @@
 "ratings":[]
 },
   {
-    "id": 8,
+    
     "name": "Leather Sofa 2",
     "description": "A stylish and comfortable leather sofa with a sleek design.",
     "price": 1000,
@@ -296,7 +296,7 @@
     "ratings":[]
   },
   {
-    "id": 9,
+    
     "name": "Wooden Coffee Table",
     "description": "A sturdy and elegant wooden coffee table with a classic design.",
     "price": 250,
@@ -308,7 +308,7 @@
     "ratings":[]
   },
   {
-    "id": 10,
+    
     "name": "Modern Armchair",
     "description": "A comfortable and stylish armchair with a modern design.",
     "price": 500,
@@ -320,7 +320,7 @@
     "ratings":[]
   },
       {
-      "id": 1,
+      
       "name": "Apple iPhone XS",
       "description": "The latest iPhone with a 5.8-inch Super Retina display and A12 Bionic chip.",
       "price": 999.99,
@@ -332,7 +332,7 @@
       "ratings":[]
     },
     {
-      "id": 2,
+      
       "name": "Samsung Galaxy S20 Ultra",
       "description": "The latest Samsung flagship with a 6.2-inch Dynamic AMOLED 2X display and Exynos 2100 chip.",
       "price": 899.99,
@@ -344,7 +344,7 @@
       "ratings":[]
     },
     {
-      "id": 3,
+      
       "name": "Apple iPad Pro",
       "description": "The latest iPad Pro with a 11-inch Liquid Retina display and A12Z Bionic chip.",
       "price": 799.99,
@@ -356,7 +356,7 @@
       "ratings":[]
     },
     {
-      "id": 4,
+      
       "name": "Sony PlayStation 5",
       "description": "The latest gaming console with 8-core Zen 2 CPU, 10.28 TFLOPs GPU and 16GB of GDDR6 memory.",
       "price": 499.99,
@@ -368,7 +368,7 @@
       "ratings":[]
     },
     {
-      "id": 5,
+      
       "name": "Apple AirPods Pro",
       "description": "Active noise cancellation and superior, immersive sound quality.",
       "price": 249.99,
@@ -380,7 +380,7 @@
       "ratings":[]
     },
     {
-      "id": 6,
+      
       "name": "Google Nest Hub",
       "description": "A smart display with a 7-inch touch screen and Google Assistant.",
       "price": 129.99,
@@ -392,7 +392,7 @@
       "ratings":[]
     },
     {
-      "id": 7,
+      
       "name": "Canon EOS Rebel T7i",
       "description": "A 24.2 MP CMOS sensor and DIGIC 8 image processor DSLR camera.",
       "price": 749.99,
@@ -404,7 +404,7 @@
       "ratings":[]
     },    
     {
-      "id": 8,
+      
       "name": "Sony X900H 65-inch TV",
       "description": "A 4K HDR TV with full array local dimming and TRILUMINOS display.",
       "price": 999.99,
@@ -416,7 +416,7 @@
       "ratings":[]
     },
     {
-    "id": 9,
+    
     "name": "Apple iPhone X",
     "price": "999.99",
     "image": "https://i.ibb.co/3WRVjsq/apple-iphone-x-review.jpg",
@@ -429,7 +429,7 @@
     },
 
     {
-    "id": 10,
+    
     "name": "Samsung Galaxy S21",
     "price": "799.99",
     "image": "https://i.ibb.co/K9vLhJ3/S21-1-e1612876753879.jpg",
@@ -442,7 +442,7 @@
     },
 
     {
-    "id": 11,
+    
     "name": "Sony PlayStation 4",
     "price": "499.99",
     "image": "https://i.ibb.co/KxHTgKv/71j-N27m-Ylh-L-SL1500.jpg",
@@ -455,7 +455,7 @@
     },
 
     {
-    "id": 12,
+    
     "name": "LG OLED TV",
     "price": "1,499.99",
     "image": "https://i.ibb.co/37GL5Kb/dm-01v-01.webp",
@@ -468,7 +468,7 @@
     },
 
     {
-    "id": 13,
+    
     "name": "Bose QuietComfort 35 Wireless Headphones",
     "price": "349.99",
     "image": "https://i.ibb.co/WGCg8Sb/5876115cv22d.jpg",
@@ -480,7 +480,7 @@
     "ratings":[]
     },
     {
-    "id": 14,
+    
     "name": "Apple iPhone 12",
     "price": "699.00",
     "image": "https://i.ibb.co/wzHbVrk/Apple-announce-iphone12pro-10132020-jpg-landing-big-2x.jpg",
@@ -493,7 +493,7 @@
     }
     ,
     {
-    "id": 15,
+    
     "name": "Samsung Galaxy S21 Ultra",
     "price": "1,199.00",
     "image": "https://i.ibb.co/F3hq7Rw/Galaxy-S21-Ultra-13-1.webp",
@@ -506,7 +506,7 @@
     }
     ,
     {
-    "id": 16,
+    
     "name": "Sony PlayStation 3",
     "price": "499.00",
     "image": "https://i.ibb.co/z5WDHWb/PS3-price-in-Bangladesh.jpg",
@@ -519,7 +519,7 @@
     }
     ,
     {
-    "id": 17,
+    
     "name": "Dell XPS 13 Laptop",
     "price": "1,349.00",
     "image": "https://i.ibb.co/Fq0R9SP/q-PVnzr8um-KIJx-Qy8z7-Cc4-C0-Gg9jv5-TXip-HRZnxuy-Us-U96-G8-Lv-U91-KS44-Yn-e-LF1s-Ospi-O8-Qw-Sc-Bs-Pb.jpg",
@@ -532,7 +532,7 @@
     }
     ,
     {
-    "id": 18,
+    
     "name": "GoPro HERO 9 Black",
     "price": "449.99",
     "image": "https://i.ibb.co/pj5q9n1/Go-Pro-Hero9-Black-4.jpg",
@@ -544,7 +544,7 @@
     "ratings":[]
     },
      {
-    "id": 1,
+    
     "name": "Fiddle Leaf Fig Tree",
     "price": "50",
     "image": "https://i.ibb.co/bNtBZTW/grow-fiddle-leaf-fig-indoors-1902756-hero-feca31e64e91430794e2bdcc9fa1e901.jpg",
@@ -557,7 +557,7 @@
     "ratings":[]
   },
   {
-    "id": 2,
+    
     "name": "Monstera Deliciosa",
     "price": "35",
     "image": "https://i.ibb.co/k4Xz08x/303d4fdc-00af-4ccb-8164-539cbb77b97a-monstera-1-1-of-1.jpg",
@@ -570,7 +570,7 @@
     "ratings":[]
   },
   {
-    "id": 3,
+    
     "name": "Pothos",
     "price": "15",
     "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
@@ -583,7 +583,7 @@
     "ratings":[]
   },
   {
-    "id": 4,
+    
     "name": "Succulent Collection",
     "price": "20",
     "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
@@ -596,7 +596,7 @@
     "ratings":[]
   },
   {
-    "id": 5,
+    
     "name": "Bamboo Palm",
     "price": "30",
     "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
@@ -610,7 +610,7 @@
   }
       ,  
   {
-    "id": 6,
+    
     "name": "Fiddle Leaf Fig Tree",
     "price": "50",
     "image": "https://i.ibb.co/bNtBZTW/grow-fiddle-leaf-fig-indoors-1902756-hero-feca31e64e91430794e2bdcc9fa1e901.jpg",
@@ -623,7 +623,7 @@
     "ratings":[]
   },
   {
-    "id": 7,
+    
     "name": "Monstera Deliciosa",
     "price": "35",
     "image": "https://i.ibb.co/k4Xz08x/303d4fdc-00af-4ccb-8164-539cbb77b97a-monstera-1-1-of-1.jpg",
@@ -636,7 +636,7 @@
     "ratings":[]
   },
   {
-    "id": 8,
+    
     "name": "Pothos",
     "price": "15",
     "image": "https://i.ibb.co/7rcmQzB/Pothos-Tips-1200x667.jpg",
@@ -649,7 +649,7 @@
     "ratings":[]
   },
   {
-    "id": 9,
+    
     "name": "Succulent Collection",
     "price": "20",
     "image": "https://i.ibb.co/T0BnBxd/succulents-guide-feat.webp",
@@ -662,7 +662,7 @@
     "ratings":[]
   },
   {
-    "id": 10,
+    
     "name": "Bamboo Palm",
     "price": "30",
     "image": "https://i.ibb.co/vL7RScS/bamboo-palms-profile-5120252-hero-9d21104511ac4b4f955d1ce44231e27c.jpg",
