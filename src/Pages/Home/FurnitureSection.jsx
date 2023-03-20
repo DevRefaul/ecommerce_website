@@ -10,10 +10,10 @@ const FurnitureSection = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/furnitures`)
+    fetch(`${api}/productcategory?category=Furnitures`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data.products.slice(0, 8));
+        setData(data.productsOfCategory.slice(0, 8));
         setloading(false);
       })
       .catch((err) => console.error(err.message));
