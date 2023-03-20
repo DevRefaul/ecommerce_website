@@ -10,7 +10,7 @@ const FurnitureSection = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/productcategory?category=Furnitures`)
+    fetch(`${api}/productcategory?category=Furniture`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.productsOfCategory.slice(0, 8));

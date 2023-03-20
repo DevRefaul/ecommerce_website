@@ -13,10 +13,10 @@ const Home = () => {
     <div className="w-[95%] md:w-[80%] mx-auto">
       <Banner />
       <CategorySection />
-      {/* <FashionSection /> */}
+      <FashionSection />
       <ElectronicsSection />
-      {/* <FurnitureSection /> */}
-      {/* <PlantSection /> */}
+      <FurnitureSection />
+      <PlantSection />
       <NewsLetterSection />
       <TrendingProducts />
     </div>

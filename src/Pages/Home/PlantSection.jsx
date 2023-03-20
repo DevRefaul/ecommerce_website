@@ -10,7 +10,7 @@ const PlantSection = () => {
 
   useEffect(() => {
     setloading(true);
-    fetch(`${api}/productcategory?category=Plants`)
+    fetch(`${api}/productcategory?category=Plant`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.productsOfCategory.slice(0, 8));
