@@ -12,7 +12,7 @@ const TrendingProducts = () => {
     fetch(`${api}/trendingProducts`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data.products);
+        setData(data.trendingProducts);
         setloading(false);
       })
       .catch((err) => console.error(err.message));
