@@ -15,7 +15,7 @@ const NewsLetterSection = () => {
         <input
           type="email"
           name="email"
-          className="bg-transparent p-2 text-gray-800 border border-white rounded w-64 mx-auto"
+          className="bg-transparent p-2 text-gray-800 border border-white rounded w-64 mx-auto focus:bg-white focus:border-gray-800"
           placeholder="Enter your email address"
         />
         <button
