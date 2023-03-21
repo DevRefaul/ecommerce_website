@@ -3,7 +3,7 @@ import LoadingScene from "../../Components/LoadingScene/LoadingScene";
 import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
 import { api } from "../../Utils/Api";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
