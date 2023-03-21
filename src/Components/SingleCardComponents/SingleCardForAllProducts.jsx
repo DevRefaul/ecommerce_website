@@ -11,6 +11,7 @@ const SingleCardForAllProducts = ({ product }) => {
       <div className="max-w-sm h-[530px] lg:h-[500px] 2xl:h-[450px] singleCard">
         <Card
           imgSrc={image && image}
+          imgAlt={name ? `${name + "'s Image"}` : "Product Image"}
           className="h-[530px] lg:h-[500px] 2xl:h-[450px] "
         >
           <div>
