@@ -21,13 +21,13 @@ const SingleProductPage = () => {
 
   const productInfo = data?.product;
 
-  // const {
-  //   isLoading: relatedDataLodaing,
-  //   data: relatedData,
-  //   isError: relatedDataError,
-  // } = useQuery(["relatedData"], functionForFetchingRelatedData);
+  const {
+    isLoading: relatedDataLodaing,
+    data: relatedData,
+    isError: relatedDataError,
+  } = useQuery(["relatedData"], functionForFetchingRelatedData);
 
-  if (isLoading) {
+  if (isLoading || relatedDataLodaing) {
     return <LoadingScene />;
   }
 
@@ -35,12 +35,17 @@ const SingleProductPage = () => {
     return toast.error(isError.message);
   }
 
-  // function functionForFetchingRelatedData() {
-  //   return fetch(`${api}/getRelatedProductData?name=${productInfo?.type}`)
-  //     .then((res) => res.json())
-  //     .then((data) => data);
-  // }
+  function functionForFetchingRelatedData() {
+    if (productInfo) {
+      return fetch(
+        `${api}/getrelateddata?category=${productInfo?.category}&id=${productInfo?._id}`
+      )
+        .then((res) => res.json())
+        .then((data) => data);
+    }
+  }
 
+  console.log(relatedData);
   return (
     <section className="w-[95%] lg:w-[80%] mx-auto min-h-screen">
       <div className="my-6 grid gap-4 lg:grid-cols-2 ">
