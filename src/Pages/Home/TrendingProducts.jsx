@@ -69,7 +69,7 @@ const TrendingProducts = () => {
           {data
             ? data.map((product, i) => {
                 return (
-                  <SwiperSlide key={i}>
+                  <SwiperSlide key={i} className="h-[530px]">
                     <SingleCardForAllProducts product={product} />
                   </SwiperSlide>
                 );

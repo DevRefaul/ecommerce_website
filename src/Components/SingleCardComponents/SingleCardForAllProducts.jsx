@@ -8,13 +8,13 @@ const SingleCardForAllProducts = ({ product }) => {
 
   return (
     <>
-      <div className="max-w-sm h-full min-h-[530px] xl:min-h-[300px] singleCard">
+      <div className="max-w-sm h-[530px] lg:h-[500px] 2xl:h-[450px] singleCard">
         <Card
           imgSrc={image && image}
-          className="h-full min-h-[530px] xl:min-h-[300px] "
+          className="h-[530px] lg:h-[500px] 2xl:h-[450px] "
         >
           <div>
-            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-between">
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white flex justify-between">
               {name.slice(0, 15) + "..."}
               {brand && (
                 <Badge color="success" size="sm">
