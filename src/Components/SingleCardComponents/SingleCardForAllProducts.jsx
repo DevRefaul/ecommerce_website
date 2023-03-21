@@ -23,7 +23,7 @@ const SingleCardForAllProducts = ({ product }) => {
               )}
             </h5>
 
-            <p className="font-normal text-gray-700 dark:text-gray-400">
+            <p className="font-normal text-start text-gray-700 dark:text-gray-400">
               {description.slice(0, 50) + "..."}
             </p>
 
