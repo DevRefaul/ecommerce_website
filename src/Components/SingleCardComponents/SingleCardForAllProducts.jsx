@@ -8,8 +8,11 @@ const SingleCardForAllProducts = ({ product }) => {
 
   return (
     <>
-      <div className="max-w-sm h-full singleCard">
-        <Card imgSrc={image && image} className="h-full">
+      <div className="max-w-sm h-full min-h-[530px] singleCard">
+        <Card
+          imgSrc={image && image}
+          className="h-full min-h-[530px] flex flex-col justify-between"
+        >
           <div>
             <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-between">
               {name.slice(0, 15) + "..."}

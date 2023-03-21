@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import LoadingScene from "../../Components/LoadingScene/LoadingScene";
 import SingleCardForAllProducts from "../../Components/SingleCardComponents/SingleCardForAllProducts";
 import { api } from "../../Utils/Api";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const TrendingProducts = () => {
   const [data, setData] = useState(null);
@@ -28,13 +32,58 @@ const TrendingProducts = () => {
         Our Trending Products
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
+      <div>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={20}
+          loop={true}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            // when window width is >= 769px
+            769: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            // when window width is >= 640px
+            1300: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
+          // autoplay={{
+          //   delay: 2500,
+          //   disableOnInteraction: false,
+          // }}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {data
+            ? data.map((product, i) => {
+                return (
+                  <SwiperSlide key={i} className="h-full">
+                    <SingleCardForAllProducts product={product} />
+                  </SwiperSlide>
+                );
+              })
+            : ""}
+        </Swiper>
+      </div>
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
         {data
           ? data.map((product, i) => {
               return <SingleCardForAllProducts key={i} product={product} />;
             })
           : ""}
-      </div>
+      </div> */}
     </section>
   );
 };
