@@ -8,10 +8,10 @@ const SingleCardForAllProducts = ({ product }) => {
 
   return (
     <>
-      <div className="max-w-sm h-full min-h-[530px] singleCard">
+      <div className="max-w-sm h-full min-h-[530px] xl:min-h-[300px] singleCard">
         <Card
           imgSrc={image && image}
-          className="h-full min-h-[530px] flex flex-col justify-between"
+          className="h-full min-h-[530px] xl:min-h-[300px] "
         >
           <div>
             <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex justify-between">
@@ -31,7 +31,7 @@ const SingleCardForAllProducts = ({ product }) => {
           </div>
 
           {/* section for price */}
-          <div id="bottomBtns" className="grid lg:grid-cols-2 lg:gap-2">
+          <div id="bottomBtns" className="grid lg:grid-cols-2 gap-2">
             <Link to={`/products/${name}`} state={{ productName: name }}>
               <button className=" text-white bg-gradient-to-r from-green-300 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm  py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full">
                 See More

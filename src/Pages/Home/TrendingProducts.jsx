@@ -69,7 +69,7 @@ const TrendingProducts = () => {
           {data
             ? data.map((product, i) => {
                 return (
-                  <SwiperSlide key={i} className="h-full">
+                  <SwiperSlide key={i}>
                     <SingleCardForAllProducts product={product} />
                   </SwiperSlide>
                 );
@@ -77,13 +77,6 @@ const TrendingProducts = () => {
             : ""}
         </Swiper>
       </div>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
-        {data
-          ? data.map((product, i) => {
-              return <SingleCardForAllProducts key={i} product={product} />;
-            })
-          : ""}
-      </div> */}
     </section>
   );
 };

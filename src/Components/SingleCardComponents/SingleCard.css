@@ -5,6 +5,7 @@
         object-position: center;
 }
 .singleCard div>div {
+    /* height: 320px; */
     justify-content: space-between;
 }
 
