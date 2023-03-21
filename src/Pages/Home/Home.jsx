@@ -13,12 +13,12 @@ const Home = () => {
     <div className="w-[95%] md:w-[80%] mx-auto">
       <Banner />
       <CategorySection />
+      <TrendingProducts />
       <FashionSection />
       <ElectronicsSection />
       <FurnitureSection />
       <PlantSection />
       <NewsLetterSection />
-      <TrendingProducts />
     </div>
   );
 };
