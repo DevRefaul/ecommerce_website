@@ -15,7 +15,7 @@ const SingleCardForAllProducts = ({ product }) => {
         >
           <div>
             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white flex justify-between">
-              {name.slice(0, 15) + "..."}
+              {name.length > 15 ? name.slice(0, 15) + "..." : name}
               {brand && (
                 <Badge color="success" size="sm">
                   {brand}
