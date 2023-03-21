@@ -7,15 +7,15 @@ import { api } from "../../../Utils/Api";
 
 const SingleProductPage = () => {
   const location = useLocation();
-  const productName = location.state.productName;
-  const functionForFetchingData = () => {
-    return fetch(`${api}/getSingleProductInfo?name=${productName}`)
+  const productId = location.state.productId;
+  const functionForFetchingData = async () => {
+    return fetch(`${api}/getSingleProductInfo?id=${productId}`)
       .then((res) => res.json())
       .then((data) => data);
   };
 
   const { isLoading, data, isError } = useQuery(
-    [productName],
+    [productId],
     functionForFetchingData
   );
 
@@ -52,7 +52,7 @@ const SingleProductPage = () => {
           />{" "}
         </div>
         <div>
-          <h2 className="text-center my-4 text-2xl font-semibold" capitalize>
+          <h2 className="text-center my-4 text-2xl font-semibold  capitalize">
             {productInfo.name}
           </h2>
           <h4 className="text-lg font-semibold my-3 capitalize">
