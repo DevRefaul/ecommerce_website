@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import "./SingleCard.css";
 
 const SingleCardForAllProducts = ({ product }) => {
-  
-console.log(product);
 
 const { _id, name, price, description, image, brand } = product;
 return (
