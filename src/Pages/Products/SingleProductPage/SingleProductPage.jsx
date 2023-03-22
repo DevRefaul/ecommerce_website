@@ -10,12 +10,12 @@ const SingleProductPage = () => {
   const location = useLocation();
   const productId = location.state.productId;
 
-console.log(productId);
-
   const functionForFetchingData = async () => {
     return fetch(`${api}/getSingleProductInfo?id=${productId}`)
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => {
+        return data;
+      });
   };
 
   const { isLoading, data, isError } = useQuery(
