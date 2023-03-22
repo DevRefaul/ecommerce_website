@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "./Banner";
+import BrandsPartner from "./BrandsPartner";
 import CategorySection from "./CategorySection";
 import ElectronicsSection from "./ElectronicsSection";
 import FashionSection from "./FashionSection";
@@ -19,6 +20,7 @@ const Home = () => {
       <FurnitureSection />
       <PlantSection />
       <NewsLetterSection />
+      <BrandsPartner />
     </div>
   );
 };
