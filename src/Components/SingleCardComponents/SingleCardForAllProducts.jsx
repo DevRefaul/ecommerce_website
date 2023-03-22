@@ -27,7 +27,9 @@ const SingleCardForAllProducts = ({ product }) => {
               {description.slice(0, 50) + "..."}
             </p>
 
-            <h4 className="text-xl font-bold">${price}</h4>
+            <h4 className="text-xl font-bold text-start mt-4">
+              Price: {price}$
+            </h4>
           </div>
 
           {/* section for price */}

@@ -17,56 +17,61 @@ const RelatedProducts = ({ category, id }) => {
       .then((data) => data);
   }
 
-  const relatedProducts = data?.products.filter((p) => p._id != id);
+  const relatedProducts = data?.products.filter((p) => p._id !== id);
 
   return (
     <section className="my-12">
       <h2 className="my-8 text-center text-xl font-semibold">
         Related Products
       </h2>
-
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={20}
-        loop={true}
-        breakpoints={{
-          // when window width is >= 320px
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          // when window width is >= 480px
-          480: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          // when window width is >= 769px
-          769: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-          // when window width is >= 640px
-          1300: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        {relatedProducts?.length &&
-          relatedProducts.map((product, i) => {
-            return (
-              <SwiperSlide key={i} className="h-[530px]">
-                <SingleCardForAllProducts product={product} />
-              </SwiperSlide>
-            );
-          })}
-      </Swiper>
+      {isLoading ? (
+        <>
+          <p className="text-center font-medium">Loading Related Products</p>
+        </>
+      ) : (
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={20}
+          loop={true}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            // when window width is >= 769px
+            769: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            // when window width is >= 640px
+            1300: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {relatedProducts?.length &&
+            relatedProducts.map((product, i) => {
+              return (
+                <SwiperSlide key={i} className="h-[530px]">
+                  <SingleCardForAllProducts product={product} />
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
+      )}
     </section>
   );
 };
