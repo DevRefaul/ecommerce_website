@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
+import LoadingScene from "../../LoadingScene/LoadingScene";
 // import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
   const handleLetSubmenuHide = () => {
     document.getElementById("dropdownNavbar").classList.add("hidden");
     setDropdown(!dropdown);
+
     window.location.reload();
   };
 
