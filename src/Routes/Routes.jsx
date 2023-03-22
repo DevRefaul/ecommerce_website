@@ -1,5 +1,7 @@
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
@@ -30,6 +32,10 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
         path: "/product/:name",
