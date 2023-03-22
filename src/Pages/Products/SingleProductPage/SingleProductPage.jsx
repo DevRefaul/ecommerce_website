@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
@@ -9,6 +9,16 @@ import { api } from "../../../Utils/Api";
 const SingleProductPage = () => {
   const location = useLocation();
   const productId = location.state.productId;
+
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    mounted.current = true;
+    if (mounted.current === true) {
+      window.scrollTo(0, 0);
+    }
+    return () => (mounted.current = false);
+  }, []);
 
   const functionForFetchingData = async () => {
     return fetch(`${api}/getSingleProductInfo?id=${productId}`)
