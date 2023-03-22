@@ -2,7 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
+import SingleCardForAllProducts from "../../../Components/SingleCardComponents/SingleCardForAllProducts";
 import { api } from "../../../Utils/Api";
 
 const SingleProductPage = () => {
@@ -45,7 +48,11 @@ const SingleProductPage = () => {
     }
   }
 
-  console.log(relatedData);
+  const relatedProducts = relatedData?.products.filter(
+    (p) => p._id != productInfo._id
+  );
+  console.log(relatedProducts);
+
   return (
     <section className="w-[95%] lg:w-[80%] mx-auto min-h-screen">
       <div className="my-6 grid gap-4 lg:grid-cols-2 ">
@@ -98,6 +105,55 @@ const SingleProductPage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        <h2 className="my-8 text-center text-xl font-semibold">
+          Related Products
+        </h2>
+
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={20}
+          loop={true}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            // when window width is >= 769px
+            769: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            // when window width is >= 640px
+            1300: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {relatedProducts &&
+            relatedProducts.map((product, i) => {
+              return (
+                <SwiperSlide key={i} className="h-[530px]">
+                  <SingleCardForAllProducts product={product} />
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
       </div>
     </section>
   );
