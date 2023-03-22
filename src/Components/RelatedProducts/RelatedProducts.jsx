@@ -17,7 +17,7 @@ const RelatedProducts = ({ category, id }) => {
       .then((data) => data);
   }
 
-  const relatedProducts = data?.products.filter((p) => p._id != data._id);
+  const relatedProducts = data?.products.filter((p) => p._id != id);
 
   return (
     <section className="my-12">
@@ -58,7 +58,7 @@ const RelatedProducts = ({ category, id }) => {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {relatedProducts &&
+        {relatedProducts?.length &&
           relatedProducts.map((product, i) => {
             return (
               <SwiperSlide key={i} className="h-[530px]">
