@@ -7,6 +7,7 @@ import FashionSection from "./FashionSection";
 import FurnitureSection from "./FurnitureSection";
 import NewsLetterSection from "./NewsLetterSection";
 import PlantSection from "./PlantSection";
+import ReviewsSection from "./ReviewsSection";
 import TrendingProducts from "./TrendingProducts";
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <PlantSection />
       <NewsLetterSection />
       <BrandsPartner />
+      <ReviewsSection />
     </div>
   );
 };

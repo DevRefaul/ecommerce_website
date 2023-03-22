@@ -38,7 +38,7 @@ const ReviewsSection = () => {
     <section className="my-12">
       <h2 className="text-center text-2xl font-semibold">Customer Reviews</h2>
 
-      <div>
+      <div className="my-6">
         <Swiper
           slidesPerView={4}
           spaceBetween={20}
@@ -66,19 +66,38 @@ const ReviewsSection = () => {
             //   },
           }}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
           className="mySwiper"
         >
           {reviews.length
-            ? reviews.map((product, i) => {
+            ? reviews.map((review, i) => {
                 return (
-                  <SwiperSlide
-                    key={i}
-                    className="h-[530px] bg-green-300"
-                  ></SwiperSlide>
+                  <SwiperSlide key={i} className="">
+                    <div className="bg-green-100 p-6 h-[400px] md:h-[430px] lg:h-[350px] xl:h-[280px] flex flex-col justify-between rounded-md">
+                      <p className="text-lg font-medium  text-start">
+                        "{review.comment}"
+                      </p>
+                      <p className="my-4  flex justify-center items-center">
+                        By -{" "}
+                        <span className="font-bold ml-6">
+                          {" "}
+                          <img
+                            src={review.image}
+                            alt=""
+                            className="h-14 w-14 rounded-full"
+                            style={{
+                              objectFit: "cover",
+                              objectPosition: "center",
+                            }}
+                          />{" "}
+                          {review.user_Name}
+                        </span>
+                      </p>
+                    </div>
+                  </SwiperSlide>
                 );
               })
             : ""}
