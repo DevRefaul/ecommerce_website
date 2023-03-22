@@ -9,6 +9,9 @@ import { api } from "../../../Utils/Api";
 const SingleProductPage = () => {
   const location = useLocation();
   const productId = location.state.productId;
+
+console.log(productId);
+
   const functionForFetchingData = async () => {
     return fetch(`${api}/getSingleProductInfo?id=${productId}`)
       .then((res) => res.json())
