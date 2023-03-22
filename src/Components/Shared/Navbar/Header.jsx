@@ -17,6 +17,7 @@ const Header = () => {
   const handleLetSubmenuHide = () => {
     document.getElementById("dropdownNavbar").classList.add("hidden");
     setDropdown(!dropdown);
+    window.location.reload();
   };
 
   return (
