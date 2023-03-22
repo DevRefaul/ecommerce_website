@@ -35,12 +35,12 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section className="my-12">
+    <section className="my-24">
       <h2 className="text-center text-2xl font-semibold">Customer Reviews</h2>
 
       <div className="my-6">
         <Swiper
-          slidesPerView={4}
+          slidesPerView={2}
           spaceBetween={20}
           loop={true}
           breakpoints={{
@@ -54,16 +54,6 @@ const ReviewsSection = () => {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            // when window width is >= 769px
-            //   769: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 20,
-            //   },
-            // when window width is >= 640px
-            //   1300: {
-            //     slidesPerView: 4,
-            //     spaceBetween: 20,
-            //   },
           }}
           autoplay={{
             delay: 3500,
