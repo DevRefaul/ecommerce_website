@@ -1,12 +1,9 @@
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import Home from "../Pages/Home/Home";
-import Electronics from "../Pages/Products/Electronics/Electronics";
-import Fashion from "../Pages/Products/Fashion/Fashion";
-import Furniture from "../Pages/Products/Furniture/Furniture";
-import Plant from "../Pages/Products/Plant/Plant";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
+import ProductsAsCategoryPage from "../Pages/Products/ProductsAsCategoryPage/ProductsAsCategoryPage";
 import SingleProductPage from "../Pages/Products/SingleProductPage/SingleProductPage";
 import Root from "../Root/Root";
 
@@ -46,20 +43,8 @@ const routes = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: "/products/fashion",
-        element: <Fashion />,
-      },
-      {
-        path: "/products/electronics",
-        element: <Electronics />,
-      },
-      {
-        path: "/products/furniture",
-        element: <Furniture />,
-      },
-      {
-        path: "/products/plant",
-        element: <Plant />,
+        path: "/products/:category",
+        element: <ProductsAsCategoryPage />,
       },
       {
         path: "/products/:name",
