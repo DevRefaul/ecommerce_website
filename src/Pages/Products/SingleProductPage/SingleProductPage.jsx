@@ -3,6 +3,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
+import RelatedProducts from "../../../Components/RelatedProducts/RelatedProducts";
 import { api } from "../../../Utils/Api";
 
 const SingleProductPage = () => {
@@ -83,7 +84,12 @@ const SingleProductPage = () => {
         </div>
       </div>
 
-      <></>
+      <>
+        <RelatedProducts
+          category={productInfo?.category}
+          id={productInfo?._id}
+        />
+      </>
     </section>
   );
 };
