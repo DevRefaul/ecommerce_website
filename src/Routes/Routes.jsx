@@ -56,6 +56,10 @@ const routes = createBrowserRouter([
         path: "/products/:category",
         element: <ProductsAsCategoryPage />,
       },
+      {
+        path: "/products/:category/:name",
+        element: <SingleProductPage />,
+      },
     ],
   },
 ]);

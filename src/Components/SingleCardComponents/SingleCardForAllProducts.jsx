@@ -5,7 +5,7 @@ import "./SingleCard.css";
 
 const SingleCardForAllProducts = ({ product }) => {
 
-const { _id, name, price, description, image, brand } = product;
+const { _id, name, price, description, image, brand, category } = product;
 return (
   <>
     <div className="max-w-sm h-[530px] lg:h-[500px] 2xl:h-[450px] singleCard">
@@ -34,7 +34,7 @@ return (
         {/* section for price */}
         <div id="bottomBtns" className="grid lg:grid-cols-2 gap-2">
           <Link
-            to={`/product/${name}`}
+            to={`/products/${category}/${name}`}
             state={{ productName: name, productId: _id }}
           >
             <button className=" text-white bg-gradient-to-r from-green-300 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm  py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full">
