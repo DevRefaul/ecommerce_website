@@ -34,11 +34,7 @@ const routes = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard />,
-      },
-      {
-        path: "/product/:name",
+        path: "/login",
         element: <SingleProductPage />,
       },
     ],
