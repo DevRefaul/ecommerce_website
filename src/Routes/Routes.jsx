@@ -3,10 +3,12 @@ import Contact from "../Pages/Contact/Contact";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
 import ProductsAsCategoryPage from "../Pages/Products/ProductsAsCategoryPage/ProductsAsCategoryPage";
 import SingleProductPage from "../Pages/Products/SingleProductPage/SingleProductPage";
+import SignUpPage from "../Pages/SignUp/SignUpPage";
 import Root from "../Root/Root";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -35,7 +37,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <SingleProductPage />,
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUpPage />,
       },
     ],
   },
