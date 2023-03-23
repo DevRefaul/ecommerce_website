@@ -57,7 +57,7 @@ const Header = () => {
             </button>
 
             <div className="relative hidden lg:block">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <div className="absolute top-0 bottom-[10px] left-0 flex items-center pl-3 pointer-events-none">
                 <svg
                   className="w-5 h-5 text-gray-500"
                   aria-hidden="true"
