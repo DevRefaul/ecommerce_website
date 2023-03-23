@@ -5,7 +5,7 @@ import "./SingleCard.css";
 
 const SingleCardForAllProducts = ({ product }) => {
 
-const { _id, name, price, description, image, brand, category } = product;
+  const { _id, name, price, description, image, brand, category } = product;
 return (
   <>
     <div className="max-w-sm h-[530px] lg:h-[500px] 2xl:h-[450px] singleCard">
