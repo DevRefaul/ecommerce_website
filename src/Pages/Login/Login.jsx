@@ -9,12 +9,10 @@ const Login = () => {
   const handleLoginUser = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    console.log(email, password);
 
     if (!email && !password) {
       setLoginError("Please Enter Valid Email and Password");
     } else if (email.length && password.length) {
-
       document.getElementById("passLabel").style.display = "hidden";
       setLoginError("");
     } else {
@@ -63,13 +61,14 @@ const Login = () => {
                             id="email"
                             placeholder="Email"
                             onChange={handleHideEmailLabel}
+                            required
                           />
                           <label
                             htmlFor="email"
                             id="emailLabel"
                             className=" pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blue-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
                           >
-                            email
+                            Email
                           </label>
                         </div>
                         <div
@@ -82,6 +81,7 @@ const Login = () => {
                             id="password"
                             placeholder="Password"
                             onChange={handleHidePasslLabel}
+                            required
                           />
                           <label
                             htmlFor="password"
