@@ -7,8 +7,14 @@ import loginAnimation from "./loginAnimation.json";
 const Login = () => {
   const [loginError, setLoginError] = useState("");
   const handleLoginUser = () => {
-    const username = document.getElementById("email").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+
+    if (email && password) {
+      setLoginError("Please Enter Valid Email and Password");
+    }
+
+
   };
 
   return (
