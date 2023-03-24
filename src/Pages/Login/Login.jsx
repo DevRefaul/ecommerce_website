@@ -1,13 +1,14 @@
 import Lottie from "lottie-react";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/shopaholic.png";
 import loginAnimation from "./loginAnimation.json";
 
 const Login = () => {
-
+  const [loginError, setLoginError] = useState("");
   const handleLoginUser = () => {
-    const username = document.getElementById("");
+    const username = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
   };
 
   return (
@@ -62,6 +63,13 @@ const Login = () => {
                             Password
                           </label>
                         </div>
+
+                        {/* section for error message */}
+                        <p className="text-red-600 my-6 font-medium">
+                          {loginError ? loginError : ""}
+                        </p>
+                        {/* section for error message */}
+
                         <div className="mb-12 pt-1 pb-1 text-center">
                           <button
                             onClick={handleLoginUser}
