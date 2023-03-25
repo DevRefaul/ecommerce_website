@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import logo from "../../Assets/shopaholic.png";
 import signupAnimation from "./signup.json";
 
 const SignUpPage = () => {
+  const [error, setError] = useState("");
+
+  const handleSignupUser = () => {
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("address").value;
+    const password = document.getElementById("firstPass").value;
+    const confirmPassword = document.getElementById("secondPass").value;
+  };
+
   return (
     <>
       <section className="gradient-form h-full bg-white">
@@ -69,11 +79,11 @@ const SignUpPage = () => {
                           <input
                             type="text"
                             className="peer block min-h-[auto] w-full rounded border bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                            id="Address"
+                            id="address"
                             placeholder="Address"
                           />
                           <label
-                            htmlFor="Address"
+                            htmlFor="address"
                             className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blue-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
                           >
                             Address
@@ -113,10 +123,19 @@ const SignUpPage = () => {
                             Confirm Password
                           </label>
                         </div>
+
+                        {/* section for error message */}
+                        <p className="text-red-600 my-6 font-medium">
+                          {error ? error : ""}
+                        </p>
+                        {/* section for error message */}
+
                         <div className="mb-12 pt-1 pb-1 text-center">
                           <button
                             className="mb-3 inline-block w-full rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] bg-gradient-to-r from-sky-400 to-cyan-300"
                             type="button"
+                            id="signupBtn"
+                            onClick={handleSignupUser}
                           >
                             Register
                           </button>
