@@ -19,16 +19,7 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200 && data.user) {
-          const { _id, name, email } = data.user;
-
-          localStorage.setItem(
-            "UserDetails",
-            JSON.stringify({
-              userId: _id,
-              userName: name,
-              userMail: email,
-            })
-          );
+          localStorage.setItem("UserDetails", JSON.stringify(data.user));
           setLoading(false);
           navigate("/");
         }
