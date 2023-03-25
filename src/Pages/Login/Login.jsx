@@ -10,28 +10,24 @@ const Login = () => {
 
   // api calling function for user login
 
-  const loginUser = (loginInfo) => {
-    fetch(`${api}/loginuser?loginInfo=${loginInfo}`)
+  const loginUser = ({ email, password }) => {
+    fetch(`${api}/loginuser?email=${email}&password=${password}`)
       .then((res) => res.json())
       .then((data) => data);
   };
 
   // login btn function
-  const handleLoginUser = () => {
+  const handleLoginUser = async () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     if (!email && !password) {
-      document.getElementById("loginBtn").setAttribute("disabled", true);
       return setLoginError("Please Enter Valid Email and Password");
     } else {
-      document.getElementById("loginBtn").removeAttribute("disabled");
       setLoginError("");
     }
 
-    const loginInfo = { email, password };
-
-    const loginResponse = loginUser(loginInfo);
+    const loginResponse = await loginUser({ email, password });
     console.log(loginResponse);
   };
 
