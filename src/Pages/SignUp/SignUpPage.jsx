@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import logo from "../../Assets/shopaholic.png";
 import signupAnimation from "./signup.json";
@@ -8,14 +8,27 @@ import { api } from "../../Utils/Api";
 
 const SignUpPage = () => {
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSignUp = (userInfo) => {
     fetch(`${api}/signup`, {
+      method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (
+          data.status === 200 &&
+          data?.makeUserAccount?.acknowledged === true &&
+          data?.makeUserAccount?.insertedId
+        ) {
+          toast.success("Successfully Created User");
+          return navigate("/");
+        } else {
+          toast.error(data.message);
+        }
+      });
   };
 
   const handleSignupUser = () => {
@@ -33,7 +46,7 @@ const SignUpPage = () => {
     }
 
     // validating email
-    if (!email.endsWith("@gmail.com")) {
+    if (!email.endsWith("@gmail.com") && !email.endsWith("@yahoo.com")) {
       toast.error("Please Enter A Valid Email");
       return setError("Please Enter A Valid Email");
     }
