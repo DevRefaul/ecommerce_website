@@ -13,7 +13,20 @@ const Login = () => {
   const loginUser = ({ email, password }) => {
     fetch(`${api}/loginuser?email=${email}&password=${password}`)
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => {
+        console.log(data);
+
+        if (data.status === 200 && data.user) {
+          const { _id, name, email } = data.user;
+          const userInfo = {
+            userId: _id,
+            userName: name,
+            userMail: email,
+          };
+
+          localStorage.setItem("UserDetails", JSON.stringify(userInfo));
+        }
+      });
   };
 
   // login btn function
@@ -27,8 +40,7 @@ const Login = () => {
       setLoginError("");
     }
 
-    const loginResponse = await loginUser({ email, password });
-    console.log(loginResponse);
+    loginUser({ email, password });
   };
 
   const handleHideEmailLabel = (e) => {
