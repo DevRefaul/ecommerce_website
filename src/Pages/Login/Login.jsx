@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/shopaholic.png";
 import TransParentLoadingScene from "../../Components/LoadingScene/TransParentLoadingScene";
 import { api } from "../../Utils/Api";
@@ -9,6 +9,7 @@ import loginAnimation from "./loginAnimation.json";
 const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   // api calling function for user login
 
@@ -29,6 +30,7 @@ const Login = () => {
             })
           );
           setLoading(false);
+          navigate("/");
         }
       });
   };
