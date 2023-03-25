@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import logo from "../../Assets/shopaholic.png";
 import signupAnimation from "./signup.json";
+import { toast, ToastContainer } from "react-toastify";
 
 const SignUpPage = () => {
   const [error, setError] = useState("");
@@ -13,10 +14,17 @@ const SignUpPage = () => {
     const address = document.getElementById("address").value;
     const password = document.getElementById("firstPass").value;
     const confirmPassword = document.getElementById("secondPass").value;
+
+    if (!username && !email && !address && !password && !confirmPassword) {
+      return setError("Please Enter Every Details On Form");
+    } else {
+      toast.success("Btn Clicked");
+    }
   };
 
   return (
     <>
+      <ToastContainer />
       <section className="gradient-form h-full bg-white">
         <div className="container mx-auto h-full md:p-10">
           <div className="g-6 flex  h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
