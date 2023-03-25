@@ -3,7 +3,7 @@ import { ThreeCircles } from "react-loader-spinner";
 
 const TransParentLoadingScene = () => {
   return (
-    <section className="flex justify-center items-center h-screen bg-[rgba(0,0,0,0.3)]">
+    <section className="flex justify-center items-center h-screen bg-transparent">
       <ThreeCircles
         height="100"
         width="100"

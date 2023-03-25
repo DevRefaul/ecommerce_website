@@ -2,20 +2,21 @@ import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/shopaholic.png";
+import TransParentLoadingScene from "../../Components/LoadingScene/TransParentLoadingScene";
 import { api } from "../../Utils/Api";
 import loginAnimation from "./loginAnimation.json";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // api calling function for user login
 
   const loginUser = ({ email, password }) => {
+    setLoading(true);
     fetch(`${api}/loginuser?email=${email}&password=${password}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         if (data.status === 200 && data.user) {
           const { _id, name, email } = data.user;
 
@@ -27,6 +28,7 @@ const Login = () => {
               userMail: email,
             })
           );
+          setLoading(false);
         }
       });
   };
@@ -57,6 +59,10 @@ const Login = () => {
       document.getElementById("passLabel").classList.add("hidden");
     }
   };
+
+  if (loading) {
+    return <TransParentLoadingScene />;
+  }
 
   return (
     <>
