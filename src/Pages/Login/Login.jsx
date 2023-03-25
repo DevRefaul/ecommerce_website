@@ -32,6 +32,7 @@ const Login = () => {
     const loginInfo = { email, password };
 
     const loginResponse = loginUser(loginInfo);
+    console.log(loginResponse);
   };
 
   const handleHideEmailLabel = (e) => {
