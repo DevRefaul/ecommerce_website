@@ -18,13 +18,15 @@ const Login = () => {
 
         if (data.status === 200 && data.user) {
           const { _id, name, email } = data.user;
-          const userInfo = {
-            userId: _id,
-            userName: name,
-            userMail: email,
-          };
 
-          localStorage.setItem("UserDetails", JSON.stringify(userInfo));
+          localStorage.setItem(
+            "UserDetails",
+            JSON.stringify({
+              userId: _id,
+              userName: name,
+              userMail: email,
+            })
+          );
         }
       });
   };
