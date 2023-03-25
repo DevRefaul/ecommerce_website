@@ -2,22 +2,36 @@ import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/shopaholic.png";
+import { api } from "../../Utils/Api";
 import loginAnimation from "./loginAnimation.json";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
+
+  // api calling function for user login
+
+  const loginUser = (loginInfo) => {
+    fetch(`${api}/loginuser?loginInfo=${loginInfo}`)
+      .then((res) => res.json())
+      .then((data) => data);
+  };
+
+  // login btn function
   const handleLoginUser = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     if (!email && !password) {
-      setLoginError("Please Enter Valid Email and Password");
-    } else if (email.length && password.length) {
-      document.getElementById("passLabel").style.display = "hidden";
-      setLoginError("");
+      document.getElementById("loginBtn").setAttribute("disabled", true);
+      return setLoginError("Please Enter Valid Email and Password");
     } else {
+      document.getElementById("loginBtn").removeAttribute("disabled");
       setLoginError("");
     }
+
+    const loginInfo = { email, password };
+
+    const loginResponse = loginUser(loginInfo);
   };
 
   const handleHideEmailLabel = (e) => {
@@ -103,6 +117,7 @@ const Login = () => {
                             onClick={handleLoginUser}
                             className="mb-3 inline-block w-full rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] bg-gradient-to-r from-sky-400 to-cyan-300"
                             type="button"
+                            id="loginBtn"
                           >
                             Log in
                           </button>
