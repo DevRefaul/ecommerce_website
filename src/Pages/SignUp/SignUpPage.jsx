@@ -15,11 +15,27 @@ const SignUpPage = () => {
     const password = document.getElementById("firstPass").value;
     const confirmPassword = document.getElementById("secondPass").value;
 
+    // checking if every input is filled with data
     if (!username || !email || !address || !password || !confirmPassword) {
       return setError("Please Enter Every Details On Form");
     } else {
-      toast.success("Btn Clicked");
-      return setError("");
+      setError("");
+    }
+
+    // validating email
+    if (!email.endsWith("@gmail.com")) {
+      toast.error("Please Enter A Valid Email");
+      return setError("Please Enter A Valid Email");
+    }
+
+    // validating passwords
+    if (password.length < 8) {
+      toast.error("Passwords Must Contain Atleast 8 Characters Or More");
+      return setError("Passwords Must Contain Atleast 8 Characters Or More");
+    }
+    if (password !== confirmPassword) {
+      toast.error("Passwords Are Not The Same");
+      return setError("Passwords Are Not The Same");
     }
   };
 
