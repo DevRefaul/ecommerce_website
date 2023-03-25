@@ -15,10 +15,11 @@ const SignUpPage = () => {
     const password = document.getElementById("firstPass").value;
     const confirmPassword = document.getElementById("secondPass").value;
 
-    if (!username && !email && !address && !password && !confirmPassword) {
+    if (!username || !email || !address || !password || !confirmPassword) {
       return setError("Please Enter Every Details On Form");
     } else {
       toast.success("Btn Clicked");
+      return setError("");
     }
   };
 
