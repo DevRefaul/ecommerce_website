@@ -4,9 +4,19 @@ import Lottie from "lottie-react";
 import logo from "../../Assets/shopaholic.png";
 import signupAnimation from "./signup.json";
 import { toast, ToastContainer } from "react-toastify";
+import { api } from "../../Utils/Api";
 
 const SignUpPage = () => {
   const [error, setError] = useState("");
+
+  const handleSignUp = (userInfo) => {
+    fetch(`${api}/signup`, {
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
 
   const handleSignupUser = () => {
     const username = document.getElementById("username").value;
@@ -37,6 +47,10 @@ const SignUpPage = () => {
       toast.error("Passwords Are Not The Same");
       return setError("Passwords Are Not The Same");
     }
+
+    const userInfo = { name: username, email, address, password };
+
+    handleSignUp(userInfo);
   };
 
   return (
