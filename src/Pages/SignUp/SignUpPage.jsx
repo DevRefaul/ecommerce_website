@@ -29,6 +29,7 @@ const SignUpPage = () => {
             "UserInfo",
             JSON.stringify(userInfo.email, userInfo.name)
           );
+          window.location.reload();
           return navigate("/");
         } else {
           toast.error(data.message);
