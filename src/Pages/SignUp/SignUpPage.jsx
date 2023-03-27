@@ -25,7 +25,7 @@ const SignUpPage = () => {
         ) {
           toast.success("Successfully Created User");
           localStorage.setItem("UserLoggedIn", true);
-          localStorage.setItem("UserInfo", JSON.stringify(userInfo));
+          localStorage.setItem("UserInfo", userInfo.email);
           return navigate("/");
         } else {
           toast.error(data.message);
