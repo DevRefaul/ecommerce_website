@@ -38,7 +38,7 @@ const Header = () => {
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
               aria-expanded="false"
-              className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+              className="hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
             >
               <svg
                 className="w-5 h-5"
@@ -178,7 +178,7 @@ const Header = () => {
                   <button
                     data-collapse-toggle="mobile-menu-2"
                     type="button"
-                    className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    className="hidden lg:inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="mobile-menu-2"
                     aria-expanded="false"
                   >
@@ -344,20 +344,23 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
-              <li className="mt-4">
-                {/* login and profile */}
-                <div className="lg:hidden">
-                  <Link to="/login">
-                    <button
-                      className="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                      style={{ margin: "0px" }}
-                    >
-                      Login
-                    </button>
-                  </Link>
-                </div>
-                {/* login and profile */}
-              </li>
+
+              {localStorage.getItem("UserLoggednIn") === "true" ? (
+                <></>
+              ) : (
+                <li className="mt-4">
+                  <div className="lg:hidden">
+                    <Link to="/login">
+                      <button
+                        className="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                        style={{ margin: "0px" }}
+                      >
+                        Login
+                      </button>
+                    </Link>
+                  </div>
+                </li>
+              )}
             </ul>
           </div>
         </div>
