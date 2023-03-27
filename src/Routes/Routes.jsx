@@ -64,6 +64,17 @@ const routes = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    errorElement: "",
+    children: [
+      {
+        path: "/",
+        element: <Profile />,
+      },
+    ],
+  },
 ]);
 
 export default routes;
