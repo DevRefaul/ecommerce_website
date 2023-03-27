@@ -70,7 +70,7 @@ const routes = createBrowserRouter([
     errorElement: "",
     children: [
       {
-        path: "/",
+        path: "/dashboard",
         element: <Profile />,
       },
     ],
