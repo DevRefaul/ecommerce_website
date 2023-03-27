@@ -20,6 +20,15 @@ const Header = () => {
     window.location.reload();
   };
 
+
+  const userDetails = localStorage.getItem("UserDetails");
+  const parsedData = JSON.parse(userDetails);
+
+  const handleSignOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <>
       <nav className="bg-[#90ee90] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10">
@@ -108,10 +117,10 @@ const Header = () => {
                   >
                     <div className="px-4 py-3">
                       <span className="block text-sm text-gray-900 dark:text-white">
-                        Bonnie Green
+                        {parsedData && parsedData.name}
                       </span>
                       <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
-                        name@flowbite.com
+                        {parsedData && parsedData.email}
                       </span>
                     </div>
                     <ul
@@ -143,13 +152,11 @@ const Header = () => {
                           Earnings
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                        >
-                          Sign out
-                        </Link>
+                      <li
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                        onClick={handleSignOut}
+                      >
+                        Sign out
                       </li>
                     </ul>
                   </div>
@@ -350,7 +357,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block lg:hidden py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Go To Dashboard
                   </Link>
