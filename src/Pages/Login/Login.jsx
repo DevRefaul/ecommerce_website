@@ -23,7 +23,7 @@ const Login = () => {
           localStorage.setItem("UserLoggedIn", true);
           localStorage.setItem(
             "UserDetails",
-            JSON.stringify(data.user.email, data.user.name)
+            JSON.stringify({ email: data.user.email, name: data.user.name })
           );
           setLoading(false);
           navigate("/");
