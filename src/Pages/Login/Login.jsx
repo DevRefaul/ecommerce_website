@@ -26,8 +26,8 @@ const Login = () => {
             JSON.stringify({ email: data.user.email, name: data.user.name })
           );
           setLoading(false);
-          window.location.reload();
           navigate("/");
+          window.location.reload();
         } else {
           toast.error(data.message);
           setLoading(false);
