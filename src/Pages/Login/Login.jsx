@@ -19,6 +19,7 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200 && data.user) {
+          localStorage.setItem("UserLoggedIn", true);
           localStorage.setItem("UserDetails", JSON.stringify(data.user));
           setLoading(false);
           navigate("/");
