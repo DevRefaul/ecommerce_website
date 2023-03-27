@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import logo from "../../Assets/shopaholic.png";
 import TransParentLoadingScene from "../../Components/LoadingScene/TransParentLoadingScene";
 import { api } from "../../Utils/Api";
@@ -23,6 +24,9 @@ const Login = () => {
           localStorage.setItem("UserDetails", data.user.email);
           setLoading(false);
           navigate("/");
+        } else {
+          toast.error(data.message);
+          setLoading(false);
         }
       });
   };
@@ -60,6 +64,7 @@ const Login = () => {
 
   return (
     <>
+      <ToastContainer />
       <section className="gradient-form h-full bg-white">
         <div className="container mx-auto h-full p-10">
           <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
