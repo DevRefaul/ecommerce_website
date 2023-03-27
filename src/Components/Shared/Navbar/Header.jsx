@@ -57,7 +57,7 @@ const Header = () => {
             </button>
 
             <div className="relative hidden lg:block">
-              <div className="absolute top-0 bottom-[10px] left-0 flex items-center pl-3 pointer-events-none">
+              <div className="absolute top-0 bottom-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
                   className="w-5 h-5 text-gray-500"
                   aria-hidden="true"
@@ -107,7 +107,7 @@ const Header = () => {
 
             {localStorage.getItem("UserLoggedIn") === "true" ? (
               <>
-                <div className="flex items-center md:order-2 ml-4">
+                <div className="hidden lg:flex items-center md:order-2 ml-4">
                   <button
                     type="button"
                     className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -178,7 +178,7 @@ const Header = () => {
                   <button
                     data-collapse-toggle="mobile-menu-2"
                     type="button"
-                    className="hidden lg:inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="mobile-menu-2"
                     aria-expanded="false"
                   >
