@@ -5,8 +5,8 @@ import Sidebar from "./Sidebar/Sidebar";
 const Dashboard = () => {
   return (
     <>
-      <Sidebar />
-      <Outlet />
+      {/* <Sidebar /> */}
+      {/* <Outlet /> */}
     </>
   );
 };

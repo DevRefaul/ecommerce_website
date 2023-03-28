@@ -43,6 +43,14 @@ const routes = createBrowserRouter([
         path: "/signup",
         element: <SignUpPage />,
       },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
     ],
   },
   {
@@ -61,17 +69,6 @@ const routes = createBrowserRouter([
       {
         path: "/products/:category/:name",
         element: <SingleProductPage />,
-      },
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-    errorElement: "",
-    children: [
-      {
-        path: "/dashboard",
-        element: <Profile />,
       },
     ],
   },
