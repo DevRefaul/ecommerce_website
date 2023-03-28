@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Dashboard = () => {
-  // useEffect(() => {
-  //   window.location.reload();
-  // }, []);
-
   return (
     <>
       <Sidebar />
