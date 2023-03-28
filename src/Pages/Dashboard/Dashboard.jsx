@@ -1,11 +1,11 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Dashboard = () => {
   return (
     <>
-      {/* <Sidebar /> */}
+      <Sidebar />
+      <h2>THis is sidebar</h2>
       {/* <Outlet /> */}
     </>
   );
