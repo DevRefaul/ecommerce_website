@@ -1,6 +1,5 @@
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
-import Dashboard from "../Pages/Dashboard/Dashboard";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -42,10 +41,6 @@ const routes = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUpPage />,
-      },
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
       },
       {
         path: "/profile",
