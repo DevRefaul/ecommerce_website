@@ -1,5 +1,6 @@
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import Orders from "../Pages/Dashboard/Orders/Orders";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -45,6 +46,10 @@ const routes = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/orders",
+        element: <Orders />,
       },
     ],
   },
