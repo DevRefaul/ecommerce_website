@@ -2,14 +2,21 @@ import React from "react";
 import user from "../../../Assets/user.png";
 
 const Profile = () => {
-
+  // function for clicking input file for choosing image
   const handleClickInputFile = () => {
     const inputFile = document.getElementById("image");
     inputFile.click();
   };
+
+  // function triggered when input file is changed to get file data
   const handleGetImageData = () => {
     const fileData = document.getElementById("image").files[0];
     console.log(fileData);
+  };
+
+  // function for updating userInfo
+  const handleUpdateUserInfo = () => {
+    const email = document.getElementById("email").value;
   };
 
   return (
@@ -117,7 +124,10 @@ const Profile = () => {
             </div>
           </div>
           <div className="flex justify-center my-4">
-            <button className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button
+              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              onClick={handleUpdateUserInfo}
+            >
               Update Information
             </button>
           </div>
