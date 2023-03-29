@@ -34,7 +34,11 @@ const Profile = () => {
   const handleProccedOnPassword = () => {
     const password = document.getElementById("password").value;
     if (password) {
-      fetch(`${api}/matchpassword?pass=${password}`)
+      fetch(
+        `${api}/matchpassword?email=${
+          document.getElementById("email").value
+        }&pass=${password}`
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
