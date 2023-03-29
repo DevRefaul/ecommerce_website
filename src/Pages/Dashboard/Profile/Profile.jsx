@@ -15,6 +15,13 @@ const Profile = () => {
               className="rounded-full border border-orange-500 h-14 w-14"
             />
           </div>
+          {/* image uploading section */}
+          <div className="my-4  flex justify-center">
+            <input type="file" name="image" id="image" className="hidden" />
+            <button className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 rounded text-sm px-2 py-1 text-center mr-2 mb-2">
+              Update Image
+            </button>
+          </div>
 
           {/* basic user info */}
           <div className="my-4">
