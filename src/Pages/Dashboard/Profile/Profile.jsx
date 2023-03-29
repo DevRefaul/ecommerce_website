@@ -15,6 +15,14 @@ const Profile = () => {
               className="rounded-full border border-orange-500 h-14 w-14"
             />
           </div>
+
+          {/* basic user info */}
+          <div className="my-4">
+            <h4 className="text-lg font-semibold">Name : </h4>
+            <p className="font-medium my-2">Email : </p>
+            <p className="font-medium my-2">Phone : </p>
+            <p className="font-medium my-2">Address : </p>
+          </div>
         </div>
         {/* user personal information here */}
         <div className="p-12">
