@@ -29,14 +29,13 @@ const Profile = () => {
       return toast.info("Please Fill All The Fields");
     }
     document.getElementById("modalId").click();
-
-    if (isPassCorrect.status === 200 && isPassCorrect.userFound === true) {
-      const updatedInfo = handleUpdateUser({ name, email, phone, address });
-      console.log(updatedInfo);
-    }
   };
 
   const handleProccedOnPassword = () => {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
     const password = document.getElementById("password").value;
     if (password) {
       fetch(
@@ -50,13 +49,18 @@ const Profile = () => {
           if (data.status !== 200 && data.userFound !== true) {
             document.getElementById("password").value = "";
             return toast.error("Password Didn't Matched");
+          } else if (data.status === 200 && data.userFound === true) {
+            handleUpdateUser(name, email, phone, address);
+          } else {
+            return toast.error(
+              "An Error Occured While Updating. Please Try Later"
+            );
           }
-          setIsPassCorrect(data);
         });
     }
   };
 
-  const handleUpdateUser = ({ name, email, phone, address }) => {
+  const handleUpdateUser = (name, email, phone, address) => {
     fetch(`${api}/updateuserinfo`, {
       method: "PATCH",
       headers: {
