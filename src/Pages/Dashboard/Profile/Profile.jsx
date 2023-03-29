@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import user from "../../../Assets/user.png";
+import TransParentLoadingScene from "../../../Components/LoadingScene/TransParentLoadingScene";
 import { api } from "../../../Utils/Api";
 
 const Profile = () => {
-  const [isPassCorrect, setIsPassCorrect] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // function for clicking input file for choosing image
   const handleClickInputFile = () => {
@@ -38,6 +39,7 @@ const Profile = () => {
     const address = document.getElementById("address").value;
     const password = document.getElementById("password").value;
     if (password) {
+      setLoading(true);
       fetch(
         `${api}/matchpassword?email=${
           document.getElementById("email").value
@@ -48,10 +50,12 @@ const Profile = () => {
           console.log(data);
           if (data.status !== 200 && data.userFound !== true) {
             document.getElementById("password").value = "";
+            setLoading(false);
             return toast.error("Password Didn't Matched");
           } else if (data.status === 200 && data.userFound === true) {
             handleUpdateUser(name, email, phone, address);
           } else {
+            setLoading(false);
             return toast.error(
               "An Error Occured While Updating. Please Try Later"
             );
@@ -71,9 +75,14 @@ const Profile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setLoading(false);
         return data;
       });
   };
+
+  if (loading) {
+    return <TransParentLoadingScene />;
+  }
 
   return (
     <section className=" bg-orange-50">
