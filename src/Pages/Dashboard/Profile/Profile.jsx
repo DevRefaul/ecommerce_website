@@ -25,10 +25,15 @@ const Profile = () => {
     const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
 
-    if (!name || !phone || !address) {
+    if (!name || !email || !phone || !address) {
       return toast.info("Please Fill All The Fields");
     }
     document.getElementById("modalId").click();
+
+    if (isPassCorrect.status === 200 && isPassCorrect.userFound === true) {
+      const updatedInfo = handleUpdateUser({ name, email, phone, address });
+      console.log(updatedInfo);
+    }
   };
 
   const handleProccedOnPassword = () => {
@@ -42,7 +47,11 @@ const Profile = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          // setIsPassCorrect()
+          if (data.status !== 200 && data.userFound !== true) {
+            document.getElementById("password").value = "";
+            return toast.error("Password Didn't Matched");
+          }
+          setIsPassCorrect(data);
         });
     }
   };
@@ -56,7 +65,10 @@ const Profile = () => {
       body: JSON.stringify({ name, email, phone, address }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
   };
 
   return (
@@ -134,6 +146,7 @@ const Profile = () => {
                 name="email"
                 id="email"
                 disabled
+                defaultValue="rafee@gmail.com"
                 className="rounded w-full bg-orange-50"
               />
             </div>
