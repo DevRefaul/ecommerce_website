@@ -1,4 +1,5 @@
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 import user from "../../../Assets/user.png";
 
 const Profile = () => {
@@ -16,11 +17,19 @@ const Profile = () => {
 
   // function for updating userInfo
   const handleUpdateUserInfo = () => {
+    const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+
+    if (!name || !email || !phone || !address) {
+      return toast.info("Please Fill All The Fields");
+    }
   };
 
   return (
     <section className=" bg-orange-50">
+      <ToastContainer />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4 py-6">
         {/* user logo and other staffs */}
         <div className="p-12 bg-white border border-orange-500 rounded">
