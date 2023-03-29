@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import user from "../../../Assets/user.png";
 import { api } from "../../../Utils/Api";
 
 const Profile = () => {
+  const [isPassCorrect, setIsPassCorrect] = useState("");
+
   // function for clicking input file for choosing image
   const handleClickInputFile = () => {
     const inputFile = document.getElementById("image");
@@ -27,6 +29,18 @@ const Profile = () => {
       return toast.info("Please Fill All The Fields");
     }
     document.getElementById("modalId").click();
+  };
+
+  const handleProccedOnPassword = () => {
+    const password = document.getElementById("password").value;
+    if (password) {
+      fetch(`${api}/matchpassword?pass=${password}`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          // setIsPassCorrect()
+        });
+    }
   };
 
   const handleUpdateUser = ({ name, email, phone, address }) => {
@@ -227,6 +241,7 @@ const Profile = () => {
                 data-modal-hide="staticModal"
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={handleProccedOnPassword}
               >
                 Proceed
               </button>
