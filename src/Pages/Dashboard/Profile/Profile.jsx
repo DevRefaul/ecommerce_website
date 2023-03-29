@@ -2,6 +2,16 @@ import React from "react";
 import user from "../../../Assets/user.png";
 
 const Profile = () => {
+
+  const handleClickInputFile = () => {
+    const inputFile = document.getElementById("image");
+    inputFile.click();
+  };
+  const handleGetImageData = () => {
+    const fileData = document.getElementById("image").files[0];
+    console.log(fileData);
+  };
+
   return (
     <section className=" bg-orange-50">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4 py-6">
@@ -17,8 +27,17 @@ const Profile = () => {
           </div>
           {/* image uploading section */}
           <div className="my-4  flex justify-center">
-            <input type="file" name="image" id="image" className="hidden" />
-            <button className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 rounded text-sm px-2 py-1 text-center mr-2 mb-2">
+            <input
+              type="file"
+              name="image"
+              id="image"
+              className="hidden"
+              onChange={handleGetImageData}
+            />
+            <button
+              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 rounded text-sm px-2 py-1 text-center mr-2 mb-2"
+              onClick={handleClickInputFile}
+            >
               Update Image
             </button>
           </div>
