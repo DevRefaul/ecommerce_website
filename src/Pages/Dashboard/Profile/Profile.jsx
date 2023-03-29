@@ -1,6 +1,7 @@
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 import user from "../../../Assets/user.png";
+import { api } from "../../../Utils/Api";
 
 const Profile = () => {
   // function for clicking input file for choosing image
@@ -25,6 +26,15 @@ const Profile = () => {
     if (!name || !email || !phone || !address) {
       return toast.info("Please Fill All The Fields");
     }
+    fetch(`${api}/updateuserinfo`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ name, email, phone, address }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (
