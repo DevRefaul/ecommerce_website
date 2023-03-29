@@ -1,10 +1,22 @@
 import React from "react";
+import user from "../../../Assets/user.png";
 
 const Profile = () => {
   return (
     <section className=" bg-orange-50">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4">
-        <div className="bg-green-400 h-28"></div>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4 py-6">
+        {/* user logo and other staffs */}
+        <div className="p-12 bg-white border border-orange-500 rounded">
+          {/* user image */}
+          <div className="flex justify-center items-center">
+            <img
+              src={user}
+              alt="user logo"
+              className="rounded-full border border-orange-500 h-14 w-14"
+            />
+          </div>
+        </div>
+        {/* user personal information here */}
         <div className="p-12">
           <h4 className="text-2xl font-semibold text-orange-500 mb-4">
             Personal Information
