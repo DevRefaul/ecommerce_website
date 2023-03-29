@@ -26,6 +26,9 @@ const Profile = () => {
     if (!name || !email || !phone || !address) {
       return toast.info("Please Fill All The Fields");
     }
+  };
+
+  const handleUpdateUser = ({ name, email, phone, address }) => {
     fetch(`${api}/updateuserinfo`, {
       method: "PATCH",
       headers: {
@@ -36,6 +39,8 @@ const Profile = () => {
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
+
+
 
   return (
     <section className=" bg-orange-50">
