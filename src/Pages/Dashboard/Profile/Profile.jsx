@@ -52,11 +52,12 @@ const Profile = () => {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
-
     if (!name || !email || !phone || !address) {
+      console.log("triggered here");
       return toast.info("Please Fill All The Fields");
+    } else {
+      return document.getElementById("modalId").click();
     }
-    document.getElementById("modalId").click();
   };
 
   // function for proceeding after entering password on updating user info
@@ -103,8 +104,10 @@ const Profile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setReloadUserData(true);
+        if (data.userUpdated) {
+          toast.success("Successfully Updated User Info");
+          setReloadUserData(true);
+        }
         setLoading(false);
         return data;
       });
@@ -255,7 +258,7 @@ const Profile = () => {
         tabIndex="-1"
         aria-hidden="true"
         className="fixed top-0 left-0 right-0 z-50 hidden w-full bg-[rgba(0,0,0,0.5)] p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
-        style={{ alignItems: "start" }}
+        // style={{ alignItems: "start" }}
       >
         <div className="relative w-full h-full max-w-2xl md:h-auto">
           {/* <!-- Modal content --> */}
