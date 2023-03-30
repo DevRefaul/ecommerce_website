@@ -56,8 +56,10 @@ const Profile = () => {
       return toast.info("Please Fill All The Fields");
     }
 
+    // writing this because flowbite modal is shwoing problem
     const modal = document.getElementById("staticModal");
     modal.classList.remove("hidden");
+    modal.classList.add("flex", "justify-center");
 
     // document.getElementById("modalId").click();
   };
@@ -75,6 +77,10 @@ const Profile = () => {
     const address = document.getElementById("address").value;
     const password = document.getElementById("password").value;
     if (password) {
+      // hidding modal before fetching data
+      const modal = document.getElementById("staticModal");
+      modal.classList.add("hidden");
+      // hidding modal before fetching data
       setLoading(true);
       fetch(
         `${api}/matchpassword?email=${
@@ -97,6 +103,8 @@ const Profile = () => {
             );
           }
         });
+    } else {
+      return toast.error("Enter The Password");
     }
   };
 
@@ -247,24 +255,13 @@ const Profile = () => {
 
       {/* modal for confirming password */}
 
-      {/* <!-- Modal toggle --> */}
-      <button
-        data-modal-target="staticModal"
-        data-modal-toggle="staticModal"
-        className="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
-        id="modalId"
-      >
-        Toggle modal
-      </button>
-
       {/* <!-- Main modal --> */}
       <div
         id="staticModal"
         data-modal-backdrop="static"
         tabIndex="-1"
         aria-hidden="true"
-        className="fixed top-0 left-0 right-0 z-50 hidden w-full bg-[rgba(0,0,0,0.5)] p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
+        className="fixed top-0 left-0 right-0 z-50 hidden w-full bg-[rgba(0,0,0,0.5)] p-4 i overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
         style={{ alignItems: "start" }}
       >
         <div className="relative w-full h-full max-w-2xl md:h-auto">
@@ -279,7 +276,10 @@ const Profile = () => {
                 type="button"
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-hide="staticModal"
-                onClick={() => toast.error("Failed To Update Info")}
+                onClick={() => {
+                  hideModal();
+                  return toast.error("Failed To Update Info");
+                }}
               >
                 <svg
                   className="w-5 h-5"
@@ -323,7 +323,10 @@ const Profile = () => {
                 data-modal-hide="staticModal"
                 type="button"
                 className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                onClick={() => toast.error("Failed To Update Info")}
+                onClick={() => {
+                  hideModal();
+                  return toast.error("Failed To Update Info");
+                }}
               >
                 Cancel
               </button>
