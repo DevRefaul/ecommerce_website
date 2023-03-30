@@ -7,10 +7,11 @@ import { api } from "../../../Utils/Api";
 const Profile = () => {
   const [loading, setLoading] = useState(false);
   const [userData, setUserData] = useState("");
+  const [reloadUserData, setReloadUserData] = useState(false);
 
   useEffect(() => {
     return () => getUserData();
-  }, []);
+  }, [reloadUserData]);
 
   // function for getting user info on page render
   const getUserData = () => {
@@ -103,6 +104,7 @@ const Profile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setReloadUserData(true);
         setLoading(false);
         return data;
       });
@@ -112,8 +114,6 @@ const Profile = () => {
   if (loading) {
     return <TransParentLoadingScene />;
   }
-
-  console.log(userData);
 
   return (
     <section className=" bg-orange-50">
