@@ -32,6 +32,7 @@ const Profile = () => {
     document.getElementById("modalId").click();
   };
 
+  // function for proceeding after entering password on updating user info
   const handleProccedOnPassword = () => {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -64,6 +65,7 @@ const Profile = () => {
     }
   };
 
+  // function that will work for api call for updating user info
   const handleUpdateUser = (name, email, phone, address) => {
     fetch(`${api}/updateuserinfo`, {
       method: "PATCH",
@@ -80,6 +82,7 @@ const Profile = () => {
       });
   };
 
+  // loader scene when function wills work for api calls
   if (loading) {
     return <TransParentLoadingScene />;
   }
