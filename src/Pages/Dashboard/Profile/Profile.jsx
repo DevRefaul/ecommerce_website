@@ -7,6 +7,18 @@ import { api } from "../../../Utils/Api";
 const Profile = () => {
   const [loading, setLoading] = useState(false);
 
+  // function for getting user info on page render
+  const getUserData = () => {
+    const userDetails = JSON.parse(localStorage.getItem("UserDetails"));
+    const userMail = userDetails?.email;
+
+    if (userMail) {
+      fetch(`${api}/getuserdata?email=${userMail}`)
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    }
+  };
+
   // function for clicking input file for choosing image
   const handleClickInputFile = () => {
     const inputFile = document.getElementById("image");
@@ -87,6 +99,7 @@ const Profile = () => {
     return <TransParentLoadingScene />;
   }
 
+  getUserData();
   return (
     <section className=" bg-orange-50">
       <ToastContainer />
