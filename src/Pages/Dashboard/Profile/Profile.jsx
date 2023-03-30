@@ -148,10 +148,10 @@ const Profile = () => {
 
           {/* basic user info */}
           <div className="my-4">
-            <h4 className="text-lg font-semibold">Name : </h4>
-            <p className="font-medium my-2">Email : </p>
-            <p className="font-medium my-2">Phone : </p>
-            <p className="font-medium my-2">Address : </p>
+            <h4 className="text-lg font-semibold">Name : {userData?.name}</h4>
+            <p className="font-medium my-2">Email : {userData?.email}</p>
+            <p className="font-medium my-2">Phone : {userData?.phone}</p>
+            <p className="font-medium my-2">Address : {userData?.address}</p>
           </div>
         </div>
         {/* user personal information here */}
@@ -168,8 +168,8 @@ const Profile = () => {
           {/* user info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white px-6 py-12 border border-orange-500 rounded">
             {/* user name */}
-            <div className="flex justify-between items-center">
-              <label htmlFor="name" className="inline-block w-[100px]">
+            <div className="lg:flex justify-between items-center">
+              <label htmlFor="name" className="inline-block w-[110px]">
                 Name :
               </label>
               <input
@@ -177,12 +177,13 @@ const Profile = () => {
                 name="name"
                 id="name"
                 className="rounded w-full"
+                defaultValue={userData?.name}
               />
             </div>
 
             {/* user email */}
-            <div className="flex justify-between items-center">
-              <label htmlFor="email" className="inline-block w-[100px]">
+            <div className="lg:flex justify-between items-center">
+              <label htmlFor="email" className="inline-block w-[110px]">
                 Email :
               </label>
               <input
@@ -190,14 +191,14 @@ const Profile = () => {
                 name="email"
                 id="email"
                 disabled
-                defaultValue="rafee@gmail.com"
                 className="rounded w-full bg-orange-50"
+                defaultValue={userData?.email}
               />
             </div>
 
             {/* user phone */}
-            <div className="flex justify-between items-center">
-              <label htmlFor="phone" className="inline-block w-[100px]">
+            <div className="lg:flex justify-between items-center">
+              <label htmlFor="phone" className="inline-block w-[110px]">
                 Phone :
               </label>
               <input
@@ -205,12 +206,13 @@ const Profile = () => {
                 name="phone"
                 id="phone"
                 className="rounded w-full"
+                defaultValue={userData?.phone}
               />
             </div>
 
             {/* user address */}
-            <div className="flex justify-between items-center">
-              <label htmlFor="address" className="inline-block w-[100px]">
+            <div className="lg:flex justify-between items-center">
+              <label htmlFor="address" className="inline-block w-[110px]">
                 Address :
               </label>
               <input
@@ -218,6 +220,7 @@ const Profile = () => {
                 name="address"
                 id="address"
                 className="rounded w-full"
+                defaultValue={userData?.address}
               />
             </div>
           </div>
@@ -284,8 +287,8 @@ const Profile = () => {
             </div>
             {/* <!-- Modal body --> */}
             <div className="p-6 space-y-6">
-              <div className="flex justify-between items-center">
-                <label htmlFor="password" className="inline-block w-[100px]">
+              <div className="lg:flex justify-between items-center">
+                <label htmlFor="password" className="inline-block w-[110px]">
                   Password :
                 </label>
                 <input
