@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import user from "../../../Assets/user.png";
 import TransParentLoadingScene from "../../../Components/LoadingScene/TransParentLoadingScene";
@@ -6,6 +6,11 @@ import { api } from "../../../Utils/Api";
 
 const Profile = () => {
   const [loading, setLoading] = useState(false);
+  const [userData, setUserData] = useState("");
+
+  useEffect(() => {
+    return () => getUserData();
+  }, []);
 
   // function for getting user info on page render
   const getUserData = () => {
@@ -13,9 +18,18 @@ const Profile = () => {
     const userMail = userDetails?.email;
 
     if (userMail) {
+      setLoading(true);
       fetch(`${api}/getuserdata?email=${userMail}`)
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          if (data.status === 200 && data.userData._id) {
+            const user = data.userData;
+            setUserData(user);
+            setLoading(false);
+          } else {
+            toast.error(data.message);
+          }
+        });
     }
   };
 
@@ -99,7 +113,8 @@ const Profile = () => {
     return <TransParentLoadingScene />;
   }
 
-  getUserData();
+  console.log(userData);
+
   return (
     <section className=" bg-orange-50">
       <ToastContainer />
