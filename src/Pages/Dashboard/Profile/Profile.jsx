@@ -14,149 +14,140 @@ const Profile = () => {
     return () => getUserData();
   }, [reloadUserData]);
 
-  const { isLoading, data: ordersData } = useQuery([], getUserOrdersData);
+const user = JSON.parse(localStorage.getItem("UserDetails"));
 
-  // function for getting user info on page render
-  const getUserData = () => {
-    const userDetails = JSON.parse(localStorage.getItem("UserDetails"));
-    const userMail = userDetails?.email;
+const { isLoading, data } = useQuery([user.email], getUserOrdersData);
 
-    if (userMail) {
-      setLoading(true);
-      fetch(`${api}/getuserdata?email=${userMail}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.status === 200 && data.userData._id) {
-            const user = data.userData;
-            setUserData(user);
-            setLoading(false);
-          } else {
-            toast.error(data.message);
-          }
-        });
-    }
-  };
+// function for getting user info on page render
+const getUserData = () => {
+  const userDetails = JSON.parse(localStorage.getItem("UserDetails"));
+  const userMail = userDetails?.email;
 
-  // function for clicking input file for choosing image
-  const handleClickInputFile = () => {
-    const inputFile = document.getElementById("image");
-    inputFile.click();
-  };
+  if (userMail) {
+    setLoading(true);
+    fetch(`${api}/getuserdata?email=${userMail}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200 && data.userData._id) {
+          const user = data.userData;
+          setUserData(user);
+          setLoading(false);
+        } else {
+          toast.error(data.message);
+        }
+      });
+  }
+};
 
-  // function triggered when input file is changed to get file data
-  const handleGetImageData = () => {
-    const fileData = document.getElementById("image").files[0];
-    console.log(fileData);
-  };
+// function for clicking input file for choosing image
+const handleClickInputFile = () => {
+  const inputFile = document.getElementById("image");
+  inputFile.click();
+};
 
-  // function for updating userInfo
-  const handleUpdateUserInfo = () => {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const address = document.getElementById("address").value;
-    if (!name || !email || !phone || !address) {
-      return toast.info("Please Fill All The Fields");
-    }
+// function triggered when input file is changed to get file data
+const handleGetImageData = () => {
+  const fileData = document.getElementById("image").files[0];
+  console.log(fileData);
+};
 
-    // writing this because flowbite modal is shwoing problem
-    const modal = document.getElementById("staticModal");
-    modal.classList.remove("hidden");
-    modal.classList.add("flex", "justify-center");
+// function for updating userInfo
+const handleUpdateUserInfo = () => {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  if (!name || !email || !phone || !address) {
+    return toast.info("Please Fill All The Fields");
+  }
 
-    // document.getElementById("modalId").click();
-  };
+  // writing this because flowbite modal is shwoing problem
+  const modal = document.getElementById("staticModal");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex", "justify-center");
 
-  // function for closing modal
-  const hideModal = () => {
+  // document.getElementById("modalId").click();
+};
+
+// function for closing modal
+const hideModal = () => {
+  const modal = document.getElementById("staticModal");
+  modal.classList.add("hidden");
+};
+
+// function for proceeding after entering password on updating user info
+const handleProccedOnPassword = () => {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  const password = document.getElementById("password").value;
+  if (password) {
+    // hidding modal before fetching data
     const modal = document.getElementById("staticModal");
     modal.classList.add("hidden");
-  };
-
-  // function for proceeding after entering password on updating user info
-  const handleProccedOnPassword = () => {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const address = document.getElementById("address").value;
-    const password = document.getElementById("password").value;
-    if (password) {
-      // hidding modal before fetching data
-      const modal = document.getElementById("staticModal");
-      modal.classList.add("hidden");
-      // hidding modal before fetching data
-      setLoading(true);
-      fetch(
-        `${api}/matchpassword?email=${
-          document.getElementById("email").value
-        }&pass=${password}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.status !== 200 && data.userFound !== true) {
-            document.getElementById("password").value = "";
-            setLoading(false);
-            return toast.error("Password Didn't Matched");
-          } else if (data.status === 200 && data.userFound === true) {
-            handleUpdateUser(name, email, phone, address);
-          } else {
-            setLoading(false);
-            return toast.error(
-              "An Error Occured While Updating. Please Try Later"
-            );
-          }
-        });
-    } else {
-      return toast.error("Enter The Password");
-    }
-  };
-
-  // function that will work for api call for updating user info
-  const handleUpdateUser = (name, email, phone, address) => {
-    fetch(`${api}/updateuserinfo`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ name, email, phone, address }),
-    })
+    // hidding modal before fetching data
+    setLoading(true);
+    fetch(
+      `${api}/matchpassword?email=${
+        document.getElementById("email").value
+      }&pass=${password}`
+    )
       .then((res) => res.json())
       .then((data) => {
-        if (data.userUpdated) {
-          toast.success("Successfully Updated User Info");
-          setReloadUserData(true);
-        }
-        setLoading(false);
-        return data;
-      });
-  };
-
-  // function for getting user orders data
-  function getUserOrdersData() {
-    const user = JSON.parse(localStorage.getItem("UserDetails"));
-    fetch(`${api}/userorders?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const ordersInfo = data.orders;
-        if (ordersInfo) {
-          return (
-            <tr className="py-2">
-              <td>{ordersInfo.productName}</td>
-              <td>{ordersInfo.price}</td>
-              <td>{ordersInfo.isPaid}</td>
-              <td>{ordersInfo.status}</td>
-            </tr>
+        console.log(data);
+        if (data.status !== 200 && data.userFound !== true) {
+          document.getElementById("password").value = "";
+          setLoading(false);
+          return toast.error("Password Didn't Matched");
+        } else if (data.status === 200 && data.userFound === true) {
+          handleUpdateUser(name, email, phone, address);
+        } else {
+          setLoading(false);
+          return toast.error(
+            "An Error Occured While Updating. Please Try Later"
           );
         }
-        return <p>{data.message}</p>;
       });
+  } else {
+    return toast.error("Enter The Password");
   }
+};
 
-  // loader scene when function wills work for api calls
-  if (loading || isLoading) {
-    return <TransParentLoadingScene />;
-  }
+// function that will work for api call for updating user info
+const handleUpdateUser = (name, email, phone, address) => {
+  fetch(`${api}/updateuserinfo`, {
+    method: "PATCH",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({ name, email, phone, address }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.userUpdated) {
+        toast.success("Successfully Updated User Info");
+        setReloadUserData(true);
+      }
+      setLoading(false);
+      return data;
+    });
+};
+
+// function for getting user orders data
+async function getUserOrdersData() {
+  const user = JSON.parse(localStorage.getItem("UserDetails"));
+  fetch(`${api}/userorders?email=${user?.email}`)
+    .then((res) => res.json())
+    .then((data) => data);
+}
+
+// loader scene when function wills work for api calls
+if (loading || isLoading) {
+  return <TransParentLoadingScene />;
+}
+
+console.log(data);
 
   return (
     <section className=" bg-orange-50 min-h-screen">
