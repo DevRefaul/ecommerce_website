@@ -10,6 +10,7 @@ const Profile = () => {
   const [reloadUserData, setReloadUserData] = useState(false);
 
   useEffect(() => {
+    getUserOrdersData();
     return () => getUserData();
   }, [reloadUserData]);
 
@@ -128,6 +129,15 @@ const Profile = () => {
         return data;
       });
   };
+
+  // function for getting user orders data
+  const getUserOrdersData = () => {
+    const user = JSON.parse(localStorage.getItem("UserDetails"));
+    fetch(`${api}/userorders?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => data);
+  };
+
 
   // loader scene when function wills work for api calls
   if (loading) {
