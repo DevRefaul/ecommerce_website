@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import user from "../../../Assets/user.png";
@@ -10,9 +11,10 @@ const Profile = () => {
   const [reloadUserData, setReloadUserData] = useState(false);
 
   useEffect(() => {
-    getUserOrdersData();
     return () => getUserData();
   }, [reloadUserData]);
+
+  const { isLoading, data: ordersData } = useQuery([], getUserOrdersData);
 
   // function for getting user info on page render
   const getUserData = () => {
@@ -131,16 +133,28 @@ const Profile = () => {
   };
 
   // function for getting user orders data
-  const getUserOrdersData = () => {
+  function getUserOrdersData() {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
     fetch(`${api}/userorders?email=${user?.email}`)
       .then((res) => res.json())
-      .then((data) => data);
-  };
-
+      .then((data) => {
+        const ordersInfo = data.orders;
+        if (ordersInfo) {
+          return (
+            <tr className="py-2">
+              <td>{ordersInfo.productName}</td>
+              <td>{ordersInfo.price}</td>
+              <td>{ordersInfo.isPaid}</td>
+              <td>{ordersInfo.status}</td>
+            </tr>
+          );
+        }
+        return <p>{data.message}</p>;
+      });
+  }
 
   // loader scene when function wills work for api calls
-  if (loading) {
+  if (loading || isLoading) {
     return <TransParentLoadingScene />;
   }
 
