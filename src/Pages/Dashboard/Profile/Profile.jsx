@@ -64,6 +64,7 @@ const Profile = () => {
     // document.getElementById("modalId").click();
   };
 
+  // function for closing modal
   const hideModal = () => {
     const modal = document.getElementById("staticModal");
     modal.classList.add("hidden");
