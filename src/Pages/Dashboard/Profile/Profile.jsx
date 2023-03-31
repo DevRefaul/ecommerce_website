@@ -135,7 +135,7 @@ const Profile = () => {
   }
 
   return (
-    <section className=" bg-orange-50">
+    <section className=" bg-orange-50 min-h-screen">
       <ToastContainer />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4 py-6">
         {/* user logo and other staffs */}
@@ -252,6 +252,12 @@ const Profile = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto my-10">
+        <h4 className="text-2xl font-medium py-4 text-center">
+          Your Orders History
+        </h4>
       </div>
 
       {/* modal for confirming password */}
