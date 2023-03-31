@@ -310,7 +310,7 @@ const Profile = () => {
             </div>
           </>
         ) : (
-          <>{data.message}</>
+          <p className="text-center my-6 font-semibold">{data.message}</p>
         )}
       </div>
 
