@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import user from "../../../Assets/user.png";
+import userImg from "../../../Assets/user.png";
 import TransParentLoadingScene from "../../../Components/LoadingScene/TransParentLoadingScene";
 import { api } from "../../../Utils/Api";
 
@@ -13,8 +13,6 @@ const Profile = () => {
   useEffect(() => {
     return () => getUserData();
   }, [reloadUserData]);
-
-  const user = JSON.parse(localStorage.getItem("UserDetails"));
 
   const { isLoading, data } = useQuery(["email"], async () => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
@@ -155,7 +153,7 @@ const Profile = () => {
           {/* user image */}
           <div className="flex justify-center items-center">
             <img
-              src={user}
+              src={userImg}
               alt="user logo"
               className="rounded-full border border-orange-500 h-14 w-14"
             />
