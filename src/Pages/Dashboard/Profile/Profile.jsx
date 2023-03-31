@@ -16,7 +16,7 @@ const Profile = () => {
 
 const user = JSON.parse(localStorage.getItem("UserDetails"));
 
-const { isLoading, data } = useQuery([user.email], getUserOrdersData);
+const { isLoading, data } = useQuery(["email"], getUserOrdersData);
 
 // function for getting user info on page render
 const getUserData = () => {

@@ -19,7 +19,7 @@ const ProductsAsCategoryPage = () => {
     return () => (mounted.current = false);
   }, []);
 
-  const { isLoading, data, isError } = useQuery(
+  const { isLoading, data } = useQuery(
     ["productcategory"],
     functionForFetchingRelatedData
   );
