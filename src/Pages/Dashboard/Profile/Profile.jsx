@@ -14,7 +14,7 @@ const Profile = () => {
     return () => getUserData();
   }, [reloadUserData]);
 
-const user = JSON.parse(localStorage.getItem("UserDetails"));
+  const user = JSON.parse(localStorage.getItem("UserDetails"));
 
   const { isLoading, data } = useQuery(["email"], async () => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
@@ -139,15 +139,15 @@ const user = JSON.parse(localStorage.getItem("UserDetails"));
       });
   };
 
-// loader scene when function wills work for api calls
-if (loading || isLoading) {
-  return <TransParentLoadingScene />;
-}
+  // loader scene when function wills work for api calls
+  if (loading || isLoading) {
+    return <TransParentLoadingScene />;
+  }
 
-console.log(data);
+  console.log(data);
 
   return (
-    <section className=" bg-orange-50 min-h-screen">
+    <section className=" bg-orange-50">
       <ToastContainer />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4 py-6">
         {/* user logo and other staffs */}
@@ -266,10 +266,52 @@ console.log(data);
         </div>
       </div>
 
-      <div className="container mx-auto my-10">
+      <div className="container mx-auto py-10">
         <h4 className="text-2xl font-medium py-4 text-center">
           Your Orders History
         </h4>
+
+        {data.orders ? (
+          <>
+            <div className="relative overflow-x-auto">
+              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-white uppercase bg-orange-400 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      Product name
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Price
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Payment
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.orders.map((order) => (
+                    <tr
+                      key={order._id}
+                      className="bg-orange-50 border dark:bg-gray-800 dark:border-gray-700"
+                    >
+                      <td className="px-6 py-4 font-semibold uppercase">
+                        {order.productName}
+                      </td>
+                      <td className="px-6 py-4">{order.price}</td>
+                      <td className="px-6 py-4">{order.isPaid}</td>
+                      <td className="px-6 py-4">{order.status}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ) : (
+          <>{data.message}</>
+        )}
       </div>
 
       {/* modal for confirming password */}
