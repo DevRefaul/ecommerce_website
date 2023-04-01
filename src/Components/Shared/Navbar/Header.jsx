@@ -33,12 +33,12 @@ const Header = () => {
     <div className="mb-24">
       <nav className="bg-[#90ee90] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10 fixed top-0 w-full block mb-28">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <a to="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logo} alt="" className="h-6 mr-3 sm:h-7" />
             <span className="self-center font-['Roboto_Slab'] text-xl font-semibold whitespace-nowrap dark:text-white">
               MYSHOP
             </span>
-          </a>
+          </Link>
 
           {/* search bar section starts here */}
           <div className="flex items-center lg:order-2">
