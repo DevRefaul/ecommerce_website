@@ -145,7 +145,7 @@ const Profile = () => {
 
 
   return (
-    <section className=" bg-orange-50">
+    <section className=" bg-orange-50 -mt-2">
       <ToastContainer />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] xl:grid-cols-[1fr,3fr] gap-4 py-6">
         {/* user logo and other staffs */}
