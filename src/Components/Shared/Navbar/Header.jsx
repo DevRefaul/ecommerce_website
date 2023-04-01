@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
+import "./Header.css";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
@@ -20,10 +21,8 @@ const Header = () => {
     window.location.reload();
   };
 
-
   const userDetails = localStorage.getItem("UserDetails");
   const parsedData = JSON.parse(userDetails);
-
 
   const handleSignOut = () => {
     localStorage.removeItem("UserDetails");
