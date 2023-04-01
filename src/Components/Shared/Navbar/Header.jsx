@@ -43,7 +43,7 @@ const Header = () => {
           </a>
 
           {/* search bar section starts here */}
-          <div className="flex lg:order-2">
+          <div className="flex items-center lg:order-2">
             <button
               type="button"
               data-collapse-toggle="navbar-search"
@@ -191,6 +191,14 @@ const Header = () => {
             )}
 
             {/* login and profile */}
+
+            {/* cart icon */}
+            <img
+              src="https://img.icons8.com/pastel-glyph/64/null/shopping-cart--v1.png"
+              alt="cart icon"
+              className="bg-orange-100 rounded-full w-9 h-9 p-2 mx-2"
+            />
+            {/* cart icon */}
 
             <button
               data-collapse-toggle="navbar-search"
