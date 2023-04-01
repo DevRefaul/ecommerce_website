@@ -14,6 +14,7 @@ const Profile = () => {
     return () => getUserData();
   }, [reloadUserData]);
 
+  // react query for fetching dat of user orders
   const { isLoading, data } = useQuery(["email"], async () => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
     return fetch(`${api}/userorders?email=${user?.email}`)
