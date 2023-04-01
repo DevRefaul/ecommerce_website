@@ -24,8 +24,10 @@ const Header = () => {
   const userDetails = localStorage.getItem("UserDetails");
   const parsedData = JSON.parse(userDetails);
 
+
   const handleSignOut = () => {
-    localStorage.clear();
+    localStorage.removeItem("UserDetails");
+    localStorage.setItem("UserLoggedIn", "false");
     window.location.reload();
   };
 
