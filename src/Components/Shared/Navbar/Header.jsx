@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
-import "./Header.css";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
