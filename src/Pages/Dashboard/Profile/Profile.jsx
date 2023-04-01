@@ -143,7 +143,6 @@ const Profile = () => {
     return <TransParentLoadingScene />;
   }
 
-  console.log(data);
 
   return (
     <section className=" bg-orange-50">
