@@ -9,7 +9,7 @@ import { Context } from "../../Utils/Contexts";
 const SingleCardForAllProducts = ({ product }) => {
   const { _id, name, price, description, image, brand, category } = product;
   const navigate = useNavigate();
-  const { loadCartItems } = useContext(Context);
+  const { loadCartItems, setLoadCartItems } = useContext(Context);
 
   const addOrderToDB = async () => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
@@ -31,6 +31,7 @@ const SingleCardForAllProducts = ({ product }) => {
       .then((data) => {
         if (data.cart.insertedId && data.status === 200) {
           toast.success(data.message);
+          return setLoadCartItems(!loadCartItems);
         } else {
           toast.error(data.message);
         }
