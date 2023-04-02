@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
+import { api } from "../../../Utils/Api";
+import { useQuery } from "@tanstack/react-query";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
+
+  const userDetails = localStorage.getItem("UserDetails");
+  const parsedData = JSON.parse(userDetails);
+
+  const { isLoading, data } = useQuery(["cartItems"], () =>
+    fetch(`${api}/getcartitems?email=${parsedData.email}`)
+      .then((res) => res.json())
+      .then((data) => data)
+  );
 
   const handleDropDownMenu = () => {
     if (dropdown) {
@@ -20,14 +31,13 @@ const Header = () => {
     window.location.reload();
   };
 
-  const userDetails = localStorage.getItem("UserDetails");
-  const parsedData = JSON.parse(userDetails);
-
   const handleSignOut = () => {
     localStorage.removeItem("UserDetails");
     localStorage.setItem("UserLoggedIn", "false");
     window.location.reload();
   };
+
+  console.log(data);
 
   return (
     <div className="mb-[80px]">
