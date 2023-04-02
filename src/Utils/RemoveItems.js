@@ -22,7 +22,7 @@ export const handleDeleteItemFromCart = (item, loadCartItems, setLoadCartItems) 
 
 export const handleDeleteAllItemsFromCart = (email, loadCartItems, setLoadCartItems) => {
 
-    fetch(`${api}/removeitemfromcart`, {
+    fetch(`${api}/removeallitemfromcart`, {
         method: "DELETE",
         body: JSON.stringify(email)
     })
