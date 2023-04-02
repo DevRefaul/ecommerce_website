@@ -6,7 +6,7 @@ import { Context } from "../../../Utils/Contexts";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
-  const [cartItems, setCartItems] = useState("");
+  const [data, setData] = useState("");
 
   const { loadCartItems } = useContext(Context);
 
@@ -17,7 +17,7 @@ const Header = () => {
     fetch(`${api}/getcartitems?email=${parsedData.email}`)
       .then((res) => res.json())
       .then((data) => {
-        setCartItems(data);
+        setData(data);
         return data;
       });
   }, [loadCartItems, parsedData.email]);
@@ -218,7 +218,7 @@ const Header = () => {
                 className="bg-orange-100 rounded-full w-9 h-9 p-2 mx-2"
               />
               <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
-                {cartItems?.cartItems.length}
+                {data?.cartItems?.length}
               </div>
             </div>
             {/* cart icon */}
