@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SingleCard.css";
 import { api } from "../../Utils/Api";
+import { toast } from "react-toastify";
 
 const SingleCardForAllProducts = ({ product }) => {
   const { _id, name, price, description, image, brand, category } = product;
@@ -21,7 +22,13 @@ const SingleCardForAllProducts = ({ product }) => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.cart.insertedId && data.status === 200) {
+          toast.success(data.message);
+        } else {
+          toast.error(data.message);
+        }
+      });
   };
 
   return (
