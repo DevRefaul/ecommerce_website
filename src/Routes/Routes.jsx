@@ -1,4 +1,5 @@
 import About from "../Pages/About/About";
+import AllCheckout from "../Pages/Checkout/AllCheckout";
 import SingleCheckout from "../Pages/Checkout/SingleCheckout";
 import Contact from "../Pages/Contact/Contact";
 import Orders from "../Pages/Dashboard/Orders/Orders";
@@ -54,7 +55,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/checkoutall",
-        element: <Orders />,
+        element: <AllCheckout />,
       },
       {
         path: "/checkout/:id",
