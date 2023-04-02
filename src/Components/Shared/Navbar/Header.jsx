@@ -419,7 +419,7 @@ const Header = () => {
       {/* <!-- drawer component for cart--> */}
       <div
         id="drawer-navigation"
-        className="fixed top-0 left-0 z-40 w-64 md:w-1/3 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-green-50 dark:bg-gray-800"
+        className="fixed top-0 left-0 z-40 w-64 md:w-10/12 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-green-50 dark:bg-gray-800"
         tabIndex="-1"
         aria-labelledby="drawer-navigation-label"
       >
@@ -497,6 +497,8 @@ const Header = () => {
             </table>
           </div>
           {/* table starts here for showing cart items */}
+
+          {/* section for buy and clear btns */}
           <div className="flex justify-between">
             <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
               Buy All
