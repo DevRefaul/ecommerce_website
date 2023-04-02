@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SingleCard.css";
 import { api } from "../../Utils/Api";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const SingleCardForAllProducts = ({ product }) => {
   const { _id, name, price, description, image, brand, category } = product;
@@ -33,6 +33,7 @@ const SingleCardForAllProducts = ({ product }) => {
 
   return (
     <>
+      <ToastContainer />
       <div className="max-w-sm h-[530px] lg:h-[500px] 2xl:h-[450px] singleCard">
         <Card
           imgSrc={image && image}
