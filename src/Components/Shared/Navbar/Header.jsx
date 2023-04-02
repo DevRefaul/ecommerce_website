@@ -189,6 +189,25 @@ const Header = () => {
                     </svg>
                   </button>
                 </div>
+
+                {/* cart icon */}
+                <div
+                  type="button"
+                  className="cursor-pointer relative"
+                  data-drawer-target="drawer-navigation"
+                  data-drawer-show="drawer-navigation"
+                  aria-controls="drawer-navigation"
+                >
+                  <img
+                    src="https://img.icons8.com/pastel-glyph/64/null/shopping-cart--v1.png"
+                    alt="cart icon"
+                    className="bg-orange-100 rounded-full w-9 h-9 p-2 mx-2"
+                  />
+                  <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
+                    {data?.cartItems?.length}
+                  </div>
+                </div>
+                {/* cart icon */}
               </>
             ) : (
               <>
@@ -203,25 +222,6 @@ const Header = () => {
             )}
 
             {/* login and profile */}
-
-            {/* cart icon */}
-            <div
-              type="button"
-              className="cursor-pointer relative"
-              data-drawer-target="drawer-navigation"
-              data-drawer-show="drawer-navigation"
-              aria-controls="drawer-navigation"
-            >
-              <img
-                src="https://img.icons8.com/pastel-glyph/64/null/shopping-cart--v1.png"
-                alt="cart icon"
-                className="bg-orange-100 rounded-full w-9 h-9 p-2 mx-2"
-              />
-              <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
-                {data?.cartItems?.length}
-              </div>
-            </div>
-            {/* cart icon */}
 
             <button
               data-collapse-toggle="navbar-search"
