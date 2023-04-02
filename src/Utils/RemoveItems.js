@@ -1,3 +1,12 @@
+import { api } from "./Api";
+
 export const handleDeleteItemFromCart = (item) => {
-    console.log(item);
+
+
+    fetch(`${api}/removeitemfromcart`, {
+        method: "DELETE",
+        body: JSON.stringify(item)
+    })
+        .then(res => res.json())
+        .then(data => console.log(data))
 };
