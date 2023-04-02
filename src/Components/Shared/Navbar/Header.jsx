@@ -515,9 +515,11 @@ const Header = () => {
 
               {/* section for buy and clear btns */}
               <div className="flex justify-between">
-                <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
-                  Buy All
-                </button>
+                <Link to="/checkoutall">
+                  <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
+                    Buy All
+                  </button>
+                </Link>
                 <button
                   onClick={() =>
                     handleDeleteAllItemsFromCart(
