@@ -18,3 +18,21 @@ export const handleDeleteItemFromCart = (item, loadCartItems, setLoadCartItems) 
             }
         })
 };
+
+
+export const handleDeleteAllItemsFromCart = (email, loadCartItems, setLoadCartItems) => {
+
+    fetch(`${api}/removeitemfromcart`, {
+        method: "DELETE",
+        body: JSON.stringify(email)
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.deleteResponse.acknowledged) {
+                setLoadCartItems(!loadCartItems)
+                toast.success(data.message)
+            } else {
+                toast.error(data.message)
+            }
+        })
+};
