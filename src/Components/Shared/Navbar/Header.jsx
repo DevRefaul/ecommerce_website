@@ -9,7 +9,7 @@ const Header = () => {
   const [dropdown, setDropdown] = useState(true);
   const [data, setData] = useState("");
 
-  const { loadCartItems } = useContext(Context);
+  const { loadCartItems, setLoadCartItems } = useContext(Context);
 
   const userDetails = localStorage.getItem("UserDetails");
   const parsedData = JSON.parse(userDetails);
@@ -43,8 +43,6 @@ const Header = () => {
     localStorage.setItem("UserLoggedIn", "false");
     window.location.reload();
   };
-
-
 
   return (
     <div className="mb-[80px]">
@@ -491,7 +489,13 @@ const Header = () => {
                     </td>
                     <td className="px-6 py-4">
                       <button
-                        onClick={() => handleDeleteItemFromCart(item)}
+                        onClick={() =>
+                          handleDeleteItemFromCart(
+                            item,
+                            loadCartItems,
+                            setLoadCartItems
+                          )
+                        }
                         className="p-2 rounded bg-red-500 text-white font-semibold"
                       >
                         Remove
