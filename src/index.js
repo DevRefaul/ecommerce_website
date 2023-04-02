@@ -9,6 +9,7 @@ import "swiper/css/bundle";
 import "flowbite"
 import 'react-toastify/dist/ReactToastify.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Contexts from './Utils/Contexts';
 
 const queryClient = new QueryClient()
 
@@ -16,11 +17,13 @@ const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Contexts>
     <QueryClientProvider client={queryClient}>
     <RouterProvider router={routes}>
         <App />
     </RouterProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </Contexts>
   </React.StrictMode>
 );
 

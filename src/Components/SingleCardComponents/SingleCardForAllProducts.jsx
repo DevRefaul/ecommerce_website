@@ -37,8 +37,8 @@ const SingleCardForAllProducts = ({ product }) => {
 
   return (
     <>
-      <ToastContainer />
       <div className="max-w-sm h-[530px] lg:h-[500px] 2xl:h-[450px] singleCard">
+        <ToastContainer />
         <Card
           imgSrc={image && image}
           imgAlt={name ? `${name + "'s Image"}` : "Product Image"}
