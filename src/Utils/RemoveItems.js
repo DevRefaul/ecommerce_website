@@ -20,15 +20,13 @@ export const handleDeleteItemFromCart = (item, loadCartItems, setLoadCartItems) 
 };
 
 
-export const handleDeleteAllItemsFromCart = (email, loadCartItems, setLoadCartItems) => {
-
-    fetch(`${api}/removeallitemfromcart`, {
+export const handleDeleteAllItemsFromCart = (userData, loadCartItems, setLoadCartItems) => {
+    fetch(`${api}/deleteall?email=${userData.email}`, {
         method: "DELETE",
-        body: JSON.stringify(email)
     })
         .then(res => res.json())
         .then(data => {
-            if (data.deleteResponse.acknowledged) {
+            if (data.removedResponse.acknowledged) {
                 setLoadCartItems(!loadCartItems)
                 toast.success(data.message)
             } else {

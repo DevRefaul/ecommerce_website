@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
 import { api } from "../../../Utils/Api";
 import { Context } from "../../../Utils/Contexts";
-import { handleDeleteItemFromCart } from "../../../Utils/RemoveItems";
+import {
+  handleDeleteAllItemsFromCart,
+  handleDeleteItemFromCart,
+} from "../../../Utils/RemoveItems";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
@@ -12,16 +15,16 @@ const Header = () => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
 
   const userDetails = localStorage.getItem("UserDetails");
-  const parsedData = JSON.parse(userDetails);
+  const userData = JSON.parse(userDetails);
 
   useEffect(() => {
-    fetch(`${api}/getcartitems?email=${parsedData.email}`)
+    fetch(`${api}/getcartitems?email=${userData.email}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         return data;
       });
-  }, [loadCartItems, parsedData.email]);
+  }, [loadCartItems, userData.email]);
 
   const handleDropDownMenu = () => {
     if (dropdown) {
@@ -132,10 +135,10 @@ const Header = () => {
                   >
                     <div className="px-4 py-3">
                       <span className="block text-sm text-gray-900 dark:text-white">
-                        {parsedData && parsedData.name}
+                        {userData && userData.name}
                       </span>
                       <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
-                        {parsedData && parsedData.email}
+                        {userData && userData.email}
                       </span>
                     </div>
                     <ul
@@ -513,7 +516,16 @@ const Header = () => {
             <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
               Buy All
             </button>
-            <button className="px-4 py-2 rounded bg-red-500 text-white font-semibold my-4">
+            <button
+              onClick={() =>
+                handleDeleteAllItemsFromCart(
+                  userData,
+                  loadCartItems,
+                  setLoadCartItems
+                )
+              }
+              className="px-4 py-2 rounded bg-red-500 text-white font-semibold my-4"
+            >
               Clear Cart
             </button>
           </div>
