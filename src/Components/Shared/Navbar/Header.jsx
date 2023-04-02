@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
 import { api } from "../../../Utils/Api";
 import { Context } from "../../../Utils/Contexts";
+import { handleDeleteItemFromCart } from "../../../Utils/RemoveItems";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
@@ -44,9 +45,6 @@ const Header = () => {
   };
 
 
-  const handleDeleteItemFromCart = (item) => {
-    console.log(item);
-  };
 
   return (
     <div className="mb-[80px]">
