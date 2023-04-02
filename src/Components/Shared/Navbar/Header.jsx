@@ -43,6 +43,11 @@ const Header = () => {
     window.location.reload();
   };
 
+
+  const handleDeleteItemFromCart = (item) => {
+    console.log(item);
+  };
+
   return (
     <div className="mb-[80px]">
       <nav className="bg-[#90ee90] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10 fixed top-0 w-full block mb-28">
@@ -487,7 +492,10 @@ const Header = () => {
                       </button>
                     </td>
                     <td className="px-6 py-4">
-                      <button className="p-2 rounded bg-red-500 text-white font-semibold">
+                      <button
+                        onClick={() => handleDeleteItemFromCart(item)}
+                        className="p-2 rounded bg-red-500 text-white font-semibold"
+                      >
                         Remove
                       </button>
                     </td>
