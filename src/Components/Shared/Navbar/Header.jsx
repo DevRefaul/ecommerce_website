@@ -450,42 +450,43 @@ const Header = () => {
           </svg>
           <span className="sr-only">Close Cart</span>
         </button>
+        {/* order will show here */}
         <div className="py-4 overflow-y-auto">
           {/* table starts here for showing cart items */}
-          <div class="relative overflow-x-auto">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <div className="relative overflow-x-auto">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" className="px-6 py-3">
                     Product name
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" className="px-6 py-3">
                     Price
                   </th>
-                  <th scope="col" class="px-6 py-3"></th>
-                  <th scope="col" class="px-6 py-3"></th>
+                  <th scope="col" className="px-6 py-3"></th>
+                  <th scope="col" className="px-6 py-3"></th>
                 </tr>
               </thead>
               <tbody>
-                {/* order will show here */}
+                {/* all data will me mapped here */}
                 {data?.cartItems?.map((item) => (
                   <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                     key={item._id}
                   >
                     <th
                       scope="row"
-                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                     >
                       {item.name}
                     </th>
-                    <td class="px-6 py-4">{item.price}</td>
-                    <td class="px-6 py-4">
+                    <td className="px-6 py-4">{item.price}</td>
+                    <td className="px-6 py-4">
                       <button className="p-2 rounded bg-orange-500 text-white font-semibold">
                         Buy_Now
                       </button>
                     </td>
-                    <td class="px-6 py-4">
+                    <td className="px-6 py-4">
                       <button className="p-2 rounded bg-red-500 text-white font-semibold">
                         Remove
                       </button>
@@ -496,7 +497,14 @@ const Header = () => {
             </table>
           </div>
           {/* table starts here for showing cart items */}
-
+          <div className="flex justify-between">
+            <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
+              Buy All
+            </button>
+            <button className="px-4 py-2 rounded bg-red-500 text-white font-semibold my-4">
+              Clear Cart
+            </button>
+          </div>
           {/* order will show here */}
         </div>
       </div>
