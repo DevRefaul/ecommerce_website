@@ -1,17 +1,21 @@
 import { Badge, Card } from "flowbite-react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SingleCard.css";
 import { api } from "../../Utils/Api";
 import { ToastContainer, toast } from "react-toastify";
 
 const SingleCardForAllProducts = ({ product }) => {
   const { _id, name, price, description, image, brand, category } = product;
-
-  const handleAddToCart = () => {};
+  const navigate = useNavigate();
 
   const addOrderToDB = async () => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
+
+    if (!user && localStorage.getItem("UserLoggedIn") !== "true") {
+      toast.info("Please Login Or SignUp To Add Items To Cart");
+      return navigate("/login");
+    }
 
     fetch(`${api}/cartitemtodb`, {
       method: "POST",
