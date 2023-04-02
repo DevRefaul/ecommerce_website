@@ -10,7 +10,7 @@ const SingleCardForAllProducts = ({ product }) => {
   const handleAddToCart = () => {};
 
   const addOrderToDB = async () => {
-    const user = JSON.stringify(localStorage.getItem("UserDetails"));
+    const user = JSON.parse(localStorage.getItem("UserDetails"));
 
     fetch(`${api}/cartitemtodb`, {
       method: "POST",
@@ -18,10 +18,10 @@ const SingleCardForAllProducts = ({ product }) => {
       body: JSON.stringify({
         product,
         user,
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data)),
-    });
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (
