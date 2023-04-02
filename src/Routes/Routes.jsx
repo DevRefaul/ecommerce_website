@@ -51,6 +51,14 @@ const routes = createBrowserRouter([
         path: "/orders",
         element: <Orders />,
       },
+      {
+        path: "/checkoutall",
+        element: <Orders />,
+      },
+      {
+        path: "/checkout/:id",
+        element: <Orders />,
+      },
     ],
   },
   {
