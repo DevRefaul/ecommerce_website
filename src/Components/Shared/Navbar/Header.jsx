@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
 import { api } from "../../../Utils/Api";
-import { useQuery } from "@tanstack/react-query";
+import { Context } from "../../../Utils/Contexts";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(true);
+  const [cartItems, setCartItems] = useState("");
+
+  const { loadCartItems } = useContext(Context);
 
   const userDetails = localStorage.getItem("UserDetails");
   const parsedData = JSON.parse(userDetails);
 
-  const { isLoading, data } = useQuery(["cartItems"], () =>
+  useEffect(() => {
     fetch(`${api}/getcartitems?email=${parsedData.email}`)
       .then((res) => res.json())
-      .then((data) => data)
-  );
+      .then((data) => {
+        setCartItems(data);
+        return data;
+      });
+  }, [loadCartItems, parsedData.email]);
 
   const handleDropDownMenu = () => {
     if (dropdown) {
@@ -36,8 +42,6 @@ const Header = () => {
     localStorage.setItem("UserLoggedIn", "false");
     window.location.reload();
   };
-
-  console.log(data);
 
   return (
     <div className="mb-[80px]">
@@ -203,7 +207,7 @@ const Header = () => {
             {/* cart icon */}
             <div
               type="button"
-              className="cursor-pointer"
+              className="cursor-pointer relative"
               data-drawer-target="drawer-navigation"
               data-drawer-show="drawer-navigation"
               aria-controls="drawer-navigation"
@@ -213,6 +217,9 @@ const Header = () => {
                 alt="cart icon"
                 className="bg-orange-100 rounded-full w-9 h-9 p-2 mx-2"
               />
+              <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
+                {cartItems?.cartItems.length}
+              </div>
             </div>
             {/* cart icon */}
 
