@@ -203,8 +203,8 @@ const Header = () => {
                     alt="cart icon"
                     className="bg-orange-100 rounded-full w-9 h-9 p-2 mx-2"
                   />
-                  <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">
-                    {data?.cartItems?.length}
+                  <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full -top-2 -right-[1px] dark:border-gray-900">
+                    {data?.cartItems?.length ? data?.cartItems?.length : 0}
                   </div>
                 </div>
                 {/* cart icon */}
