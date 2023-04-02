@@ -1,13 +1,15 @@
 import { Badge, Card } from "flowbite-react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SingleCard.css";
 import { api } from "../../Utils/Api";
 import { ToastContainer, toast } from "react-toastify";
+import { Context } from "../../Utils/Contexts";
 
 const SingleCardForAllProducts = ({ product }) => {
   const { _id, name, price, description, image, brand, category } = product;
   const navigate = useNavigate();
+  const { loadCartItems } = useContext(Context);
 
   const addOrderToDB = async () => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
