@@ -456,80 +456,90 @@ const Header = () => {
         </button>
         {/* order will show here */}
         <div className="py-4 overflow-y-auto">
-          {/* table starts here for showing cart items */}
-          <div className="relative overflow-x-auto">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    Product name
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Price
-                  </th>
-                  <th scope="col" className="px-6 py-3"></th>
-                  <th scope="col" className="px-6 py-3"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* all data will me mapped here */}
-                {data?.cartItems?.map((item) => (
-                  <tr
-                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                    key={item._id}
-                  >
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      {item.name}
-                    </th>
-                    <td className="px-6 py-4">{item.price}</td>
-                    <td className="px-6 py-4">
-                      <button className="p-2 rounded bg-orange-500 text-white font-semibold">
-                        Buy_Now
-                      </button>
-                    </td>
-                    <td className="px-6 py-4">
-                      <button
-                        onClick={() =>
-                          handleDeleteItemFromCart(
-                            item,
-                            loadCartItems,
-                            setLoadCartItems
-                          )
-                        }
-                        className="p-2 rounded bg-red-500 text-white font-semibold"
+          {data?.cartItems?.length ? (
+            <>
+              {/* table starts here for showing cart items */}
+              <div className="relative overflow-x-auto">
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        Product name
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Price
+                      </th>
+                      <th scope="col" className="px-6 py-3"></th>
+                      <th scope="col" className="px-6 py-3"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* all data will me mapped here */}
+                    {data?.cartItems?.map((item) => (
+                      <tr
+                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                        key={item._id}
                       >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          {/* table starts here for showing cart items */}
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {item.name}
+                        </th>
+                        <td className="px-6 py-4">{item.price}</td>
+                        <td className="px-6 py-4">
+                          <button className="p-2 rounded bg-orange-500 text-white font-semibold">
+                            Buy_Now
+                          </button>
+                        </td>
+                        <td className="px-6 py-4">
+                          <button
+                            onClick={() =>
+                              handleDeleteItemFromCart(
+                                item,
+                                loadCartItems,
+                                setLoadCartItems
+                              )
+                            }
+                            className="p-2 rounded bg-red-500 text-white font-semibold"
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {/* table starts here for showing cart items */}
 
-          {/* section for buy and clear btns */}
-          <div className="flex justify-between">
-            <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
-              Buy All
-            </button>
-            <button
-              onClick={() =>
-                handleDeleteAllItemsFromCart(
-                  userData,
-                  loadCartItems,
-                  setLoadCartItems
-                )
-              }
-              className="px-4 py-2 rounded bg-red-500 text-white font-semibold my-4"
-            >
-              Clear Cart
-            </button>
-          </div>
-          {/* order will show here */}
+              {/* section for buy and clear btns */}
+              <div className="flex justify-between">
+                <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
+                  Buy All
+                </button>
+                <button
+                  onClick={() =>
+                    handleDeleteAllItemsFromCart(
+                      userData,
+                      loadCartItems,
+                      setLoadCartItems
+                    )
+                  }
+                  className="px-4 py-2 rounded bg-red-500 text-white font-semibold my-4"
+                >
+                  Clear Cart
+                </button>
+              </div>
+              {/* order will show here */}
+            </>
+          ) : (
+            <>
+              <p className="my-4 font-semibold text-center">
+                No Items In Cart. Shop Now.
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
