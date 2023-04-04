@@ -107,6 +107,7 @@ const Orders = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.orderResponse.insertedId) {
+              deleteCartitems(user.email)
               navigate("/");
               return toast.success(
                 "Your Orders Are Placed. Visit Your Profile To View Orders"
@@ -128,6 +129,7 @@ const Orders = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.orderResponse.insertedId) {
+              deleteCartitems(user.email);
               navigate("/payment");
               return toast.success("Your Orders Are Placed.");
             }
@@ -144,7 +146,11 @@ const Orders = () => {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => {
+        if (data.status === 200 && data.deleteResponse.deletedCount) {
+          setLoadCartItems(!loadCartItems);
+        }
+      });
   };
 
   return (
