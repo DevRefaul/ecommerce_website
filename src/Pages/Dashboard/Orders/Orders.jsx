@@ -10,13 +10,12 @@ const Orders = () => {
   const [cartItemsData, setCartItemsData] = useState(null);
   const navigate = useNavigate();
 
+  const user = JSON.parse(localStorage.getItem("UserDetails"));
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("UserDetails"));
-
     fetch(`${api}/getcartitems?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setCartItemsData(data.cartItems));
-  }, [loadCartItems]);
+  }, [loadCartItems, user.email]);
 
   // function for increase quantity and update price as quantity
   const handleIncreaseQuantity = (item) => {
@@ -86,14 +85,24 @@ const Orders = () => {
     return navigate("/");
   }
 
-
   const handleCheckout = () => {
-    if (document.getElementById("cashOnDelivery").checked) {
-      console.log("cash checked");
-    }
-    if (document.getElementById("payNow").checked) {
-      console.log("paynow checked");
-    }
+    fetch(`${api}/addorder`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        user,
+        cartItemsData,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
+    // if (document.getElementById("cashOnDelivery").checked) {
+    //   console.log("cash checked");
+    // }
+    // if (document.getElementById("payNow").checked) {
+    //   console.log("paynow checked");
+    // }
   };
 
   return (
