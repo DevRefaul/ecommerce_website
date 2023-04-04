@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../../Utils/Contexts";
 import { api } from "../../../Utils/Api";
+import { handleDeleteItemFromCart } from "../../../Utils/RemoveItems";
 
 const Orders = () => {
-  const { loadCartItems } = useContext(Context);
+  const { loadCartItems, setLoadCartItems } = useContext(Context);
   const [cartItemsData, setCartItemsData] = useState(null);
 
   useEffect(() => {
@@ -28,7 +29,9 @@ const Orders = () => {
               <th scope="col" className="px-6 py-3">
                 Price
               </th>
-              <th scope="col" className="px-6 py-3"></th>
+              <th scope="col" className="px-6 py-3">
+                Quantity
+              </th>
               <th scope="col" className="px-6 py-3"></th>
             </tr>
           </thead>
@@ -46,8 +49,31 @@ const Orders = () => {
                   {item.name}
                 </th>
                 <td className="px-6 py-4">{item.price}</td>
-                <td className="px-6 py-4"></td>
-                <td className="px-6 py-4"></td>
+                <td className="px-6 py-4">
+                  <div className="flex">
+                    <button className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8">
+                      +
+                    </button>
+                    <button className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8">
+                      -
+                    </button>
+                  </div>
+                </td>
+                <td className="px-6 py-4">
+                  {" "}
+                  <button
+                    onClick={() =>
+                      handleDeleteItemFromCart(
+                        item,
+                        loadCartItems,
+                        setLoadCartItems
+                      )
+                    }
+                    className="p-2 rounded bg-red-500 text-white font-semibold"
+                  >
+                    Remove
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
