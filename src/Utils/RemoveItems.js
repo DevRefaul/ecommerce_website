@@ -34,3 +34,16 @@ export const handleDeleteAllItemsFromCart = (userData, loadCartItems, setLoadCar
             }
         })
 };
+
+// function for calling server to delete cart items from databasr after payment or order
+export const deleteCartitems = (email, setLoadCartItems, loadCartItems) => {
+    fetch(`${api}/removeCartItem?email=${email}`, {
+        method: "DELETE",
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.status === 200 && data.deleteResponse.deletedCount) {
+                setLoadCartItems(!loadCartItems);
+            }
+        });
+};

@@ -2,7 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../../Utils/Contexts";
 import { api } from "../../../Utils/Api";
-import { handleDeleteItemFromCart } from "../../../Utils/RemoveItems";
+import {
+  deleteCartitems,
+  handleDeleteItemFromCart,
+} from "../../../Utils/RemoveItems";
 import { ToastContainer, toast } from "react-toastify";
 
 const Orders = () => {
@@ -14,7 +17,14 @@ const Orders = () => {
   useEffect(() => {
     fetch(`${api}/getcartitems?email=${user.email}`)
       .then((res) => res.json())
-      .then((data) => setCartItemsData(data.cartItems));
+      .then((data) => {
+        data.cartItems.map((item) => {
+          item.quantity = 1;
+          return (item.totalPrice = item.price);
+        });
+
+        setCartItemsData(data.cartItems);
+      });
   }, [loadCartItems, user.email]);
 
   // function for increase quantity and update price as quantity
@@ -33,8 +43,10 @@ const Orders = () => {
         item.price);
     }
 
+    const itemPrice = item.price.toString();
+
     // using regular expression for solving the problem of comma in price
-    if (item.price.includes(",")) {
+    if (itemPrice?.includes(",")) {
       const prevPrice = Number(item.price.replace(/,/g, ""));
       return (document.getElementById(`${item._id}_Price`).innerText =
         Number(document.getElementById(`${item._id}_quantity`).value) *
@@ -53,6 +65,9 @@ const Orders = () => {
     item.quantity = Number(
       document.getElementById(`${item._id}_quantity`).value
     );
+    item.totalPrice = Number(
+      document.getElementById(`${item._id}_Price`).innerText
+    );
   };
 
   // function for decrease quantity and update price as quantity
@@ -66,8 +81,9 @@ const Orders = () => {
     document.getElementById(`${item._id}_quantity`).value =
       Number(document.getElementById(`${item._id}_quantity`).value) - 1;
 
+    const itemPrice = item.price.toString();
     // using regular expression for solving the problem of comma in price
-    if (item.price.includes(",")) {
+    if (itemPrice?.includes(",")) {
       const prevPrice = Number(item.price.replace(/,/g, ""));
       return (document.getElementById(`${item._id}_Price`).innerText =
         Number(document.getElementById(`${item._id}_quantity`).value) *
@@ -84,6 +100,9 @@ const Orders = () => {
     ).toFixed(2);
     item.quantity = Number(
       document.getElementById(`${item._id}_quantity`).value
+    );
+    item.totalPrice = Number(
+      document.getElementById(`${item._id}_Price`).innerText
     );
   };
 
@@ -113,7 +132,7 @@ const Orders = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.orderResponse.insertedId) {
-              deleteCartitems(user.email)
+              deleteCartitems(user.email, loadCartItems, setLoadCartItems);
               navigate("/");
               return toast.success(
                 "Your Orders Are Placed. Visit Your Profile To View Orders"
@@ -135,7 +154,6 @@ const Orders = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.orderResponse.insertedId) {
-              deleteCartitems(user.email);
               navigate("/payment");
               return toast.success("Your Orders Are Placed.");
             }
@@ -144,19 +162,6 @@ const Orders = () => {
     } else {
       return toast.info("Please Select Any Payment Method");
     }
-  };
-
-  // function for calling server to delete cart items from databasr after payment or order
-  const deleteCartitems = (email) => {
-    fetch(`${api}/removeCartItem?email=${email}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === 200 && data.deleteResponse.deletedCount) {
-          setLoadCartItems(!loadCartItems);
-        }
-      });
   };
 
   return (
