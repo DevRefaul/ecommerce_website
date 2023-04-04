@@ -21,9 +21,24 @@ const Orders = () => {
   const handleIncreaseQuantity = (item) => {
     document.getElementById(`${item._id}_quantity`).value =
       Number(document.getElementById(`${item._id}_quantity`).value) + 1;
+    if (document.getElementById(`${item._id}_quantity`).value === "1") {
+      return (document.getElementById(`${item._id}_Price`).innerText =
+        item.price);
+    }
     document.getElementById(`${item._id}_Price`).innerText =
-      Number(document.getElementById(`${item._id}_Price`).innerText) *
-      Number(document.getElementById(`${item._id}_quantity`).value);
+      Number(document.getElementById(`${item._id}_quantity`).value) *
+      Number(document.getElementById(`${item._id}_Price`).innerText);
+  };
+
+  const handleDecreaseQuantity = (item) => {
+    if (document.getElementById(`${item._id}_quantity`).value === "0") {
+      return (document.getElementById(`${item._id}_Price`).innerText = 0);
+    }
+    document.getElementById(`${item._id}_quantity`).value =
+      Number(document.getElementById(`${item._id}_quantity`).value) - 1;
+    document.getElementById(`${item._id}_Price`).innerText =
+      Number(document.getElementById(`${item._id}_quantity`).value) *
+      item.price;
   };
 
   return (
@@ -79,19 +94,7 @@ const Orders = () => {
                     />
                     <button
                       className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8"
-                      onClick={() => {
-                        if (
-                          document.getElementById(`${item._id}_quantity`)
-                            .value === "0"
-                        ) {
-                          return;
-                        }
-                        document.getElementById(`${item._id}_quantity`).value =
-                          Number(
-                            document.getElementById(`${item._id}_quantity`)
-                              .value
-                          ) - 1;
-                      }}
+                      onClick={() => handleDecreaseQuantity(item)}
                     >
                       -
                     </button>
