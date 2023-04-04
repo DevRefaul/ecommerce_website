@@ -86,8 +86,18 @@ const Orders = () => {
     return navigate("/");
   }
 
+
+  const handleCheckout = () => {
+    if (document.getElementById("cashOnDelivery").checked) {
+      console.log("cash checked");
+    }
+    if (document.getElementById("payNow").checked) {
+      console.log("paynow checked");
+    }
+  };
+
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto min-h-screen">
       <ToastContainer />
       <h2 className="text-center font-semibold my-6">Checkout Products</h2>
       <div className="relative overflow-x-auto my-6">
@@ -168,8 +178,36 @@ const Orders = () => {
 
       {/* buying section */}
       <div className="my-6">
-        <h4 className="font-medium text-lg my-3">Your Total Amount Is - {}</h4>
         <h4 className="font-medium text-lg my-3">Select Your Paying Method</h4>
+        <div>
+          <div>
+            <input
+              type="radio"
+              name="paymentType"
+              id="cashOnDelivery"
+              value="Cash On Delivery"
+              className="mr-2"
+            />
+            <label htmlFor="cashOnDelivery">Cash On Devlivery</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="paymentType"
+              id="payNow"
+              value="Cash On Delivery"
+              className="mr-2"
+            />
+            <label htmlFor="payNow">Pay Now</label>
+          </div>
+
+          <button
+            className="bg-orange-500 font-semibold text-white px-6 py-2 my-4 rounded"
+            onClick={handleCheckout}
+          >
+            Go ToCheckout
+          </button>
+        </div>
       </div>
     </section>
   );
