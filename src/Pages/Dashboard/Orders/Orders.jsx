@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../../Utils/Contexts";
 import { api } from "../../../Utils/Api";
 import { handleDeleteItemFromCart } from "../../../Utils/RemoveItems";
@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Orders = () => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
   const [cartItemsData, setCartItemsData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("UserDetails"));
@@ -45,6 +46,10 @@ const Orders = () => {
     document.getElementById(`${item._id}_Price`).innerText =
       Number(document.getElementById(`${item._id}_quantity`).value) *
       Number(item.price);
+
+    document.getElementById(`${item._id}_Price`).innerText = Number(
+      document.getElementById(`${item._id}_Price`).innerText
+    ).toFixed(2);
   };
 
   // function for decrease quantity and update price as quantity
@@ -69,7 +74,15 @@ const Orders = () => {
     document.getElementById(`${item._id}_Price`).innerText =
       Number(document.getElementById(`${item._id}_quantity`).value) *
       Number(item.price);
+
+    document.getElementById(`${item._id}_Price`).innerText = Number(
+      document.getElementById(`${item._id}_Price`).innerText
+    ).toFixed(2);
   };
+
+  if (cartItemsData === undefined || cartItemsData === null) {
+    return navigate("/");
+  }
 
   return (
     <section className="container mx-auto">
@@ -133,13 +146,13 @@ const Orders = () => {
                 <td className="px-6 py-4">
                   {" "}
                   <button
-                    onClick={() =>
-                      handleDeleteItemFromCart(
+                    onClick={() => {
+                      return handleDeleteItemFromCart(
                         item,
                         loadCartItems,
                         setLoadCartItems
-                      )
-                    }
+                      );
+                    }}
                     className="p-2 rounded bg-red-500 text-white font-semibold"
                   >
                     Remove
@@ -149,6 +162,12 @@ const Orders = () => {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* buying section */}
+      <div className="my-6">
+        <h4 className="font-medium text-lg my-3">Your Total Amount Is - {}</h4>
+        <h4 className="font-medium text-lg my-3">Select Your Paying Method</h4>
       </div>
     </section>
   );
