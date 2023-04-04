@@ -95,10 +95,7 @@ const Orders = () => {
 
       if (document.getElementById("cashOnDelivery").checked) {
         paymentMethod = "Cash On Delivery";
-      } else if (document.getElementById("payNow").checked) {
-        paymentMethod = "Pay Now";
-      }
-
+        
       fetch(`${api}/addorder`, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -109,7 +106,35 @@ const Orders = () => {
         }),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          if (data.orderResponse.insertedId) {
+            navigate("/")
+           return toast.success(
+              "Your Orders Are Placed. Visit Your Profile To View Orders"
+            );
+          }
+        });
+      } else if (document.getElementById("payNow").checked) {
+        paymentMethod = "Pay Now";
+
+        fetch(`${api}/addorder`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            user,
+            cartItemsData,
+            paymentMethod,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.orderResponse.insertedId) {
+              navigate("/payment");
+              return toast.success("Your Orders Are Placed.");
+            }
+          });
+      }
+
     } else {
       return toast.info("Please Select Any Payment Method");
     }
