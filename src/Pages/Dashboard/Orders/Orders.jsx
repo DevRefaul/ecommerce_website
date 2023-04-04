@@ -134,6 +134,8 @@ const Orders = () => {
             user,
             cartItemsData,
             paymentMethod,
+            payment: "Pending",
+            status :"Processing"
           }),
         })
           .then((res) => res.json())
@@ -156,6 +158,8 @@ const Orders = () => {
             user,
             cartItemsData,
             paymentMethod,
+            payment: "Pending",
+            status: "Processing",
           }),
         })
           .then((res) => res.json())
