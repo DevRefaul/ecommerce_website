@@ -488,7 +488,7 @@ const Header = () => {
                         </th>
                         <td className="px-6 py-4">{item.price}</td>
                         <td className="px-6 py-4">
-                          <Link to={`/checkout/${item._id}`}>
+                          <Link to={`/order/${item._id}`}>
                             <button className="p-2 rounded bg-orange-500 text-white font-semibold">
                               Buy_Now
                             </button>
@@ -517,7 +517,7 @@ const Header = () => {
 
               {/* section for buy and clear btns */}
               <div className="flex justify-between">
-                <Link to="/checkoutall">
+                <Link to="/orders">
                   <button className="px-4 py-2 rounded bg-green-500 text-white font-semibold my-4">
                     Buy All
                   </button>

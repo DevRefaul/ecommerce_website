@@ -54,11 +54,11 @@ const routes = createBrowserRouter([
         element: <Orders />,
       },
       {
-        path: "/checkoutall",
+        path: "/orders",
         element: <AllCheckout />,
       },
       {
-        path: "/checkout/:id",
+        path: "/order/:id",
         element: <SingleCheckout />,
       },
     ],
