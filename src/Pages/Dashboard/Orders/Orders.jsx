@@ -17,6 +17,15 @@ const Orders = () => {
       .then((data) => setCartItemsData(data.cartItems));
   }, [loadCartItems]);
 
+
+  const handleIncreaseQuantity = (item) => {
+    document.getElementById(`${item._id}_quantity`).value =
+      Number(document.getElementById(`${item._id}_quantity`).value) + 1;
+    document.getElementById(`${item._id}_Price`).innerText =
+      Number(document.getElementById(`${item._id}_Price`).innerText) *
+      Number(document.getElementById(`${item._id}_quantity`).value);
+  };
+
   return (
     <section className="container mx-auto">
       <ToastContainer />
@@ -50,18 +59,14 @@ const Orders = () => {
                 >
                   {item.name}
                 </th>
-                <td className="px-6 py-4">{item.price}</td>
+                <td className="px-6 py-4">
+                  <p id={`${item._id}_Price`}> {item.price}</p>
+                </td>
                 <td className="px-6 py-4">
                   <div className="flex justify-center">
                     <button
                       className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8"
-                      onClick={() => {
-                        document.getElementById(`${item._id}_quantity`).value =
-                          Number(
-                            document.getElementById(`${item._id}_quantity`)
-                              .value
-                          ) + 1;
-                      }}
+                      onClick={() => handleIncreaseQuantity(item)}
                     >
                       +
                     </button>
@@ -72,7 +77,22 @@ const Orders = () => {
                       className="w-14 cursor-not-allowed"
                       disabled
                     />
-                    <button className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8">
+                    <button
+                      className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8"
+                      onClick={() => {
+                        if (
+                          document.getElementById(`${item._id}_quantity`)
+                            .value === "0"
+                        ) {
+                          return;
+                        }
+                        document.getElementById(`${item._id}_quantity`).value =
+                          Number(
+                            document.getElementById(`${item._id}_quantity`)
+                              .value
+                          ) - 1;
+                      }}
+                    >
                       -
                     </button>
                   </div>
