@@ -20,7 +20,13 @@ const Orders = () => {
       .then((data) => {
         data.cartItems.map((item) => {
           item.quantity = 1;
-          return (item.totalPrice = item.price);
+
+          const itemPrice = item.price.toString();
+          if (itemPrice?.includes(",")) {
+            const newPrice = Number(item.price.replace(/,/g, ""));
+            return (item.totalPrice = newPrice);
+          }
+          return "";
         });
 
         setCartItemsData(data.cartItems);
