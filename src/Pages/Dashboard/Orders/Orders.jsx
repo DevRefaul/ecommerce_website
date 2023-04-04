@@ -86,7 +86,6 @@ const Orders = () => {
   }
 
   const handleCheckout = () => {
-
     if (
       document.getElementById("cashOnDelivery").checked ||
       document.getElementById("payNow").checked
@@ -95,25 +94,25 @@ const Orders = () => {
 
       if (document.getElementById("cashOnDelivery").checked) {
         paymentMethod = "Cash On Delivery";
-        
-      fetch(`${api}/addorder`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          user,
-          cartItemsData,
-          paymentMethod,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.orderResponse.insertedId) {
-            navigate("/")
-           return toast.success(
-              "Your Orders Are Placed. Visit Your Profile To View Orders"
-            );
-          }
-        });
+
+        fetch(`${api}/addorder`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            user,
+            cartItemsData,
+            paymentMethod,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.orderResponse.insertedId) {
+              navigate("/");
+              return toast.success(
+                "Your Orders Are Placed. Visit Your Profile To View Orders"
+              );
+            }
+          });
       } else if (document.getElementById("payNow").checked) {
         paymentMethod = "Pay Now";
 
@@ -134,11 +133,18 @@ const Orders = () => {
             }
           });
       }
-
     } else {
       return toast.info("Please Select Any Payment Method");
     }
+  };
 
+  // function for calling server to delete cart items from databasr after payment or order
+  const deleteCartitems = (email) => {
+    fetch(`${api}/removeCartItem?email=${email}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => data);
   };
 
   return (
