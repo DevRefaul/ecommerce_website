@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Context } from "../../Utils/Contexts";
-import { api } from "../../Utils/Api";
 import { Link } from "react-router-dom";
+import { Context } from "../../../Utils/Contexts";
+import { api } from "../../../Utils/Api";
 
 const Orders = () => {
   const { loadCartItems } = useContext(Context);
