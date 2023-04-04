@@ -50,6 +50,9 @@ const Orders = () => {
     document.getElementById(`${item._id}_Price`).innerText = Number(
       document.getElementById(`${item._id}_Price`).innerText
     ).toFixed(2);
+    item.quantity = Number(
+      document.getElementById(`${item._id}_quantity`).value
+    );
   };
 
   // function for decrease quantity and update price as quantity
@@ -79,6 +82,9 @@ const Orders = () => {
     document.getElementById(`${item._id}_Price`).innerText = Number(
       document.getElementById(`${item._id}_Price`).innerText
     ).toFixed(2);
+    item.quantity = Number(
+      document.getElementById(`${item._id}_quantity`).value
+    );
   };
 
   if (cartItemsData === undefined || cartItemsData === null) {
