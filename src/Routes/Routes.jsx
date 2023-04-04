@@ -5,6 +5,7 @@ import Orders from "../Pages/Dashboard/Orders/Orders";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import Payment from "../Pages/Payment/Payment";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
 import ProductsAsCategoryPage from "../Pages/Products/ProductsAsCategoryPage/ProductsAsCategoryPage";
@@ -55,6 +56,10 @@ const routes = createBrowserRouter([
       {
         path: "/order/:id",
         element: <SingleCheckout />,
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
   },
