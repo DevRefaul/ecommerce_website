@@ -36,7 +36,7 @@ export const handleDeleteAllItemsFromCart = (userData, loadCartItems, setLoadCar
 };
 
 // function for calling server to delete cart items from databasr after payment or order
-export const deleteCartitems = (email, setLoadCartItems, loadCartItems) => {
+export const deleteCartitems = (email, loadCartItems, setLoadCartItems) => {
     fetch(`${api}/removeCartItem?email=${email}`, {
         method: "DELETE",
     })

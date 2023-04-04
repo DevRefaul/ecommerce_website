@@ -116,6 +116,7 @@ const Orders = () => {
     return navigate("/");
   }
 
+  // function for checkout
   const handleCheckout = () => {
     if (
       document.getElementById("cashOnDelivery").checked ||
