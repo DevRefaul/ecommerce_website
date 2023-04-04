@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../../Utils/Contexts";
 import { api } from "../../../Utils/Api";
 import { handleDeleteItemFromCart } from "../../../Utils/RemoveItems";
+import { ToastContainer, toast } from "react-toastify";
 
 const Orders = () => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
@@ -18,6 +19,7 @@ const Orders = () => {
 
   return (
     <section className="container mx-auto">
+      <ToastContainer />
       <h2 className="text-center font-semibold my-6">Checkout Products</h2>
       <div className="relative overflow-x-auto my-6">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border border-orange-500">
@@ -29,7 +31,7 @@ const Orders = () => {
               <th scope="col" className="px-6 py-3">
                 Price
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 Quantity
               </th>
               <th scope="col" className="px-6 py-3"></th>
@@ -50,10 +52,26 @@ const Orders = () => {
                 </th>
                 <td className="px-6 py-4">{item.price}</td>
                 <td className="px-6 py-4">
-                  <div className="flex">
-                    <button className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8">
+                  <div className="flex justify-center">
+                    <button
+                      className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8"
+                      onClick={() => {
+                        document.getElementById(`${item._id}_quantity`).value =
+                          Number(
+                            document.getElementById(`${item._id}_quantity`)
+                              .value
+                          ) + 1;
+                      }}
+                    >
                       +
                     </button>
+                    <input
+                      type="text"
+                      id={`${item._id}_quantity`}
+                      defaultValue="1"
+                      className="w-14 cursor-not-allowed"
+                      disabled
+                    />
                     <button className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8">
                       -
                     </button>
