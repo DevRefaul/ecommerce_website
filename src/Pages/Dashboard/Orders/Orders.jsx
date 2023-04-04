@@ -47,6 +47,7 @@ const Orders = () => {
       Number(document.getElementById(`${item._id}_quantity`).value) *
       Number(item.price);
 
+    // setting fixed decimal to show
     document.getElementById(`${item._id}_Price`).innerText = Number(
       document.getElementById(`${item._id}_Price`).innerText
     ).toFixed(2);
@@ -75,6 +76,7 @@ const Orders = () => {
       Number(document.getElementById(`${item._id}_quantity`).value) *
       Number(item.price);
 
+    // setting fixed decimal to show
     document.getElementById(`${item._id}_Price`).innerText = Number(
       document.getElementById(`${item._id}_Price`).innerText
     ).toFixed(2);
