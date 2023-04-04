@@ -86,23 +86,34 @@ const Orders = () => {
   }
 
   const handleCheckout = () => {
-    fetch(`${api}/addorder`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        user,
-        cartItemsData,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
 
-    // if (document.getElementById("cashOnDelivery").checked) {
-    //   console.log("cash checked");
-    // }
-    // if (document.getElementById("payNow").checked) {
-    //   console.log("paynow checked");
-    // }
+    if (
+      document.getElementById("cashOnDelivery").checked ||
+      document.getElementById("payNow").checked
+    ) {
+      let paymentMethod;
+
+      if (document.getElementById("cashOnDelivery").checked) {
+        paymentMethod = "Cash On Delivery";
+      } else if (document.getElementById("payNow").checked) {
+        paymentMethod = "Pay Now";
+      }
+
+      fetch(`${api}/addorder`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          user,
+          cartItemsData,
+          paymentMethod,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    } else {
+      return toast.info("Please Select Any Payment Method");
+    }
+
   };
 
   return (
