@@ -17,28 +17,58 @@ const Orders = () => {
       .then((data) => setCartItemsData(data.cartItems));
   }, [loadCartItems]);
 
-
+  // function for increase quantity and update price as quantity
   const handleIncreaseQuantity = (item) => {
+    // checking if the quantity is 20 or not because user cant order more than 20
+    if (document.getElementById(`${item._id}_quantity`).value === "20") {
+      return toast.info("Can't Order More Than 20 Same Products At A Time");
+    }
+
+    // setting the value after increasing
     document.getElementById(`${item._id}_quantity`).value =
       Number(document.getElementById(`${item._id}_quantity`).value) + 1;
+    // checking if the quantity is 1 or not because wont work if the value is 0
     if (document.getElementById(`${item._id}_quantity`).value === "1") {
       return (document.getElementById(`${item._id}_Price`).innerText =
         item.price);
     }
+
+    // using regular expression for solving the problem of comma in price
+    if (item.price.includes(",")) {
+      const prevPrice = Number(item.price.replace(/,/g, ""));
+      return (document.getElementById(`${item._id}_Price`).innerText =
+        Number(document.getElementById(`${item._id}_quantity`).value) *
+        Number(prevPrice));
+    }
+
+    // setting the price for the price section
     document.getElementById(`${item._id}_Price`).innerText =
       Number(document.getElementById(`${item._id}_quantity`).value) *
-      Number(document.getElementById(`${item._id}_Price`).innerText);
+      Number(item.price);
   };
 
+  // function for decrease quantity and update price as quantity
   const handleDecreaseQuantity = (item) => {
+    // if the value is 0 it wont show - values
     if (document.getElementById(`${item._id}_quantity`).value === "0") {
       return (document.getElementById(`${item._id}_Price`).innerText = 0);
     }
+
+    // setting the value after decreasing
     document.getElementById(`${item._id}_quantity`).value =
       Number(document.getElementById(`${item._id}_quantity`).value) - 1;
+
+    // using regular expression for solving the problem of comma in price
+    if (item.price.includes(",")) {
+      const prevPrice = Number(item.price.replace(/,/g, ""));
+      return (document.getElementById(`${item._id}_Price`).innerText =
+        Number(document.getElementById(`${item._id}_quantity`).value) *
+        Number(prevPrice));
+    }
+    // setting the price for the price section
     document.getElementById(`${item._id}_Price`).innerText =
       Number(document.getElementById(`${item._id}_quantity`).value) *
-      item.price;
+      Number(item.price);
   };
 
   return (
