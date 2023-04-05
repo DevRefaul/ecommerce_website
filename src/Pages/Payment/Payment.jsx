@@ -3,12 +3,16 @@ import CheckoutForm from "./CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import "./payment.css";
+import { useLocation } from "react-router-dom";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 const Payment = () => {
   const [clientSecret, setClientSecret] = useState("");
+  const location = useLocation();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const orderId = location.state;
+  }, [location.state]);
 
   const createPaymentIntent = (item) => {
     // Create PaymentIntent as soon as the page loads
@@ -20,7 +24,6 @@ const Payment = () => {
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   };
-
 
   const appearance = {
     theme: "stripe",
