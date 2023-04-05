@@ -165,7 +165,7 @@ const Orders = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.orderResponse.insertedId) {
-              navigate("/payment");
+              navigate("/payment", { state: data.orderResponse.insertedId });
               return toast.success("Your Orders Are Placed.");
             }
           });
