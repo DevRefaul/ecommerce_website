@@ -36,7 +36,10 @@ const Payment = () => {
       body: JSON.stringify(item),
     })
       .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
+      .then((data) => {
+        console.log(data);
+        return setClientSecret(data.clientSecret);
+      });
   };
 
   const appearance = {
