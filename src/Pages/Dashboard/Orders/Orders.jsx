@@ -48,15 +48,28 @@ const Orders = () => {
       return (document.getElementById(`${item._id}_Price`).innerText =
         item.price);
     }
+    item.quantity = Number(
+      document.getElementById(`${item._id}_quantity`).value
+    );
 
     const itemPrice = item.price.toString();
 
     // using regular expression for solving the problem of comma in price
     if (itemPrice?.includes(",")) {
       const prevPrice = Number(item.price.replace(/,/g, ""));
-      return (document.getElementById(`${item._id}_Price`).innerText =
+      document.getElementById(`${item._id}_Price`).innerText =
         Number(document.getElementById(`${item._id}_quantity`).value) *
-        Number(prevPrice));
+        Number(prevPrice);
+
+      // setting fixed decimal to show
+      document.getElementById(`${item._id}_Price`).innerText = Number(
+        document.getElementById(`${item._id}_Price`).innerText
+      ).toFixed(2);
+
+      item.totalPrice =
+        Number(prevPrice) *
+        Number(document.getElementById(`${item._id}_quantity`).value);
+      return;
     }
 
     // setting the price for the price section
@@ -68,9 +81,7 @@ const Orders = () => {
     document.getElementById(`${item._id}_Price`).innerText = Number(
       document.getElementById(`${item._id}_Price`).innerText
     ).toFixed(2);
-    item.quantity = Number(
-      document.getElementById(`${item._id}_quantity`).value
-    );
+
     item.totalPrice = Number(
       document.getElementById(`${item._id}_Price`).innerText
     );
@@ -135,7 +146,7 @@ const Orders = () => {
             cartItemsData,
             paymentMethod,
             payment: "Pending",
-            status :"Processing"
+            status: "Processing",
           }),
         })
           .then((res) => res.json())
@@ -284,7 +295,7 @@ const Orders = () => {
             className="bg-orange-500 font-semibold text-white px-6 py-2 my-4 rounded"
             onClick={handleCheckout}
           >
-            Go ToCheckout
+            Go To Checkout
           </button>
         </div>
       </div>

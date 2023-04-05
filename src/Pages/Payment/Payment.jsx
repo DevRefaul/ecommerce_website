@@ -7,7 +7,9 @@ import { useLocation } from "react-router-dom";
 import { api } from "../../Utils/Api";
 import { toast } from "react-toastify";
 
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe(
+  "pk_test_51M7I4PBM1N4t2PWxXQCUeLoqgKzwPUL8nqPhQHgROr5Hvvett4yENCXr0KehyxUZvNWhLRExbFHXX7aIfLyeBjcF00W5cGdylm"
+);
 const Payment = () => {
   const [clientSecret, setClientSecret] = useState("");
   const location = useLocation();
@@ -21,17 +23,17 @@ const Payment = () => {
         if (data.status === 200 && data.orderResponse._id) {
           return createPaymentIntent(data.orderResponse);
         } else {
-          toast.error(data.message);
+          return toast.error(data.message);
         }
       });
   }, [location.state]);
 
   const createPaymentIntent = (item) => {
     // Create PaymentIntent as soon as the page loads
-    fetch("/create-payment-intent", {
+    fetch(`${api}/create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+      body: JSON.stringify(item),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
