@@ -4,6 +4,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import "./payment.css";
 import { useLocation } from "react-router-dom";
+import { api } from "../../Utils/Api";
+import { toast } from "react-toastify";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 const Payment = () => {
@@ -12,6 +14,16 @@ const Payment = () => {
 
   useEffect(() => {
     const orderId = location.state;
+
+    fetch(`${api}/getorder?id=${orderId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200 && data.orderResponse._id) {
+          return createPaymentIntent(data.orderResponse);
+        } else {
+          toast.error(data.message);
+        }
+      });
   }, [location.state]);
 
   const createPaymentIntent = (item) => {
