@@ -8,7 +8,9 @@ const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 const Payment = () => {
   const [clientSecret, setClientSecret] = useState("");
 
-  useEffect(() => {
+  useEffect(() => {}, []);
+
+  const createPaymentIntent = (item) => {
     // Create PaymentIntent as soon as the page loads
     fetch("/create-payment-intent", {
       method: "POST",
@@ -17,7 +19,8 @@ const Payment = () => {
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, []);
+  };
+
 
   const appearance = {
     theme: "stripe",
