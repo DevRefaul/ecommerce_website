@@ -1,4 +1,4 @@
-form {
+.form {
     width: 30vw;
     min-width: 500px;
     align-self: center;
@@ -9,7 +9,7 @@ form {
 }
 
 
-#payment-message {
+.payment-message {
     color: rgb(105, 115, 134);
     font-size: 16px;
     line-height: 20px;
@@ -17,12 +17,12 @@ form {
     text-align: center;
 }
 
-#payment-element {
+.paymentElement {
     margin-bottom: 24px;
 }
 
 /* Buttons and links */
-button {
+.button {
     background: #ff651d;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -38,11 +38,11 @@ button {
     width: 100%;
 }
 
-button:hover {
+.button:hover {
     filter: contrast(115%);
 }
 
-button:disabled {
+.button:disabled {
     opacity: 0.5;
     cursor: default;
 }

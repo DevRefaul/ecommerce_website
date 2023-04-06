@@ -7,7 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { ToastContainer, toast } from "react-toastify";
 
-export default function CheckoutForm({ totalPayment }) {
+export default function CheckoutForm({ totalPayment, styles }) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -84,25 +84,41 @@ export default function CheckoutForm({ totalPayment }) {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
+    <form className={styles.form} id="payment-form" onSubmit={handleSubmit}>
       <ToastContainer />
       <LinkAuthenticationElement
         id="link-authentication-element"
         // onChange={(e) => setEmail(e.target.value)}
       />
-      <PaymentElement id="payment-element" options={paymentElementOptions} />
+      <PaymentElement
+        className={styles.paymentElement}
+        id="payment-element"
+        options={paymentElementOptions}
+      />
 
       <p className="my-4 font-medium">
         Your Total Payment is - {totalPayment} $
       </p>
 
-      <button disabled={isLoading || !stripe || !elements} id="submit">
+      <button
+        className={styles.button}
+        disabled={isLoading || !stripe || !elements}
+        id="submit"
+      >
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          {isLoading ? (
+            <div className={styles.spinner} id="spinner"></div>
+          ) : (
+            "Pay now"
+          )}
         </span>
       </button>
       {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
+      {message && (
+        <div className={styles.payment - message} id="payment-message">
+          {message}
+        </div>
+      )}
     </form>
   );
 }
