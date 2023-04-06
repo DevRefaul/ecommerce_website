@@ -38,7 +38,7 @@ const Payment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setTotalPayment(data.paymentIntent.amount);
         return setClientSecret(data.clientSecret);
       });

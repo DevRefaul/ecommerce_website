@@ -4,6 +4,7 @@ import {
   LinkAuthenticationElement,
   useStripe,
   useElements,
+  CardElement,
 } from "@stripe/react-stripe-js";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -12,6 +13,7 @@ export default function CheckoutForm({ totalPayment, styles }) {
   const elements = useElements();
 
   const [email, setEmail] = useState("");
+  const [clientSC, setClientSC] = useState("");
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,6 +29,8 @@ export default function CheckoutForm({ totalPayment, styles }) {
     if (!clientSecret) {
       return;
     }
+
+    setClientSC(clientSecret);
 
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
@@ -57,14 +61,18 @@ export default function CheckoutForm({ totalPayment, styles }) {
 
     setIsLoading(true);
 
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000",
+    console.log(clientSC);
+
+    const { error, paymentIntent } = await stripe.confirmCardPayment(clientSC, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+        billing_details: {
+          name: "Rafee",
+        },
       },
     });
 
+    console.log(paymentIntent);
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
     // your `return_url`. For some payment methods like iDEAL, your customer will
