@@ -51,15 +51,17 @@ const Payment = () => {
   };
 
   return (
-    <section>
-      <h2 className="text-center my-3 text-3xl font-bold">
-        Make your payment secure with stripe
-      </h2>
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )}
+    <section className="flex justify-center min-h-screen my-6">
+      <div>
+        <h2 className="text-center text-3xl font-bold my-4">
+          Make your payment secure with stripe
+        </h2>
+        {clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        )}
+      </div>
     </section>
   );
 };
