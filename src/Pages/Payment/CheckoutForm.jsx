@@ -5,6 +5,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -64,6 +65,11 @@ export default function CheckoutForm() {
       },
     });
 
+    if (!error) {
+      console.log("Payment Successfully");
+      toast.success("Payment Done Successfully");
+    }
+
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to
     // your `return_url`. For some payment methods like iDEAL, your customer will
@@ -84,6 +90,7 @@ export default function CheckoutForm() {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
+      <ToastContainer />
       <LinkAuthenticationElement
         id="link-authentication-element"
         onChange={(e) => setEmail(e.target.value)}
