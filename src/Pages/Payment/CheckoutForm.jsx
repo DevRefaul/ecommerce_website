@@ -61,8 +61,6 @@ export default function CheckoutForm({ totalPayment, styles }) {
 
     setIsLoading(true);
 
-    console.log(clientSC);
-
     const { error, paymentIntent } = await stripe.confirmCardPayment(clientSC, {
       payment_method: {
         card: elements.getElement(CardElement),
