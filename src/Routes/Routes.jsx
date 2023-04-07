@@ -5,6 +5,7 @@ import Orders from "../Pages/Dashboard/Orders/Orders";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import CheckoutMessage from "../Pages/Payment/CheckoutMessage";
 import Payment from "../Pages/Payment/Payment";
 import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
@@ -60,6 +61,10 @@ const routes = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment />,
+      },
+      {
+        path: "/checkoutmessage",
+        element: <CheckoutMessage />,
       },
     ],
   },
