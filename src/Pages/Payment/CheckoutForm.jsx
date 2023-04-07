@@ -4,6 +4,7 @@ import "./checkout.css";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { updateOrder } from "../../Utils/RemoveItems";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -166,6 +167,10 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
     if (payment.paymentIntent.id) {
       const transactionId = payment.paymentIntent.id;
       const totalPaid = payment.paymentIntent.amount / 100;
+
+      updateOrder(orderId, transactionId);
+
+      navigate("/finishedcheckout");
     }
     setProcessing(false);
   };
