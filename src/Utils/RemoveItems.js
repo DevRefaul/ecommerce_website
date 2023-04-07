@@ -50,8 +50,9 @@ export const deleteCartitems = (email, loadCartItems, setLoadCartItems) => {
 
 
 // function for updating order after payment has done
-export const updateOrder = ({ orderId, paymentInfo }) => {
+export const updateOrder = (orderId, paymentInfo) => {
 
+    console.log(orderId, paymentInfo);
 
     fetch(`${api}/updateorder`, {
         method: "PATCH",
