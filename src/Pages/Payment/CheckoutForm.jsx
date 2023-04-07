@@ -99,7 +99,7 @@ const ResetButton = ({ onClick }) => (
   </button>
 );
 
-const CheckoutForm = ({ totalPayment, orderId }) => {
+const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -144,13 +144,26 @@ const CheckoutForm = ({ totalPayment, orderId }) => {
       billing_details: billingDetails,
     });
 
-    console.log(payload);
-
     if (payload?.paymentMethod?.id) {
       const paymentInfo = payload?.paymentMethod;
+      const { name, email, phone } = paymentInfo?.billing_details;
 
+      const { paymentIntent, error } = await stripe.confirmCardPayment(
+        clientSecret,
+        {
+          payment_method: {
+            card: card,
+            billing_details: {
+              name: name,
+              email: email,
+              phone: phone,
+            },
+          },
+        }
+      );
 
-      
+      console.log("payment intent" + paymentIntent);
+      console.log("payment error" + error);
     }
 
     setProcessing(false);
@@ -237,7 +250,7 @@ const CheckoutForm = ({ totalPayment, orderId }) => {
       </fieldset>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <SubmitButton processing={processing} error={error} disabled={!stripe}>
-        Pay ${totalPayment}
+        Pay ${totalPayment / 100}
       </SubmitButton>
     </form>
   );
