@@ -170,7 +170,7 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
 
       deleteCartitems(user.email, loadCartItems, setLoadCartItems);
 
-      // navigate("/finishedcheckout", { state: { transactionId, totalPaid } });
+      navigate("/checkoutmessage", { state: { transactionId, totalPaid } });
     }
     setProcessing(false);
   };
