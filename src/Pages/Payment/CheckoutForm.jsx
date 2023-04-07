@@ -1,16 +1,14 @@
-const {
-  CardElement,
-  useStripe,
-  useElements,
-} = require("@stripe/react-stripe-js");
-const { useState } = require("react");
+import { useState } from "react";
+import "./checkout.css";
+
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
   style: {
     base: {
       iconColor: "#c4f0ff",
-      color: "#fff",
+      color: "#000",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
@@ -46,11 +44,11 @@ const Field = ({
   onChange,
 }) => (
   <div className="FormRow">
-    <label htmlFor={id} className="FormRowLabel">
+    <label htmlFor={id} className="FormRowLabel label">
       {label}
     </label>
     <input
-      className="FormRowInput"
+      className="FormRowInput input"
       id={id}
       type={type}
       placeholder={placeholder}
@@ -64,7 +62,7 @@ const Field = ({
 
 const SubmitButton = ({ processing, error, children, disabled }) => (
   <button
-    className={`SubmitButton ${error ? "SubmitButton--error" : ""}`}
+    className={`SubmitButton ${error ? "SubmitButton--error" : ""} button`}
     type="submit"
     disabled={processing || disabled}
   >
@@ -89,7 +87,7 @@ const ErrorMessage = ({ children }) => (
 );
 
 const ResetButton = ({ onClick }) => (
-  <button type="button" className="ResetButton" onClick={onClick}>
+  <button type="button" className="ResetButton button" onClick={onClick}>
     <svg width="32px" height="32px" viewBox="0 0 32 32">
       <path
         fill="#FFF"
