@@ -3,6 +3,7 @@ import "./checkout.css";
 
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -98,7 +99,7 @@ const ResetButton = ({ onClick }) => (
   </button>
 );
 
-const CheckoutForm = ({ totalPayment }) => {
+const CheckoutForm = ({ totalPayment, orderId }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -110,6 +111,8 @@ const CheckoutForm = ({ totalPayment }) => {
     phone: "",
     name: "",
   });
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
