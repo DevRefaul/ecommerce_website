@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./checkout.css";
 
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { updateOrder } from "../../Utils/RemoveItems";
+import { deleteCartitems, updateOrder } from "../../Utils/RemoveItems";
+import { Context } from "../../Utils/Contexts";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -90,6 +91,7 @@ const ErrorMessage = ({ children }) => (
 );
 
 const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
+  const { loadCartItems, setLoadCartItems } = useContext(Context);
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -167,10 +169,12 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
     if (payment.paymentIntent.id) {
       const transactionId = payment.paymentIntent.id;
       const totalPaid = payment.paymentIntent.amount / 100;
-
+      const user = JSON.parse(localStorage.getItem("UserDetails"));
       updateOrder(orderId, transactionId);
 
-      navigate("/finishedcheckout", { state: { transactionId, totalPaid } });
+      // deleteCartitems(user.email, loadCartItems, setLoadCartItems);
+
+      // navigate("/finishedcheckout", { state: { transactionId, totalPaid } });
     }
     setProcessing(false);
   };
