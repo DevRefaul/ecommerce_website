@@ -60,7 +60,13 @@ export const updateOrder = (orderId, paymentInfo) => {
         body: JSON.stringify({ orderId, paymentInfo })
     })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if (data.status === 200 && data.updateResponse) {
+                return toast.success(data.message)
+            } else {
+                return toast.error(data.message)
+            }
+        })
 
 
 }

@@ -165,7 +165,7 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
       const transactionId = payment.paymentIntent.id;
       const totalPaid = payment.paymentIntent.amount / 100;
       const user = JSON.parse(localStorage.getItem("UserDetails"));
-      const updatedOrder = updateOrder(orderId, transactionId);
+      const updatedOrder = await updateOrder(orderId, transactionId);
       console.log(updatedOrder);
 
       deleteCartitems(user.email, loadCartItems, setLoadCartItems);
