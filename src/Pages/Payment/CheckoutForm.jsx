@@ -172,7 +172,7 @@ const CheckoutForm = () => {
       <ResetButton onClick={reset} />
     </div>
   ) : (
-    <form className="Form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <fieldset className="FormGroup">
         <Field
           label="Name"
