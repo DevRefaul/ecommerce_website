@@ -55,7 +55,7 @@ const Payment = () => {
   };
 
   return (
-    <section className="flex justify-center min-h-screen my-6">
+    <section className="flex justify-center min-h-screen py-6 bg-orange-50">
       <ToastContainer />
       <div>
         <h2 className="text-center text-3xl font-bold my-4">
