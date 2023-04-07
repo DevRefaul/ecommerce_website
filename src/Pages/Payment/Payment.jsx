@@ -11,11 +11,14 @@ const stripePromise = loadStripe(
 );
 const Payment = () => {
   const [clientSecret, setClientSecret] = useState("");
+  const [orderId, setOrderId] = useState("");
   const [totalPayment, setTotalPayment] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     const orderId = location.state;
+
+    setOrderId(orderId);
 
     fetch(`${api}/getorder?id=${orderId}`)
       .then((res) => res.json())
@@ -60,7 +63,7 @@ const Payment = () => {
         </h2>
         {clientSecret && (
           <Elements options={options} stripe={stripePromise}>
-            <CheckoutForm totalPayment={totalPayment} />
+            <CheckoutForm totalPayment={totalPayment} orderId={orderId} />
           </Elements>
         )}
       </div>

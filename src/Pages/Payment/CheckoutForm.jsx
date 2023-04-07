@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./checkout.css";
 
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { ToastContainer, toast } from "react-toastify";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -97,7 +98,7 @@ const ResetButton = ({ onClick }) => (
   </button>
 );
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ totalPayment }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -140,9 +141,16 @@ const CheckoutForm = () => {
       billing_details: billingDetails,
     });
 
+    console.log(payload);
+
+    if (payload?.paymentMethod?.id) {
+      console.log("Reached here");
+    }
+
     setProcessing(false);
 
     if (payload.error) {
+      toast.error(payload.error.message);
       setError(payload.error);
     } else {
       setPaymentMethod(payload.paymentMethod);
@@ -162,6 +170,7 @@ const CheckoutForm = () => {
 
   return paymentMethod ? (
     <div className="Result">
+      <ToastContainer />
       <div className="ResultTitle" role="alert">
         Payment successful
       </div>
@@ -173,6 +182,7 @@ const CheckoutForm = () => {
     </div>
   ) : (
     <form className="form" onSubmit={handleSubmit}>
+      <ToastContainer />
       <fieldset className="FormGroup">
         <Field
           label="Name"
@@ -221,7 +231,7 @@ const CheckoutForm = () => {
       </fieldset>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <SubmitButton processing={processing} error={error} disabled={!stripe}>
-        Pay $25
+        Pay ${totalPayment}
       </SubmitButton>
     </form>
   );
