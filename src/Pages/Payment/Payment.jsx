@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import styles from "./payment.module.css";
 import { useLocation } from "react-router-dom";
 import { api } from "../../Utils/Api";
 import { ToastContainer, toast } from "react-toastify";
@@ -61,7 +60,7 @@ const Payment = () => {
         </h2>
         {clientSecret && (
           <Elements options={options} stripe={stripePromise}>
-            <CheckoutForm totalPayment={totalPayment} styles={styles} />
+            <CheckoutForm totalPayment={totalPayment} />
           </Elements>
         )}
       </div>
