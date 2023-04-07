@@ -147,7 +147,10 @@ const CheckoutForm = ({ totalPayment, orderId }) => {
     console.log(payload);
 
     if (payload?.paymentMethod?.id) {
-      console.log("Reached here");
+      const paymentInfo = payload?.paymentMethod;
+
+
+      
     }
 
     setProcessing(false);
