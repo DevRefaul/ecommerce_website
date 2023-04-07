@@ -47,3 +47,21 @@ export const deleteCartitems = (email, loadCartItems, setLoadCartItems) => {
             }
         });
 };
+
+
+// function for updating order after payment has done
+export const updateOrder = ({ orderId, paymentInfo }) => {
+
+
+    fetch(`${api}/updateorder`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({ orderId, paymentInfo })
+    })
+        .then(res => res.json())
+        .then(data => console.log(data))
+
+
+}
