@@ -172,7 +172,7 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
       const user = JSON.parse(localStorage.getItem("UserDetails"));
       updateOrder(orderId, transactionId);
 
-      // deleteCartitems(user.email, loadCartItems, setLoadCartItems);
+      deleteCartitems(user.email, loadCartItems, setLoadCartItems);
 
       // navigate("/finishedcheckout", { state: { transactionId, totalPaid } });
     }
