@@ -63,7 +63,11 @@ const Payment = () => {
         </h2>
         {clientSecret && (
           <Elements options={options} stripe={stripePromise}>
-            <CheckoutForm totalPayment={totalPayment} orderId={orderId} />
+            <CheckoutForm
+              totalPayment={totalPayment}
+              orderId={orderId}
+              clientSecret={clientSecret}
+            />
           </Elements>
         )}
       </div>
