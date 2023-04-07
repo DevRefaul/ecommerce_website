@@ -141,13 +141,9 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
       setError(payload.error);
     }
 
-    console.log(payload);
 
     const paymentInfo = payload?.paymentMethod;
     const { name, email } = paymentInfo?.billing_details;
-    console.log(name, email);
-
-    console.log("before triggering confirm card payment");
 
     setDisableButton(true);
     const payment = await stripe.confirmCardPayment(clientSecret, {
@@ -159,18 +155,18 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
         },
       },
     });
-    console.log("after triggering cinfirm card payment");
 
     if (payment.error) {
       setError(payment.error.message);
       return;
     }
-    console.log(payment);
+
     if (payment.paymentIntent.id) {
       const transactionId = payment.paymentIntent.id;
       const totalPaid = payment.paymentIntent.amount / 100;
       const user = JSON.parse(localStorage.getItem("UserDetails"));
-      updateOrder(orderId, transactionId);
+      const updatedOrder = updateOrder(orderId, transactionId);
+      console.log(updatedOrder);
 
       deleteCartitems(user.email, loadCartItems, setLoadCartItems);
 
