@@ -170,7 +170,7 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
 
       updateOrder(orderId, transactionId);
 
-      navigate("/finishedcheckout");
+      navigate("/finishedcheckout", { state: { transactionId, totalPaid } });
     }
     setProcessing(false);
   };
