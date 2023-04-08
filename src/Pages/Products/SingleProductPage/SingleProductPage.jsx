@@ -1,14 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
 import RelatedProducts from "../../../Components/RelatedProducts/RelatedProducts";
 import { api } from "../../../Utils/Api";
+import { addOrderToDB } from "../../../Utils/functionForOrders";
+import { Context } from "../../../Utils/Contexts";
 
 const SingleProductPage = () => {
   const location = useLocation();
   const productId = location.state.productId;
+  const [product, setProduct] = useState();
+  const { loadCartItems, setLoadCartItems } = useContext(Context);
 
   const mounted = useRef(false);
 
@@ -17,8 +21,13 @@ const SingleProductPage = () => {
     if (mounted.current === true) {
       window.scrollTo(0, 0);
     }
+
+    fetch(`${api}/getSingleProductInfo?id=${productId}`)
+      .then((res) => res.json())
+      .then((data) => setProduct(data.product));
+
     return () => (mounted.current = false);
-  }, []);
+  }, [productId]);
 
   const functionForFetchingData = async () => {
     return fetch(`${api}/getSingleProductInfo?id=${productId}`)
@@ -74,7 +83,12 @@ const SingleProductPage = () => {
             Price : {productInfo.price} $
           </h2>
 
-          <button className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center mr-2 mb-2">
+          <button
+            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center mr-2 mb-2"
+            onClick={() =>
+              addOrderToDB(product, loadCartItems, setLoadCartItems)
+            }
+          >
             Add To Cart
           </button>
           <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center mr-2 mb-2">
