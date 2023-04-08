@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { api } from "../../Utils/Api";
 import { Context } from "../../Utils/Contexts";
 import { deleteCartitems } from "../../Utils/RemoveItems";
@@ -7,7 +7,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const SingleCheckout = () => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
-  const [cartItemsData, setCartItemsData] = useState(null);
   const navigate = useNavigate();
 
   const location = useLocation();
