@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
 import RelatedProducts from "../../../Components/RelatedProducts/RelatedProducts";
 import { api } from "../../../Utils/Api";
@@ -54,6 +54,7 @@ const SingleProductPage = () => {
 
   return (
     <section className="w-[95%] lg:w-[80%] mx-auto min-h-screen">
+      <ToastContainer />
       <div className="my-6 grid gap-4 lg:grid-cols-2 ">
         <div>
           <img
