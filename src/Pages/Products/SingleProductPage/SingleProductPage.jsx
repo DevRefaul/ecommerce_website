@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
 import RelatedProducts from "../../../Components/RelatedProducts/RelatedProducts";
@@ -92,9 +92,11 @@ const SingleProductPage = () => {
           >
             Add To Cart
           </button>
-          <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center mr-2 mb-2">
-            Buy Now
-          </button>
+          <Link to={`/order/${productId}`}>
+            <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-8 py-2.5 text-center mr-2 mb-2">
+              Buy Now
+            </button>
+          </Link>
 
           {/* reviews section */}
           <div className="mt-6">
