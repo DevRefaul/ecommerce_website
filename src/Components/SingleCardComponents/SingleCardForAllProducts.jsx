@@ -1,42 +1,14 @@
 import { Badge, Card } from "flowbite-react";
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./SingleCard.css";
-import { api } from "../../Utils/Api";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Context } from "../../Utils/Contexts";
+import { addOrderToDB } from "../../Utils/functionForOrders";
 
 const SingleCardForAllProducts = ({ product }) => {
   const { _id, name, price, description, image, brand, category } = product;
-  const navigate = useNavigate();
   const { loadCartItems, setLoadCartItems } = useContext(Context);
-
-  const addOrderToDB = async () => {
-    const user = JSON.parse(localStorage.getItem("UserDetails"));
-
-    if (!user && localStorage.getItem("UserLoggedIn") !== "true") {
-      toast.info("Please Login Or SignUp To Add Items To Cart");
-      return navigate("/login");
-    }
-
-    fetch(`${api}/cartitemtodb`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        product,
-        user,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.cart.insertedId && data.status === 200) {
-          toast.success(data.message);
-          return setLoadCartItems(!loadCartItems);
-        } else {
-          toast.error(data.message);
-        }
-      });
-  };
 
   return (
     <>
@@ -78,7 +50,9 @@ const SingleCardForAllProducts = ({ product }) => {
             </Link>
             <button
               className="text-white bg-gradient-to-r from-orange-400 to-yellow-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full"
-              onClick={addOrderToDB}
+              onClick={() =>
+                addOrderToDB(product, loadCartItems, setLoadCartItems)
+              }
             >
               Add To Cart
             </button>
