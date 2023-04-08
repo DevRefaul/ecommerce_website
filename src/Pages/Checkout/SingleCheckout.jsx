@@ -14,6 +14,12 @@ const SingleCheckout = () => {
 
   const product = location.state.product;
   const { _id, name, price, image } = product;
+  product.quantity = 1;
+
+  if (price?.includes(",")) {
+    const newPrice = Number(price.replace(/,/g, ""));
+    product.totalPrice = newPrice;
+  }
 
   const user = JSON.parse(localStorage.getItem("UserDetails"));
 
@@ -123,7 +129,7 @@ const SingleCheckout = () => {
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
             user,
-            cartItemsData,
+            cartItemsData: [product],
             paymentMethod,
             payment: "Pending",
             status: "Processing",
@@ -135,7 +141,7 @@ const SingleCheckout = () => {
               deleteCartitems(user.email, loadCartItems, setLoadCartItems);
               navigate("/");
               return toast.success(
-                "Your Orders Are Placed. Visit Your Profile To View Orders"
+                "Your Orders Is Placed. Visit Your Profile To View Orders"
               );
             }
           });
@@ -147,7 +153,7 @@ const SingleCheckout = () => {
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
             user,
-            cartItemsData,
+            cartItemsData: [product],
             paymentMethod,
             payment: "Pending",
             status: "Processing",
@@ -155,9 +161,10 @@ const SingleCheckout = () => {
         })
           .then((res) => res.json())
           .then((data) => {
+            console.log(data.orderResponse);
             if (data.orderResponse.insertedId) {
               navigate("/payment", { state: data.orderResponse.insertedId });
-              return toast.success("Your Orders Are Placed.");
+              return toast.success("Your Orders Is Placed.");
             }
           });
       }
@@ -197,11 +204,7 @@ const SingleCheckout = () => {
               key={_id}
             >
               <td>
-                <img
-                  src={image}
-                  alt={`${name}'s image`}
-                  className="w-28 ml-3"
-                />
+                <img src={image} alt={`${name}'s img`} className="w-28 ml-3" />
               </td>
 
               <th
