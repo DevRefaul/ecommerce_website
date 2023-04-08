@@ -2,33 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import { api } from "../../Utils/Api";
 import { Context } from "../../Utils/Contexts";
 import { deleteCartitems } from "../../Utils/RemoveItems";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SingleCheckout = () => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
   const [cartItemsData, setCartItemsData] = useState(null);
   const navigate = useNavigate();
 
+  const location = useLocation();
+
+  const product = location.state.product;
+  const { _id, name, price, image } = product;
+
   const user = JSON.parse(localStorage.getItem("UserDetails"));
-  useEffect(() => {
-    fetch(`${api}/getcartitems?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        data.cartItems.map((item) => {
-          item.quantity = 1;
-
-          const itemPrice = item.price.toString();
-          if (itemPrice?.includes(",")) {
-            const newPrice = Number(item.price.replace(/,/g, ""));
-            return (item.totalPrice = newPrice);
-          }
-          return "";
-        });
-
-        setCartItemsData(data.cartItems);
-      });
-  }, [loadCartItems, user.email]);
 
   // function for increase quantity and update price as quantity
   const handleIncreaseQuantity = (item) => {
@@ -120,10 +107,6 @@ const SingleCheckout = () => {
     );
   };
 
-  if (cartItemsData === undefined || cartItemsData === null) {
-    return navigate("/");
-  }
-
   // function for checkout
   const handleCheckout = () => {
     if (
@@ -184,9 +167,114 @@ const SingleCheckout = () => {
   };
 
   return (
-    <div>
-      <h2>This is single order page</h2>
-    </div>
+    <section className="container mx-auto min-h-screen">
+      <ToastContainer />
+      <h2 className="text-center font-semibold my-6">Checkout Product</h2>
+      <div className="relative overflow-x-auto my-6">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border border-orange-500">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Product Image
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Product name
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Price
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Quantity
+              </th>
+              <th scope="col" className="px-6 py-3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* all data will me mapped here */}
+
+            <tr
+              className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+              key={_id}
+            >
+              <td>
+                <img
+                  src={image}
+                  alt={`${name}'s image`}
+                  className="w-28 ml-3"
+                />
+              </td>
+
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                {name}
+              </th>
+              <td className="px-6 py-4">
+                <p id={`${_id}_Price`}> {price}</p>
+              </td>
+              <td className="px-6 py-4">
+                <div className="flex justify-center">
+                  <button
+                    className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8"
+                    onClick={() => handleIncreaseQuantity(product)}
+                  >
+                    +
+                  </button>
+                  <input
+                    type="text"
+                    id={`${product._id}_quantity`}
+                    defaultValue="1"
+                    className="w-14 cursor-not-allowed"
+                    disabled
+                  />
+                  <button
+                    className="text-lg font-semibold bg-orange-500 px-2 mx-1 text-white w-8"
+                    onClick={() => handleDecreaseQuantity(product)}
+                  >
+                    -
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* buying section */}
+      <div className="my-6">
+        <h4 className="font-medium text-lg my-3">Select Your Paying Method</h4>
+        <div>
+          <div>
+            <input
+              type="radio"
+              name="paymentType"
+              id="cashOnDelivery"
+              value="Cash On Delivery"
+              className="mr-2"
+            />
+            <label htmlFor="cashOnDelivery">Cash On Devlivery</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="paymentType"
+              id="payNow"
+              value="Cash On Delivery"
+              className="mr-2"
+            />
+            <label htmlFor="payNow">Pay Now</label>
+          </div>
+
+          <button
+            className="bg-orange-500 font-semibold text-white px-6 py-2 my-4 rounded"
+            onClick={handleCheckout}
+          >
+            Go To Checkout
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 
