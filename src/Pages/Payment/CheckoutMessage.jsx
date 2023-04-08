@@ -7,13 +7,15 @@ const CheckoutMessage = () => {
   const { transactionId, totalPaid } = location.state;
 
   return (
-    <div>
-      <h2>Congratulation Your Payment Has Completed</h2>
+    <section className="container mx-auto py-10">
+      <h2 className="text-center text-2xl font-semibold">
+        Congratulation Your Payment Has Completed
+      </h2>
       <p>
         Your Transaction id id - {transactionId} and total bill is - {totalPaid}{" "}
         $
       </p>
-    </div>
+    </section>
   );
 };
 
