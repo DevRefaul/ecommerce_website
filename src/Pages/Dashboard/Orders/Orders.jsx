@@ -142,7 +142,8 @@ const Orders = () => {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
-            user,
+            email: user.email,
+            name: user.name,
             cartItemsData,
             paymentMethod,
             payment: "Pending",
@@ -166,7 +167,8 @@ const Orders = () => {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
-            user,
+            email: user.email,
+            name: user.name,
             cartItemsData,
             paymentMethod,
             payment: "Pending",
