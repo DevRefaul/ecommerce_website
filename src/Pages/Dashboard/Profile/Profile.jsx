@@ -297,7 +297,7 @@ return (
                   orders.cartItemsData.map((items) => (
                     <tr
                       key={items._id}
-                      className="bg-orange-50 border dark:bg-gray-800 dark:border-gray-700"
+                      className="bg-white border dark:bg-gray-800 dark:border-gray-700"
                     >
                       <td className="px-6 py-4 font-semibold uppercase">
                         {items.name}
