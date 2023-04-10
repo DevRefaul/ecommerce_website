@@ -144,8 +144,6 @@ const Profile = () => {
   }
 
 
-console.log(data);
-
 return (
   <section className=" bg-orange-50 -mt-2">
     <ToastContainer />
