@@ -127,7 +127,8 @@ const SingleCheckout = () => {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
-            user,
+            email: user.email,
+            name: user.name,
             cartItemsData: [product],
             paymentMethod,
             payment: "Pending",
