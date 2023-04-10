@@ -90,7 +90,7 @@ const ErrorMessage = ({ children }) => (
   </div>
 );
 
-const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
+const CheckoutForm = ({ totalPayment, orderId, clientSecret, user }) => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
   const stripe = useStripe();
   const elements = useElements();
@@ -141,7 +141,6 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
       setError(payload.error);
     }
 
-
     const paymentInfo = payload?.paymentMethod;
     const { name, email } = paymentInfo?.billing_details;
 
@@ -182,10 +181,9 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
           label="Name"
           id="name"
           type="text"
-          placeholder="Jane Doe"
           required
           autoComplete="name"
-          value={billingDetails.name}
+          value={user.name}
           onChange={(e) => {
             setBillingDetails({ ...billingDetails, name: e.target.value });
           }}
@@ -197,7 +195,7 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret }) => {
           placeholder="janedoe@gmail.com"
           required
           autoComplete="email"
-          value={billingDetails.email}
+          value={user.email}
           onChange={(e) => {
             setBillingDetails({ ...billingDetails, email: e.target.value });
           }}
