@@ -37,7 +37,7 @@ const OrderProcess = () => {
   console.log(orders);
 
   return (
-    <section className="py-8">
+    <section className="py-8 container mx-auto">
       <h3>Process Orders</h3>
 
       <div className="relative overflow-x-auto my-6">
@@ -66,18 +66,38 @@ const OrderProcess = () => {
                 Order Status
               </th>
               <th scope="col" className="px-6 py-3"></th>
+              <th scope="col" className="px-6 py-3"></th>
             </tr>
           </thead>
           <tbody>
             {/* all data will me mapped here */}
 
-            {/* {orders.map((order) => (
+            {orders.map((order) => (
               <tr key={order._id}>
                 <td className="px-6 py-4">{order._id}</td>
                 <td className="px-6 py-4">{order.name}</td>
                 <td className="px-6 py-4">{order.email}</td>
+                <td className="px-6 py-4">{order.totalPrice}</td>
+                <td className="px-6 py-4">{order.payment}</td>
+                <td className="px-6 py-4">
+                  {order.transactionId ? order.transactionId : "Not Paid Yet"}
+                </td>
+                <td className="px-6 py-4">{order.status}</td>
+                <td className="px-6 py-4">
+                  <select name="orderStatus" id="orderStatus">
+                    <option value="">Update Order Status</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Out For Delivery">Out For Delivery</option>
+                    <option value="Delivered">Delivered</option>
+                  </select>
+                </td>
+                <td className="px-6 py-4">
+                  <button className="bg-green-500 text-white font-semibold px-4 py-2 rounded">
+                    Update
+                  </button>
+                </td>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>
