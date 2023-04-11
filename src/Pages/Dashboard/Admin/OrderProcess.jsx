@@ -12,6 +12,20 @@ const OrderProcess = () => {
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
+
+        data?.orders?.map((items) => {
+          let totalPrice = 0;
+          items?.cartItemsData?.map((item) => {
+            if (item.price?.includes(",")) {
+              const prevPrice = Number(item.price.replace(/,/g, ""));
+              return (totalPrice = totalPrice + prevPrice * item.quantity);
+            } else {
+              return (totalPrice =
+                totalPrice + Number(item.price * item.quantity));
+            }
+          });
+          return (items.totalPrice = totalPrice);
+        });
         return setOrders(data.orders);
       });
   }, []);
@@ -54,7 +68,17 @@ const OrderProcess = () => {
               <th scope="col" className="px-6 py-3"></th>
             </tr>
           </thead>
-          <tbody>{/* all data will me mapped here */}\</tbody>
+          <tbody>
+            {/* all data will me mapped here */}
+
+            {/* {orders.map((order) => (
+              <tr key={order._id}>
+                <td className="px-6 py-4">{order._id}</td>
+                <td className="px-6 py-4">{order.name}</td>
+                <td className="px-6 py-4">{order.email}</td>
+              </tr>
+            ))} */}
+          </tbody>
         </table>
       </div>
     </section>
