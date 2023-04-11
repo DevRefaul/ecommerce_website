@@ -38,7 +38,9 @@ const OrderProcess = () => {
 
   return (
     <section className="py-8 container mx-auto">
-      <h3>Process Orders</h3>
+      <h3 className="text-center text-2xl font-semibold my-4">
+        Process and Update Orders
+      </h3>
 
       <div className="relative overflow-x-auto my-6">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border border-orange-500">
