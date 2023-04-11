@@ -1,6 +1,7 @@
 import About from "../Pages/About/About";
 import SingleCheckout from "../Pages/Checkout/SingleCheckout";
 import Contact from "../Pages/Contact/Contact";
+import OrderProcess from "../Pages/Dashboard/Admin/OrderProcess";
 import Orders from "../Pages/Dashboard/Orders/Orders";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Home from "../Pages/Home/Home";
@@ -65,6 +66,10 @@ const routes = createBrowserRouter([
       {
         path: "/checkoutmessage",
         element: <CheckoutMessage />,
+      },
+      {
+        path: "/processorders",
+        element: <OrderProcess />,
       },
     ],
   },
