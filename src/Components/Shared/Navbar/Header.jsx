@@ -8,7 +8,7 @@ import {
   handleDeleteItemFromCart,
 } from "../../../Utils/RemoveItems";
 
-const Header = () => {
+const Header = ({ user }) => {
   const [dropdown, setDropdown] = useState(true);
   const [data, setData] = useState("");
 
