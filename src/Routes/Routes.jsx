@@ -14,6 +14,7 @@ import ProductsAsCategoryPage from "../Pages/Products/ProductsAsCategoryPage/Pro
 import SingleProductPage from "../Pages/Products/SingleProductPage/SingleProductPage";
 import SignUpPage from "../Pages/SignUp/SignUpPage";
 import AdminRoute from "../Root/Admin/AdminRoute";
+import PrivateRoute from "../Root/Private/PrivateRoute";
 import Root from "../Root/Root";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -50,23 +51,43 @@ const routes = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/orders",
-        element: <Orders />,
+        element: (
+          <PrivateRoute>
+            <Orders />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/order/:id",
-        element: <SingleCheckout />,
+        element: (
+          <PrivateRoute>
+            <SingleCheckout />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/payment",
-        element: <Payment />,
+        element: (
+          <PrivateRoute>
+            <Payment />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/checkoutmessage",
-        element: <CheckoutMessage />,
+        element: (
+          <PrivateRoute>
+            <CheckoutMessage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/processorders",
