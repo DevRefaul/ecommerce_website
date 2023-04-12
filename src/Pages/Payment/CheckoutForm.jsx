@@ -106,6 +106,7 @@ const CheckoutForm = ({ totalPayment, orderId, clientSecret, user }) => {
 
   const navigate = useNavigate();
 
+  // function for submit btn in payment card info
   const handleSubmit = async (event) => {
     event.preventDefault();
 

@@ -26,6 +26,7 @@ const Header = ({ user }) => {
       });
   }, [loadCartItems, userData.email]);
 
+  // function for handling dropdown menu
   const handleDropDownMenu = () => {
     if (dropdown) {
       document.getElementById("dropdownNavbar").classList.remove("hidden");
@@ -34,6 +35,8 @@ const Header = ({ user }) => {
     }
     setDropdown(!dropdown);
   };
+
+  // function for hiding submenu
   const handleLetSubmenuHide = () => {
     document.getElementById("dropdownNavbar").classList.add("hidden");
     setDropdown(!dropdown);
@@ -41,6 +44,7 @@ const Header = ({ user }) => {
     window.location.reload();
   };
 
+  // function for singout
   const handleSignOut = () => {
     localStorage.removeItem("UserDetails");
     localStorage.setItem("UserLoggedIn", "false");
