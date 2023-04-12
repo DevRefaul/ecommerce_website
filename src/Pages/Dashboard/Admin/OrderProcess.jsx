@@ -30,6 +30,13 @@ const OrderProcess = () => {
       });
   }, []);
 
+
+
+
+  const handleUpdateOrderStatus = (status, orderId) => {
+    console.log(status, orderId);
+  };
+
   if (loading) {
     return <TransParentLoadingScene />;
   }
@@ -74,7 +81,7 @@ const OrderProcess = () => {
           <tbody>
             {/* all data will me mapped here */}
 
-            {orders.map((order) => (
+            {orders?.map((order) => (
               <tr key={order._id}>
                 <td className="px-6 py-4">{order._id}</td>
                 <td className="px-6 py-4">{order.name}</td>
@@ -94,7 +101,10 @@ const OrderProcess = () => {
                   </select>
                 </td>
                 <td className="px-6 py-4">
-                  <button className="bg-green-500 text-white font-semibold px-4 py-2 rounded">
+                  <button
+                    onClick={handleUpdateOrderStatus}
+                    className="bg-green-500 text-white font-semibold px-4 py-2 rounded"
+                  >
                     Update
                   </button>
                 </td>
