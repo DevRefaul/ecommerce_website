@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../../../Utils/Api";
 import TransParentLoadingScene from "../../../Components/LoadingScene/TransParentLoadingScene";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const OrderProcess = () => {
   const [orders, setOrders] = useState();
@@ -57,6 +57,7 @@ const OrderProcess = () => {
 
   return (
     <section className="py-8 container mx-auto">
+      <ToastContainer />
       <h3 className="text-center text-2xl font-semibold my-4">
         Process and Update Orders
       </h3>
