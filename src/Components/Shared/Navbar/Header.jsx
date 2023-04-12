@@ -11,6 +11,7 @@ import {
 const Header = ({ user }) => {
   const [dropdown, setDropdown] = useState(true);
   const [data, setData] = useState("");
+  const [showMenu, setShowMenu] = useState(false);
 
   const { loadCartItems, setLoadCartItems } = useContext(Context);
 
@@ -55,9 +56,21 @@ const Header = ({ user }) => {
     window.location.reload();
   };
 
+  const handleMenu = () => {
+    if (showMenu) {
+      document.getElementById("navbar-search")?.classList.add("hidden", true);
+    } else {
+      document.getElementById("navbar-search")?.classList.remove("hidden");
+    }
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className="mb-[80px]">
-      <nav className="bg-[#90ee90] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10 fixed top-0 w-full block mb-28">
+      <nav
+        id="navbar"
+        className="bg-[#90ee90] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10 fixed top-0 w-full block mb-28"
+      >
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="" className="h-6 mr-3 sm:h-7" />
@@ -70,6 +83,8 @@ const Header = ({ user }) => {
           <div className="flex items-center lg:order-2">
             <button
               type="button"
+              onClick={handleMenu}
+              id="menubtn"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
               aria-expanded="false"
@@ -239,6 +254,8 @@ const Header = ({ user }) => {
 
             <button
               data-collapse-toggle="navbar-search"
+              id="menubtn"
+              onClick={handleMenu}
               type="button"
               className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-search"
@@ -435,7 +452,7 @@ const Header = ({ user }) => {
       {/* <!-- drawer component for cart--> */}
       <div
         id="drawer-navigation"
-        className="fixed top-0 left-0 z-40 w-64 md:w-10/12 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-green-50 dark:bg-gray-800"
+        className="fixed top-0 left-0 z-50 w-64 md:w-10/12 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-green-50 dark:bg-gray-800"
         tabIndex="-1"
         aria-labelledby="drawer-navigation-label"
       >
