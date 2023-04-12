@@ -44,6 +44,14 @@ const SingleProductPage = () => {
 
   const productInfo = data?.product;
 
+
+
+
+
+  const handleAddReview = (productId) => {
+    console.log(productId);
+  };
+
   if (isLoading) {
     return <LoadingScene />;
   }
@@ -123,7 +131,10 @@ const SingleProductPage = () => {
           placeholder="Write A Review About This Product"
         ></textarea>
 
-        <button className="bg-green-500 text-white px-6 py-2 rounded mt-4">
+        <button
+          onClick={() => handleAddReview(productInfo._id)}
+          className="bg-green-500 text-white px-6 py-2 rounded mt-4"
+        >
           Add Review
         </button>
       </div>
