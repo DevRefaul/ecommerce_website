@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import LoadingScene from "../../../Components/LoadingScene/LoadingScene";
 import RelatedProducts from "../../../Components/RelatedProducts/RelatedProducts";
@@ -9,6 +9,7 @@ import { addOrderToDB } from "../../../Utils/functionForOrders";
 import { Context } from "../../../Utils/Contexts";
 
 const SingleProductPage = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const productId = location.state.productId;
   const [product, setProduct] = useState();
@@ -44,9 +45,12 @@ const SingleProductPage = () => {
 
   const productInfo = data?.product;
 
-
-
   const handleAddReview = (productId) => {
+    const ifUserLoggedin = localStorage.getItem("UserLoggedIn");
+    if (ifUserLoggedin !== "true") {
+      return navigate("/login");
+    }
+
     const { name, email } = JSON.parse(localStorage.getItem("UserDetails"));
 
     const reviewText = document.getElementById(`${productId}_review`).value;
