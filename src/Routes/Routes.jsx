@@ -13,6 +13,7 @@ import Products from "../Pages/Products/Products";
 import ProductsAsCategoryPage from "../Pages/Products/ProductsAsCategoryPage/ProductsAsCategoryPage";
 import SingleProductPage from "../Pages/Products/SingleProductPage/SingleProductPage";
 import SignUpPage from "../Pages/SignUp/SignUpPage";
+import AdminRoute from "../Root/Admin/AdminRoute";
 import Root from "../Root/Root";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -69,7 +70,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/processorders",
-        element: <OrderProcess />,
+        element: (
+          <AdminRoute>
+            <OrderProcess />
+          </AdminRoute>
+        ),
       },
     ],
   },
