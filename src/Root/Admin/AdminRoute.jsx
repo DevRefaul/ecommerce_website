@@ -11,25 +11,24 @@ const AdminRoute = ({ children }) => {
 
   const user = JSON.parse(localStorage.getItem("UserDetails"));
 
-  useEffect(() => {
-    if (!user.email) {
-      return navigate("/login");
-    }
+    useEffect(() => {
+      if (!user.email) {
+        return navigate("/login");
+      }
 
-    setLoading(true);
-    fetch(`${api}/getuserdata?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === 200 && data.userData._id) {
-          const user = data.userData;
-          setUserRole(user.role);
-        } else {
-          toast.error(data.message);
-        }
-        setLoading(false);
-      });
-  }, [user.email]);
-
+      setLoading(true);
+      fetch(`${api}/getuserdata?email=${user.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === 200 && data.userData._id) {
+            const user = data.userData;
+            setUserRole(user.role);
+          } else {
+            toast.error(data.message);
+          }
+          setLoading(false);
+        });
+    }, [user.email, navigate]);
   if (loading) {
     return <TransParentLoadingScene />;
   }
