@@ -8,6 +8,7 @@ const OrderProcess = () => {
   const [loading, setLoading] = useState(false);
   const [reFetch, setReFetch] = useState(false);
 
+  // fetching all orders data
   useEffect(() => {
     setLoading(true);
     fetch(`${api}/orders`)
@@ -32,6 +33,7 @@ const OrderProcess = () => {
       });
   }, [reFetch]);
 
+  // function for updating order status
   const handleUpdateOrderStatus = (orderId) => {
     const orderStatus = document.getElementById(`${orderId}_status`).value;
 
