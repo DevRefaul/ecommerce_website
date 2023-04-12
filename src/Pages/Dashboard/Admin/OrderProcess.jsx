@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../../../Utils/Api";
 import TransParentLoadingScene from "../../../Components/LoadingScene/TransParentLoadingScene";
+import { toast } from "react-toastify";
 
 const OrderProcess = () => {
   const [orders, setOrders] = useState();
@@ -30,19 +31,29 @@ const OrderProcess = () => {
       });
   }, []);
 
-
-
-
   const handleUpdateOrderStatus = (orderId) => {
-    const order = document.getElementById(`${orderId}_status`).value;
-    console.log(order);
+    const orderStatus = document.getElementById(`${orderId}_status`).value;
+
+    if (
+      orderStatus === "" ||
+      orderStatus === null ||
+      orderStatus === undefined
+    ) {
+      return toast.error("Please Select A Updating State");
+    }
+
+    fetch(`${api}/updateorderstate`, {
+      method: "PATCH",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ orderId, orderStatus }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   if (loading) {
     return <TransParentLoadingScene />;
   }
-
-  console.log(orders);
 
   return (
     <section className="py-8 container mx-auto">
