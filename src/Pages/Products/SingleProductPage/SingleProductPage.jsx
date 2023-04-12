@@ -97,21 +97,35 @@ const SingleProductPage = () => {
               Buy Now
             </button>
           </Link>
-
-          {/* reviews section */}
-          <div className="mt-6">
-            <h4 className="text-xl font-semibold underline">Reviews :</h4>
-            <div>
-              {productInfo?.reviews.length ? (
-                <></>
-              ) : (
-                <>
-                  <p className="my-3 text-lg">No Reviews Found</p>
-                </>
-              )}
-            </div>
-          </div>
         </div>
+      </div>
+      {/* reviews section */}
+      <div className="mt-6">
+        <h4 className="text-xl font-semibold underline">Reviews :</h4>
+        <div>
+          {productInfo?.reviews.length ? (
+            <></>
+          ) : (
+            <>
+              <p className="my-3 text-lg">No Reviews Found</p>
+            </>
+          )}
+        </div>
+      </div>
+      {/* section for giving a review */}
+      <div>
+        <textarea
+          name="product review"
+          id={`${productInfo._id}_review`}
+          // cols="30"
+          className="w-full"
+          rows="3"
+          placeholder="Write A Review About This Product"
+        ></textarea>
+
+        <button className="bg-green-500 text-white px-6 py-2 rounded mt-4">
+          Add Review
+        </button>
       </div>
 
       <>
