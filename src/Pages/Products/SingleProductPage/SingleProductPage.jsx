@@ -46,10 +46,21 @@ const SingleProductPage = () => {
 
 
 
-
-
   const handleAddReview = (productId) => {
-    console.log(productId);
+    const { name } = JSON.parse(localStorage.getItem("UserDetails"));
+
+    const reviewText = document.getElementById(`${productId}_review`).value;
+    if (!reviewText) {
+      return toast.error("Write A Review First");
+    }
+
+    fetch(`${api}/addreview`, {
+      method: "PATCH",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ productId, reviewText, name }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   if (isLoading) {
@@ -112,7 +123,11 @@ const SingleProductPage = () => {
         <h4 className="text-xl font-semibold underline">Reviews :</h4>
         <div>
           {productInfo?.reviews.length ? (
-            <></>
+            <>
+              {productInfo?.reviews?.map((review) => (
+                <p>{review}</p>
+              ))}
+            </>
           ) : (
             <>
               <p className="my-3 text-lg">No Reviews Found</p>
