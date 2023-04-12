@@ -121,11 +121,16 @@ const SingleProductPage = () => {
       {/* reviews section */}
       <div className="mt-6">
         <h4 className="text-xl font-semibold underline">Reviews :</h4>
-        <div>
+        <>
           {productInfo?.reviews.length ? (
             <>
-              {productInfo?.reviews?.map((review) => (
-                <p>{review}</p>
+              {productInfo?.reviews?.map((review, i) => (
+                <div key={i} className="my-4 p-2 bg-orange-50 rounded">
+                  <p className="text-lg font-medium my-2">
+                    {review.reviewText}
+                  </p>
+                  <p className="">by - {review.name}</p>
+                </div>
               ))}
             </>
           ) : (
@@ -133,7 +138,7 @@ const SingleProductPage = () => {
               <p className="my-3 text-lg">No Reviews Found</p>
             </>
           )}
-        </div>
+        </>
       </div>
       {/* section for giving a review */}
       <div>
