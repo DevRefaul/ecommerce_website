@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 const OrderProcess = () => {
   const [orders, setOrders] = useState();
   const [loading, setLoading] = useState(false);
+  const [reFetch, setReFetch] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -29,7 +30,7 @@ const OrderProcess = () => {
         });
         return setOrders(data.orders);
       });
-  }, []);
+  }, [reFetch]);
 
   const handleUpdateOrderStatus = (orderId) => {
     const orderStatus = document.getElementById(`${orderId}_status`).value;
@@ -42,13 +43,26 @@ const OrderProcess = () => {
       return toast.error("Please Select A Updating State");
     }
 
+    setLoading(true);
     fetch(`${api}/updateorderstate`, {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ orderId, orderStatus }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (
+          data.status === 200 &&
+          data.updatedResponse.acknowledged &&
+          data.updatedResponse.modifiedCount
+        ) {
+          toast.success(data.message);
+          setReFetch(!reFetch);
+        } else {
+          toast.error(data.message);
+        }
+        setLoading(false);
+      });
   };
 
   if (loading) {
