@@ -47,7 +47,7 @@ const SingleProductPage = () => {
 
 
   const handleAddReview = (productId) => {
-    const { name } = JSON.parse(localStorage.getItem("UserDetails"));
+    const { name, email } = JSON.parse(localStorage.getItem("UserDetails"));
 
     const reviewText = document.getElementById(`${productId}_review`).value;
     if (!reviewText) {
@@ -57,7 +57,7 @@ const SingleProductPage = () => {
     fetch(`${api}/addreview`, {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ productId, reviewText, name }),
+      body: JSON.stringify({ productId, reviewText, name, email }),
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
