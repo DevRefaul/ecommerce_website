@@ -18,13 +18,17 @@ const Header = ({ user }) => {
   const userData = JSON.parse(userDetails);
 
   useEffect(() => {
+    if (!userData) {
+      return setData("");
+    }
+
     fetch(`${api}/getcartitems?email=${userData.email}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         return data;
       });
-  }, [loadCartItems, userData.email]);
+  }, [loadCartItems, userData]);
 
   // function for handling dropdown menu
   const handleDropDownMenu = () => {

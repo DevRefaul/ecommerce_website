@@ -7,9 +7,9 @@ const PrivateRoute = ({ children }) => {
   const user = JSON.parse(localStorage.getItem("UserDetails"));
   const userLoggedIn = localStorage.getItem("UserLoggedIn");
 
-  if (!user.email && !user.name && userLoggedIn !== "true") {
+  if (!user || !user.email || !user.name || userLoggedIn !== "true") {
     toast.info("Please Login To Continue");
-    return navigate("/login");
+    navigate("/login");
   }
 
   return children;
