@@ -34,7 +34,8 @@ const OrderProcess = () => {
 
 
   const handleUpdateOrderStatus = (orderId) => {
-    console.log(orderId);
+    const order = document.getElementById(`${orderId}_status`).value;
+    console.log(order);
   };
 
   if (loading) {
