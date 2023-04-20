@@ -26,12 +26,13 @@ const Orders = () => {
           const itemPrice = item.price.toString();
           if (itemPrice?.includes(",")) {
             const newPrice = Number(item.price.replace(/,/g, ""));
-            return (item.totalPrice = newPrice);
+            item.totalPrice = newPrice;
           }
+          return item;
         });
 
         setCartItemsData(data.cartItems);
-        setLoading(false);
+        return setLoading(false);
       });
   }, [loadCartItems, user.email]);
 
@@ -193,6 +194,7 @@ const Orders = () => {
   if (loading) {
     return <TransParentLoadingScene />;
   }
+
 
   return (
     <section className="container mx-auto min-h-screen">
