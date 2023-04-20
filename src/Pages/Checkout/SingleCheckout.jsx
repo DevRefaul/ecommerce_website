@@ -11,7 +11,8 @@ const SingleCheckout = () => {
 
   const location = useLocation();
 
-  const product = location.state.product;
+  const product = location?.state?.item;
+
   const { _id, name, price, image } = product;
   product.quantity = 1;
 

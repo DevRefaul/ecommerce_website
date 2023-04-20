@@ -518,7 +518,7 @@ const Header = ({ user }) => {
                         </th>
                         <td className="px-6 py-4">{item.price}</td>
                         <td className="px-6 py-4">
-                          <Link to={`/order/${item._id}`}>
+                          <Link to={`/order/${item._id}`} state={{ item }}>
                             <button className="p-2 rounded bg-orange-500 text-white font-semibold">
                               Buy_Now
                             </button>
