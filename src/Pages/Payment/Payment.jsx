@@ -6,9 +6,7 @@ import { useLocation } from "react-router-dom";
 import { api } from "../../Utils/Api";
 import { ToastContainer, toast } from "react-toastify";
 
-const stripePromise = loadStripe(
-  "pk_test_51M7I4PBM1N4t2PWxXQCUeLoqgKzwPUL8nqPhQHgROr5Hvvett4yENCXr0KehyxUZvNWhLRExbFHXX7aIfLyeBjcF00W5cGdylm"
-);
+const stripePromise = loadStripe(`${process.env.PUBLISH_KEY}`);
 const Payment = () => {
   const [clientSecret, setClientSecret] = useState("");
   const [orderId, setOrderId] = useState("");
