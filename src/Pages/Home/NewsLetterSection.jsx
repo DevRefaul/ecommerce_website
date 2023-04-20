@@ -2,7 +2,10 @@ import React from "react";
 
 const NewsLetterSection = () => {
   return (
-    <section className="bg-gradient-to-l from-green-300  to-blue-400 p-4 md:p-10 grid gap-4 xl:grid-cols-[2fr,2fr] xl:w-[80%] mx-auto my-20 rounded">
+    <section
+      className=" p-4 md:p-10 grid gap-4 xl:grid-cols-[2fr,2fr] xl:w-[80%] mx-auto my-20 rounded"
+      style={{ backgroundImage: "linear-gradient(260deg, #2afadf, #4c83ff)" }}
+    >
       <div>
         <h2 className="text-white font-bold text-2xl">
           Subscribe to Our Newsletter
