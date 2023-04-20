@@ -7,10 +7,12 @@ import {
   handleDeleteItemFromCart,
 } from "../../../Utils/RemoveItems";
 import { ToastContainer, toast } from "react-toastify";
+import TransParentLoadingScene from "../../../Components/LoadingScene/TransParentLoadingScene";
 
 const Orders = () => {
   const { loadCartItems, setLoadCartItems } = useContext(Context);
   const [cartItemsData, setCartItemsData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("UserDetails"));
@@ -26,10 +28,10 @@ const Orders = () => {
             const newPrice = Number(item.price.replace(/,/g, ""));
             return (item.totalPrice = newPrice);
           }
-          return "";
         });
 
         setCartItemsData(data.cartItems);
+        setLoading(false);
       });
   }, [loadCartItems, user.email]);
 
@@ -187,6 +189,10 @@ const Orders = () => {
       return toast.info("Please Select Any Payment Method");
     }
   };
+
+  if (loading) {
+    return <TransParentLoadingScene />;
+  }
 
   return (
     <section className="container mx-auto min-h-screen">
