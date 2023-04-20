@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
 
   if (!user || !user.email || !user.name || userLoggedIn !== "true") {
     toast.info("Please Login To Continue");
-    navigate("/login");
+    return navigate("/login");
   }
 
   return children;
