@@ -49,7 +49,7 @@ const SingleCardForAllProducts = ({ product }) => {
               </button>
             </Link>
             <button
-              className="text-white bg-gradient-to-r from-orange-400 to-yellow-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full"
+              className="addToCart text-sm py-2.5 text-center mr-2 mb-2 lg:mt-6 w-full"
               onClick={() =>
                 addOrderToDB(product, loadCartItems, setLoadCartItems)
               }
