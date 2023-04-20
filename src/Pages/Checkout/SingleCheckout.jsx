@@ -184,7 +184,7 @@ const SingleCheckout = () => {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Product Image
+                Order ID
               </th>
               <th scope="col" className="px-6 py-3">
                 Product name
@@ -205,9 +205,7 @@ const SingleCheckout = () => {
               className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
               key={_id}
             >
-              <td>
-                <img src={image} alt={`${name}'s img`} className="w-28 ml-3" />
-              </td>
+              <td className="p-2">{_id}</td>
 
               <th
                 scope="row"
