@@ -8,7 +8,7 @@ import { handleDeleteAllItemsFromCart } from "../../Utils/RemoveItems";
 
 const CheckoutMessage = () => {
   const location = useLocation();
-  const userData = JSON.parse(localStorage.getItem("UserData"));
+  const userData = JSON.parse(localStorage.getItem("UserDetails"));
   const { loadCartItems, setLoadCartItems } = useContext(Context);
 
   const { transactionId, totalPaid } = location.state;
