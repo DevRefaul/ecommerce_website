@@ -9,8 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLISH_KEY}`);
 
 const Payment = () => {
-  console.log(process.env.REACT_APP_PUBLISH_KEY);
-
   const [clientSecret, setClientSecret] = useState("");
   const [orderId, setOrderId] = useState("");
   const [totalPayment, setTotalPayment] = useState("");

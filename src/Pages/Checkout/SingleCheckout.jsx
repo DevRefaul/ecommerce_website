@@ -163,7 +163,6 @@ const SingleCheckout = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data.orderResponse);
             if (data.orderResponse.insertedId) {
               navigate("/payment", { state: data.orderResponse.insertedId });
               return toast.success("Your Orders Is Placed.");

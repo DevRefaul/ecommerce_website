@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Lottie from "lottie-react";
 
 import congratsAnim from "./checkoutAnim.json";
+import { Context } from "../../Utils/Contexts";
+import { handleDeleteAllItemsFromCart } from "../../Utils/RemoveItems";
 
 const CheckoutMessage = () => {
   const location = useLocation();
+  const userData = JSON.parse(localStorage.getItem("UserData"));
+  const { loadCartItems, setLoadCartItems } = useContext(Context);
 
   const { transactionId, totalPaid } = location.state;
+
+  handleDeleteAllItemsFromCart(userData, loadCartItems, setLoadCartItems);
 
   return (
     <section className="container mx-auto py-10 flex items-center justify-center min-h-screen">
