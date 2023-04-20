@@ -21,7 +21,7 @@ code {
   color: #fff;
   font-weight: 500;
   border-radius: 8px;
-  padding: 10px 16px;
+  /* padding: 10px 16px; */
   background-image: linear-gradient(45deg, #0c97fa, #16e1f5);
 }
 
