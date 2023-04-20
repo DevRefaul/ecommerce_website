@@ -30,3 +30,16 @@ code {
   transform: scale(1.04);
   transition: all ease-in-out 1s;
 }
+.buyNow {
+  color: #fff;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-image: linear-gradient(45deg, #cd7ee7, #990fc7);
+}
+
+.buyNow:hover {
+  background-image: linear-gradient(180deg, #cd7ee7, #990fc7);
+  transform: scale(1.04);
+  transition: all ease-in-out 1s;
+}
