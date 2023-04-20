@@ -27,7 +27,7 @@ export const handleDeleteAllItemsFromCart = (userData, loadCartItems, setLoadCar
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            if (data.removedResponse) {
+            if (data.removedResponse.acknowledged) {
                 setLoadCartItems(!loadCartItems)
                 toast.success(data.message)
             } else {
