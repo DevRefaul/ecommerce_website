@@ -13,7 +13,7 @@ const SingleCheckout = () => {
 
   const product = location?.state?.item;
 
-  const { _id, name, price, image } = product;
+  const { _id, name, price } = product;
   product.quantity = 1;
 
   if (price?.includes(",")) {
