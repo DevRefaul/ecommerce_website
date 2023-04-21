@@ -9,7 +9,7 @@ const CategorySection = () => {
         Shop By Category
       </h2>
 
-      <div className="my-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="my-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Link to="/products/fashion" state="Fashion">
           <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-32 relative rounded-lg">
             <h2 className="textCenter text-white text-3xl font-medium font-['Roboto_Slab']">
