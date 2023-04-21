@@ -12,6 +12,7 @@ const Header = ({ user }) => {
   const [dropdown, setDropdown] = useState(true);
   const [data, setData] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(true);
   const [showCart, setShowCart] = useState(false);
 
   const { loadCartItems, setLoadCartItems } = useContext(Context);
@@ -64,6 +65,19 @@ const Header = ({ user }) => {
       document.getElementById("user-dropdown")?.classList.remove("hidden");
     }
     setShowMenu(!showMenu);
+  };
+
+  const handleHamburgerMenu = () => {
+    if (showMobileMenu) {
+      document.getElementById("navbar-search").classList.remove("hidden");
+      document.getElementById("menubtn").removeAttribute("aria-expanded");
+      document.getElementById("menubtn").setAttribute("aria-expanded", "true");
+    } else {
+      document.getElementById("navbar-search").classList.add("hidden");
+      document.getElementById("menubtn").removeAttribute("aria-expanded");
+      document.getElementById("menubtn").setAttribute("aria-expanded", "false");
+    }
+    setShowMobileMenu(!showMobileMenu);
   };
 
   const handleShowSidebar = () => {
@@ -278,7 +292,7 @@ const Header = ({ user }) => {
             <button
               data-collapse-toggle="navbar-search"
               id="menubtn"
-              onClick={handleMenu}
+              onClick={handleHamburgerMenu}
               type="button"
               className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-search"
@@ -452,6 +466,14 @@ const Header = ({ user }) => {
                       </Link>
                     </li>
                   )}
+                  <li>
+                    <button
+                      className="py-2.5 px-5 rounded text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                      style={{ margin: "0px" }}
+                    >
+                      Sign Out
+                    </button>
+                  </li>
                 </>
               ) : (
                 <li className="mt-4">
