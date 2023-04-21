@@ -12,6 +12,7 @@ const Header = ({ user }) => {
   const [dropdown, setDropdown] = useState(true);
   const [data, setData] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const { loadCartItems, setLoadCartItems } = useContext(Context);
 
@@ -58,11 +59,32 @@ const Header = ({ user }) => {
 
   const handleMenu = () => {
     if (showMenu) {
-      document.getElementById("navbar-search")?.classList.add("hidden", true);
+      document.getElementById("user-dropdown")?.classList.add("hidden");
     } else {
-      document.getElementById("navbar-search")?.classList.remove("hidden");
+      document.getElementById("user-dropdown")?.classList.remove("hidden");
     }
     setShowMenu(!showMenu);
+  };
+
+  const handleShowSidebar = () => {
+    if (showCart) {
+      document.getElementById("cartDrawer")?.classList.remove("transform-none");
+      document.getElementById("cartDrawer")?.removeAttribute("aria-model");
+      document.getElementById("cartDrawer")?.removeAttribute("role");
+      document.getElementById("cartDrawer")?.classList.add("-translate-x-full");
+      document
+        .getElementById("cartDrawer")
+        ?.setAttribute("aria-hidden", "true");
+    } else {
+      document
+        .getElementById("cartDrawer")
+        ?.classList.remove("-translate-x-full");
+      document.getElementById("cartDrawer")?.classList.add("transform-none");
+      document.getElementById("cartDrawer")?.removeAttribute("aria-hidden");
+      document.getElementById("cartDrawer")?.setAttribute("aria-model", "true");
+      document.getElementById("cartDrawer")?.setAttribute("role", "dialog");
+    }
+    setShowCart(!showCart);
   };
 
   return (
@@ -71,7 +93,7 @@ const Header = ({ user }) => {
         id="navbar"
         className="bg-[#16e1f5] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10 fixed top-0 w-full block mb-28"
       >
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
+        <div className="container flex flex-wrap items-center justify-between mx-auto  relative">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="" className="h-6 mr-3 sm:h-7" />
             <span className="self-center font-['Roboto_Slab'] text-xl font-semibold whitespace-nowrap dark:text-white">
@@ -83,7 +105,6 @@ const Header = ({ user }) => {
           <div className="flex items-center lg:order-2">
             <button
               type="button"
-              onClick={handleMenu}
               id="menubtn"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
@@ -143,6 +164,7 @@ const Header = ({ user }) => {
                     aria-expanded="false"
                     data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom"
+                    onClick={handleMenu}
                   >
                     <span className="sr-only">Open user menu</span>
                     <img
@@ -153,7 +175,7 @@ const Header = ({ user }) => {
                   </button>
                   {/* <!-- Dropdown menu --> */}
                   <div
-                    className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                    className="z-50 absolute top-[40px] right-[15px] hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown"
                   >
                     <div className="px-4 py-3">
@@ -167,7 +189,7 @@ const Header = ({ user }) => {
                     <ul
                       className="py-2"
                       aria-labelledby="user-menu-2"
-                      id="mobile-menu-2"
+                      id="dropdown-menu-2"
                     >
                       <li>
                         <Link
@@ -223,9 +245,10 @@ const Header = ({ user }) => {
                 <div
                   type="button"
                   className="cursor-pointer relative"
-                  data-drawer-target="drawer-navigation"
-                  data-drawer-show="drawer-navigation"
-                  aria-controls="drawer-navigation"
+                  data-drawer-target="cartDrawer"
+                  data-drawer-show="cartDrawer"
+                  aria-controls="cartDrawer"
+                  onClick={handleShowSidebar}
                 >
                   <img
                     src="https://img.icons8.com/pastel-glyph/64/null/shopping-cart--v1.png"
@@ -451,13 +474,13 @@ const Header = ({ user }) => {
 
       {/* <!-- drawer component for cart--> */}
       <div
-        id="drawer-navigation"
+        id="cartDrawer"
         className="fixed top-0 left-0 z-50 w-64 md:w-10/12 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-green-50 dark:bg-gray-800"
         tabIndex="-1"
-        aria-labelledby="drawer-navigation-label"
+        aria-labelledby="cartDrawer-label"
       >
         <h5
-          id="drawer-navigation-label"
+          id="cartDrawer-label"
           className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
         >
           Cart
@@ -465,8 +488,8 @@ const Header = ({ user }) => {
         <button
           type="button"
           id="sidebarCloseBtn"
-          data-drawer-hide="drawer-navigation"
-          aria-controls="drawer-navigation"
+          data-drawer-hide="cartDrawer"
+          aria-controls="cartDrawer"
           className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
         >
           <svg
