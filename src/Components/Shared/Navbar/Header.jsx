@@ -7,6 +7,7 @@ import {
   handleDeleteAllItemsFromCart,
   handleDeleteItemFromCart,
 } from "../../../Utils/RemoveItems";
+import { ToastContainer, toast } from "react-toastify";
 
 const Header = ({ user }) => {
   const [dropdown, setDropdown] = useState(true);
@@ -103,10 +104,14 @@ const Header = ({ user }) => {
 
   const handleSearch = () => {
     const searchText = document.getElementById("searchInput").value;
+    if (!searchText) {
+      return toast.info("Enter Some Product Name To Search For");
+    }
   };
 
   return (
     <div className="mb-[80px]">
+      <ToastContainer />
       <nav
         id="navbar"
         className="bg-[#16e1f5] border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 z-10 fixed top-0 w-full block mb-28"
