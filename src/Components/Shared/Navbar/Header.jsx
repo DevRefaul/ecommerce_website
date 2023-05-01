@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../Assets/shopaholic.png";
 import { api } from "../../../Utils/Api";
 import { Context } from "../../../Utils/Contexts";
@@ -15,6 +15,7 @@ const Header = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(true);
   const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
 
   const { loadCartItems, setLoadCartItems } = useContext(Context);
 
@@ -107,6 +108,8 @@ const Header = ({ user }) => {
     if (!searchText) {
       return toast.info("Enter Some Product Name To Search For");
     }
+
+    navigate(`/products/${searchText}`);
   };
 
   return (
