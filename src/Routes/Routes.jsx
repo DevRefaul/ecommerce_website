@@ -12,6 +12,7 @@ import ProductRoot from "../Pages/Products/ProductRoot/ProductRoot";
 import Products from "../Pages/Products/Products";
 import ProductsAsCategoryPage from "../Pages/Products/ProductsAsCategoryPage/ProductsAsCategoryPage";
 import SingleProductPage from "../Pages/Products/SingleProductPage/SingleProductPage";
+import SearchPage from "../Pages/SearchPage/SearchPage";
 import SignUpPage from "../Pages/SignUp/SignUpPage";
 import AdminRoute from "../Root/Admin/AdminRoute";
 import PrivateRoute from "../Root/Private/PrivateRoute";
@@ -115,6 +116,10 @@ const routes = createBrowserRouter([
       {
         path: "/products/:category/:name",
         element: <SingleProductPage />,
+      },
+      {
+        path: "/products/:name",
+        element: <SearchPage />,
       },
     ],
   },
