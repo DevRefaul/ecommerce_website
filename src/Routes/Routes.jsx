@@ -51,6 +51,10 @@ const routes = createBrowserRouter([
         element: <SignUpPage />,
       },
       {
+        path: "/product/:name",
+        element: <SearchPage />,
+      },
+      {
         path: "/profile",
         element: (
           <PrivateRoute>
@@ -116,10 +120,6 @@ const routes = createBrowserRouter([
       {
         path: "/products/:category/:name",
         element: <SingleProductPage />,
-      },
-      {
-        path: "/products/:name",
-        element: <SearchPage />,
       },
     ],
   },

@@ -109,7 +109,7 @@ const Header = ({ user }) => {
       return toast.info("Enter Some Product Name To Search For");
     }
 
-    navigate(`/products/${searchText}`);
+    navigate(`/product/${searchText}`);
   };
 
   return (
