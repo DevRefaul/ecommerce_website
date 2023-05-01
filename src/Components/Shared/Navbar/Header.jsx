@@ -25,7 +25,7 @@ const Header = ({ user }) => {
       return setData("");
     }
 
-    fetch(`${api}/getcartitems?email=${userData.email}`)
+    fetch(`${api}/getcartitems?email=${userData?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -101,6 +101,10 @@ const Header = ({ user }) => {
     setShowCart(!showCart);
   };
 
+  const handleSearch = () => {
+    const searchText = document.getElementById("searchInput").value;
+  };
+
   return (
     <div className="mb-[80px]">
       <nav
@@ -142,7 +146,10 @@ const Header = ({ user }) => {
             </button>
 
             <div className="relative hidden lg:block">
-              <div className="absolute top-0 bottom-0 right-0 flex items-center px-3 cursor-pointer rounded-r-lg bg-sky-200">
+              <div
+                className="absolute top-0 bottom-0 right-0 flex items-center px-3 cursor-pointer rounded-r-lg bg-sky-200"
+                onClick={handleSearch}
+              >
                 <svg
                   className="w-5 h-5 text-gray-500"
                   aria-hidden="true"
@@ -160,7 +167,7 @@ const Header = ({ user }) => {
               </div>
               <input
                 type="text"
-                id="search-navbar"
+                id="searchInput"
                 className="block w-full p-2 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
@@ -322,7 +329,10 @@ const Header = ({ user }) => {
             id="navbar-search"
           >
             <div className="relative mt-3 lg:hidden">
-              <div className="absolute top-0 bottom-0 right-0 flex items-center px-3 cursor-pointer rounded-r-lg bg-sky-200">
+              <div
+                className="absolute top-0 bottom-0 right-0 flex items-center px-3 cursor-pointer rounded-r-lg bg-sky-200"
+                onClick={handleSearch}
+              >
                 <svg
                   className="w-5 h-5 text-gray-500"
                   aria-hidden="true"
@@ -339,7 +349,7 @@ const Header = ({ user }) => {
               </div>
               <input
                 type="text"
-                id="search-navbar"
+                id="searchInput"
                 className="block w-full p-2 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
